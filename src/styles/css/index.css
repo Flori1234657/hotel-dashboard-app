@@ -1,0 +1,472 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+*,
+::after,
+::before {
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  width: 100%;
+}
+
+body {
+  width: 100%;
+  background-color: #253249;
+}
+
+#root {
+  width: 100%;
+  background-color: #253249;
+}
+
+.login {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #0d1627;
+}
+.login > h1 {
+  font-family: "Hind", sans-serif;
+  font-size: clamp(2.5rem, 0.38rem + 2.83vw, 3.56rem);
+  font-weight: bold;
+  color: #7a9ffb;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  padding-bottom: 1em;
+}
+.login form {
+  width: 25%;
+  background-color: white;
+  max-width: 450px;
+  font-size: clamp(1.75rem, 0.25rem + 2vw, 2.5rem);
+  border-radius: 0.3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login form div:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+}
+.login form div:first-child img {
+  width: 100%;
+  font-size: clamp(1.75rem, 0.25rem + 2vw, 2.5rem);
+  padding: 1.5em 0 0.5em 0;
+}
+.login form div:first-child h1 {
+  font-family: "Hind", sans-serif;
+  font-size: clamp(1.75rem, 0.25rem + 2vw, 2.5rem);
+  font-weight: bold;
+  color: black;
+  padding: 0 0 1.5em 0;
+  margin: 0;
+}
+.login form .loginBtns {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(1.75rem, 0.25rem + 2vw, 2.5rem);
+  padding: 0 0 1.5em 0;
+}
+.login form .loginBtns button {
+  width: 75%;
+  font-family: "Libre Franklin", sans-serif;
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  font-weight: bold;
+  color: white;
+  padding: 0.6em 0;
+  margin: 0 0 0.5em 0;
+  background-color: #7a9ffb;
+  border: none;
+  border-radius: 0.4em;
+  cursor: pointer;
+}
+.login form .loginBtns button:hover {
+  background-color: #3568e8;
+}
+.login form .loginBtns button:last-child {
+  background-color: #970606;
+}
+.login form .loginBtns button:last-child:hover {
+  background-color: #cb1919;
+}
+.login form p {
+  font-family: "Kanit", sans-serif;
+  font-size: clamp(0.69rem, 0.06rem + 0.83vw, 1rem);
+  font-weight: 500;
+  color: black;
+  padding: 0 5em 3.5em 2em;
+  margin: 0;
+}
+.login form p a {
+  text-decoration: none;
+  color: #7a9ffb;
+}
+.login form p a:hover {
+  text-decoration: underline;
+}
+
+.homeContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homeContainer aside {
+  width: 17%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: #0d1627;
+}
+.homeContainer aside > img {
+  width: 75%;
+  align-self: center;
+  font-size: clamp(2.06rem, 0.19rem + 2.5vw, 3rem);
+  padding: 0.5em 0;
+}
+.homeContainer aside h2 {
+  font-family: "Kanit", sans-serif;
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  font-weight: 600;
+  color: #7a9ffb;
+  padding: 0;
+  margin: 2em 0 0.5em 0.6em;
+}
+.homeContainer aside nav {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homeContainer aside nav div {
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: clamp(1.44rem, 0.19rem + 1.67vw, 2.06rem);
+  border-top-right-radius: 0.4em;
+  border-bottom-right-radius: 0.4em;
+}
+.homeContainer aside nav div img {
+  width: 15%;
+  margin-left: 4%;
+}
+.homeContainer aside nav div h3 {
+  font-family: "Kanit", sans-serif;
+  font-size: clamp(1.44rem, 0.19rem + 1.67vw, 2.06rem);
+  font-weight: 300;
+  color: #f5f5fb;
+  padding: 0.3em 0;
+  margin: 0 0 0 0.7em;
+}
+.homeContainer aside nav div h4 {
+  font-family: "Kanit", sans-serif;
+  font-size: clamp(1.44rem, 0.19rem + 1.67vw, 2.06rem);
+  font-weight: 400;
+  color: #f5f5fb;
+  padding: 0 0 0 0.3em;
+  margin: 0;
+}
+.homeContainer aside nav div:hover {
+  background-color: #253249;
+  cursor: pointer;
+}
+.homeContainer aside nav div:first-child {
+  background-color: #7a9ffb;
+}
+.homeContainer aside nav div:nth-child(3) h4 {
+  margin-left: 1.4em;
+}
+.homeContainer aside nav div:nth-child(4) h4 {
+  margin-left: 0.7em;
+}
+.homeContainer aside button {
+  font-family: "Kanit", sans-serif;
+  font-size: clamp(1.44rem, 0.19rem + 1.67vw, 2.06rem);
+  font-weight: 400;
+  color: #f5f5fb;
+  padding: 0.3em 3.2em;
+  margin: 12.5em 0 0 0;
+  background-color: #970606;
+  border: none;
+  border-radius: 0.4em;
+  cursor: pointer;
+  align-self: center;
+}
+.homeContainer aside button:hover, .homeContainer aside button:focus {
+  background-color: #cb1919;
+}
+.homeContainer .conRight {
+  width: 83%;
+  order: 2;
+}
+.homeContainer .conRight header {
+  width: 100%;
+  background-color: #0d1627;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.homeContainer .conRight header > img {
+  width: 4%;
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  margin-left: 1em;
+}
+.homeContainer .conRight header .headerRight {
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.homeContainer .conRight header .headerRight > img {
+  width: 10%;
+}
+.homeContainer .conRight header .headerRight figure {
+  width: 85%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.homeContainer .conRight header .headerRight figure img {
+  order: 2;
+  width: 15%;
+  border-radius: 50%;
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  border: 0.2em solid #3568e8;
+  padding: 0.1em;
+}
+.homeContainer .conRight header .headerRight figure figcaption {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  font-weight: 500;
+  color: #f5f5fb;
+  padding: 1em 0.5em 1em 0;
+  margin: 0;
+}
+.homeContainer .conRight .homeMain {
+  width: 100%;
+  background-color: #253249;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: space-around;
+}
+.homeContainer .conRight .homeMain .homeMainText {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  line-height: 1.3;
+  font-size: clamp(1.75rem, 0.25rem + 2vw, 2.5rem);
+  margin: 1em 0 1em 0.9em;
+}
+.homeContainer .conRight .homeMain .homeMainText h1 {
+  font-family: "Hind", sans-serif;
+  font-size: clamp(2.06rem, 0.19rem + 2.5vw, 3rem);
+  font-weight: 500;
+  color: #7a9ffb;
+  padding: 0;
+  margin: 0;
+}
+.homeContainer .conRight .homeMain .homeMainText h2 {
+  font-family: "Hind", sans-serif;
+  font-size: clamp(1.75rem, 0.25rem + 2vw, 2.5rem);
+  font-weight: 500;
+  color: #f5f5fb;
+  padding: 0;
+  margin: 0;
+}
+.homeContainer .conRight .homeMain .teDhenatCont {
+  width: 95%;
+  font-size: clamp(1.75rem, 0.25rem + 2vw, 2.5rem);
+  margin-left: 0.9em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homeContainer .conRight .homeMain .teDhenatCont .firstInfoCont {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.homeContainer .conRight .homeMain .teDhenatCont .firstInfoCont .cardCont {
+  width: 24%;
+  background-color: #0d1627;
+  font-size: clamp(1.44rem, 0.19rem + 1.67vw, 2.06rem);
+  border-radius: 0.4em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.homeContainer .conRight .homeMain .teDhenatCont .firstInfoCont .cardCont .txtIcn {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.homeContainer .conRight .homeMain .teDhenatCont .firstInfoCont .cardCont .txtIcn img {
+  width: 20%;
+  font-size: clamp(1.44rem, 0.19rem + 1.67vw, 2.06rem);
+  align-self: flex-start;
+  margin-top: 0.7em;
+  margin-left: 0.5em;
+}
+.homeContainer .conRight .homeMain .teDhenatCont .firstInfoCont .cardCont .txtIcn .text {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+  font-size: clamp(1.44rem, 0.19rem + 1.67vw, 2.06rem);
+  margin-right: 0.5em;
+}
+.homeContainer .conRight .homeMain .teDhenatCont .firstInfoCont .cardCont .txtIcn .text h3 {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: clamp(1.44rem, 0.19rem + 1.67vw, 2.06rem);
+  font-weight: 400;
+  color: #f5f5fb;
+  padding: 0.8em 0 0 0;
+  margin: 0;
+  white-space: nowrap;
+}
+.homeContainer .conRight .homeMain .teDhenatCont .firstInfoCont .cardCont .txtIcn .text h2 {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: clamp(1.75rem, 0.25rem + 2vw, 2.5rem);
+  font-weight: 500;
+  color: #f5f5fb;
+  padding: 0 0 1em 0;
+  margin: 0;
+}
+.homeContainer .conRight .homeMain .teDhenatCont .firstInfoCont .cardCont .progressBar {
+  width: 90%;
+  aspect-ratio: 33;
+  background-color: #253249;
+  align-self: center;
+  font-size: clamp(1.44rem, 0.19rem + 1.67vw, 2.06rem);
+  margin-bottom: 1em;
+  border-radius: 0.4em;
+  overflow: hidden;
+}
+.homeContainer .conRight .homeMain .teDhenatCont .firstInfoCont .cardCont .progressBar div {
+  height: 100%;
+}
+.homeContainer .conRight .homeMain .teDhenatCont .graphCont {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: clamp(1.75rem, 0.25rem + 2vw, 2.5rem);
+  margin: 1em 0 0 0;
+}
+.homeContainer .conRight .homeMain .teDhenatCont .graphCont .graphChart {
+  width: 60%;
+  background-color: #0d1627;
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  border-radius: 0.49em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+.homeContainer .conRight .homeMain .teDhenatCont .graphCont .graphChart .grChartUp {
+  width: 95%;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.homeContainer .conRight .homeMain .teDhenatCont .graphCont .graphChart .grChartUp img {
+  width: 6%;
+  cursor: pointer;
+}
+.homeContainer .conRight .homeMain .teDhenatCont .graphCont .graphChart .grChartUp h3 {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  font-weight: 600;
+  color: #8f98a9;
+  padding: 0.7em 0;
+  margin: 0;
+}
+.homeContainer .conRight .homeMain .teDhenatCont .graphCont .graphChart .grChartDown {
+  width: 95%;
+  height: 80%;
+  align-self: center;
+}
+.homeContainer .conRight .homeMain .teDhenatCont .graphCont .secondChart {
+  width: 38.7%;
+  background-color: #0d1627;
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  border-radius: 0.49em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+.homeContainer .conRight .homeMain .teDhenatCont .graphCont .secondChart div:first-child {
+  width: 95%;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.homeContainer .conRight .homeMain .teDhenatCont .graphCont .secondChart div:first-child img {
+  width: 9.3%;
+  cursor: pointer;
+}
+.homeContainer .conRight .homeMain .teDhenatCont .graphCont .secondChart div:first-child h3 {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  font-weight: 600;
+  color: #8f98a9;
+  padding: 0.7em 0;
+  margin: 0;
+}
+.homeContainer .conRight .homeMain .teDhenatCont .graphCont .secondChart .rrethorChart {
+  width: 60%;
+  align-self: center;
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  padding-bottom: 2.65em;
+}
+
+/*# sourceMappingURL=index.css.map */

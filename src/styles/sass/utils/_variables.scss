@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+//colors
+$col-60_Neutral900: #0d1627;
+$col-30_Neutral700: #253249;
+$col-10_Brand700: #510697;
+
+$col-Brand500: #9235e8;
+
+$col-subTxt_Neutral100: #f5f5fb;
+$col-mainTxt_Ifno300: #7a9ffb;
+$col-secSubTxt_Neutral300: #8f98a9;
+
+$col-dilBtn_Error700: #970606;
+$col-nextBtn_Warning500: #e88c35;
+$col-submitBtn_Success700: #069715;
+
+$col-dilBtnHov_Error600: #cb1919;
+$col-googleAuthHov_info500: #3568e8;
+$col-nextBtnHov_warning400: #f3a052;
+$col-submitBtnHov_Success600: #19cb2a;
+$col-sideNavLinksHov_Neutral700: #253249;
+
+//font-family
+$hind: "Hind", sans-serif;
+$libreFranklin: "Libre Franklin", sans-serif;
+$kanit: "Kanit", sans-serif;
+
+//sizes
+$s_PCsm40-57: clamp(2.5rem, calc(0.38rem + 2.83vw), 3.56rem);
+$s_PCsm28-40: clamp(1.75rem, calc(0.25rem + 2vw), 2.5rem);
+$s_PCsm33-48: clamp(2.06rem, calc(0.19rem + 2.5vw), 3rem);
+$s_PCsm19-28: clamp(1.19rem, calc(0.06rem + 1.5vw), 1.75rem);
+$s_PCsm23-33: clamp(1.44rem, calc(0.19rem + 1.67vw), 2.06rem);
+$s_PCsm11-16: clamp(0.69rem, calc(0.06rem + 0.83vw), 1rem);

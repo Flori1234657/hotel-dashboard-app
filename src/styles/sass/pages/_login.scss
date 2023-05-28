@@ -1,0 +1,89 @@
+@use "../utils/mixin" as mix;
+@use "../utils/variables" as var;
+
+@mixin styles() {
+  > h1 {
+    @include mix.font(
+      var.$hind,
+      var.$s_PCsm40-57,
+      bold,
+      var.$col-mainTxt_Ifno300,
+      0,
+      0
+    );
+    text-align: center;
+    padding-bottom: 1em;
+  }
+  form {
+    width: 25%;
+    background-color: white;
+    max-width: 450px;
+    font-size: var.$s_PCsm28-40;
+    border-radius: 0.3em;
+    @include mix.flex($js: center);
+    div:first-child {
+      @include mix.flex($js: center);
+      width: 60%;
+      img {
+        width: 100%;
+        font-size: var.$s_PCsm28-40;
+        padding: 1.5em 0 0.5em 0;
+      }
+      h1 {
+        @include mix.font(
+          var.$hind,
+          var.$s_PCsm28-40,
+          bold,
+          black,
+          0 0 1.5em 0,
+          0
+        );
+      }
+    }
+    .loginBtns {
+      width: 100%;
+      @include mix.flex($js: center);
+      font-size: var.$s_PCsm28-40;
+      padding: 0 0 1.5em 0;
+      button {
+        width: 75%;
+        @include mix.button(
+          var.$libreFranklin,
+          var.$s_PCsm19-28,
+          bold,
+          white,
+          0.6em 0,
+          0 0 0.5em 0,
+          var.$col-mainTxt_Ifno300,
+          0.4em
+        );
+      }
+      button:hover {
+        background-color: var.$col-googleAuthHov_info500;
+      }
+      button:last-child {
+        background-color: var.$col-dilBtn_Error700;
+      }
+      button:last-child:hover {
+        background-color: var.$col-dilBtnHov_Error600;
+      }
+    }
+    p {
+      @include mix.font(
+        var.$kanit,
+        var.$s_PCsm11-16,
+        500,
+        black,
+        0 5em 3.5em 2em,
+        0
+      );
+      a {
+        text-decoration: none;
+        color: var.$col-mainTxt_Ifno300;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

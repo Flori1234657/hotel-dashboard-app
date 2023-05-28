@@ -1,0 +1,58 @@
+@use "./utils/mixin" as mix;
+@use "./utils/variables" as var;
+@use "./pages/login" as loginStyles;
+@use "./components/sideNav" as sideNav;
+@use "./components/header" as header;
+@use "./pages/home" as home;
+
+*,
+::after,
+::before {
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+}
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+html {
+  width: 100%;
+}
+body {
+  width: 100%;
+  background-color: var.$col-30_Neutral700;
+}
+#root {
+  width: 100%;
+  background-color: var.$col-30_Neutral700;
+}
+.login {
+  width: 100%;
+  height: 100vh;
+  @include mix.flex($js: center);
+  background-color: var.$col-60_Neutral900;
+  @include loginStyles.styles();
+}
+.homeContainer {
+  width: 100%;
+  @include mix.flex($dr: row, $al: flex-start);
+  aside {
+    width: 17%;
+    height: 100vh;
+    @include sideNav.style();
+  }
+  .conRight {
+    width: 83%;
+    order: 2;
+    header {
+      @include header.styles();
+    }
+    .homeMain {
+      @include home.styles();
+    }
+  }
+}

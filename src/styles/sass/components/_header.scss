@@ -1,0 +1,43 @@
+@use "../utils/mixin" as mix;
+@use "../utils/variables" as var;
+
+@mixin styles() {
+  width: 100%;
+  background-color: var.$col-60_Neutral900;
+  @include mix.flex($dr: row, $js: space-between);
+  > img {
+    width: 4%;
+    font-size: var.$s_PCsm19-28;
+    margin-left: 1em;
+  }
+  .headerRight {
+    width: 30%;
+    @include mix.flex($dr: row, $js: space-between);
+
+    > img {
+      width: 10%;
+    }
+    figure {
+      width: 85%;
+      @include mix.flex($dr: row, $js: center);
+      img {
+        order: 2;
+        width: 15%;
+        border-radius: 50%;
+        font-size: var.$s_PCsm19-28;
+        border: 0.2em solid var.$col-googleAuthHov_info500;
+        padding: 0.1em;
+      }
+      figcaption {
+        @include mix.font(
+          var.$libreFranklin,
+          var.$s_PCsm19-28,
+          500,
+          var.$col-subTxt_Neutral100,
+          1em 0.5em 1em 0,
+          0
+        );
+      }
+    }
+  }
+}

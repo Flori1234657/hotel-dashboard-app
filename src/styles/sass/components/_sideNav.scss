@@ -1,0 +1,92 @@
+@use "../utils/mixin" as mix;
+@use "../utils/variables" as var;
+
+@mixin style() {
+  @include mix.flex($al: flex-start);
+  background-color: var.$col-60_Neutral900;
+  > img {
+    width: 75%;
+    align-self: center;
+    font-size: var.$s_PCsm33-48;
+    padding: 0.5em 0;
+  }
+  h2 {
+    @include mix.font(
+      var.$kanit,
+      var.$s_PCsm19-28,
+      600,
+      var.$col-mainTxt_Ifno300,
+      0,
+      2em 0 0.5em 0.6em
+    );
+  }
+  nav {
+    width: 100%;
+    @include mix.flex($al: flex-start);
+    div {
+      width: 95%;
+      @include mix.flex($dr: row);
+      font-size: var.$s_PCsm23-33;
+      border-top-right-radius: 0.4em;
+      border-bottom-right-radius: 0.4em;
+      img {
+        width: 15%;
+        margin-left: 4%;
+      }
+      h3 {
+        @include mix.font(
+          var.$kanit,
+          var.$s_PCsm23-33,
+          300,
+          var.$col-subTxt_Neutral100,
+          0.3em 0,
+          0 0 0 0.7em
+        );
+      }
+      h4 {
+        @include mix.font(
+          var.$kanit,
+          var.$s_PCsm23-33,
+          400,
+          var.$col-subTxt_Neutral100,
+          0 0 0 0.3em,
+          0
+        );
+      }
+      &:hover {
+        background-color: var.$col-sideNavLinksHov_Neutral700;
+        cursor: pointer;
+      }
+    }
+    div:first-child {
+      background-color: var.$col-mainTxt_Ifno300;
+    }
+    div:nth-child(3) {
+      h4 {
+        margin-left: 1.4em;
+      }
+    }
+    div:nth-child(4) {
+      h4 {
+        margin-left: 0.7em;
+      }
+    }
+  }
+  button {
+    @include mix.button(
+      var.$kanit,
+      var.$s_PCsm23-33,
+      400,
+      var.$col-subTxt_Neutral100,
+      0.3em 3.2em,
+      12.5em 0 0 0,
+      var.$col-dilBtn_Error700,
+      0.4em
+    );
+    align-self: center;
+    &:hover,
+    &:focus {
+      background-color: var.$col-dilBtnHov_Error600;
+    }
+  }
+}

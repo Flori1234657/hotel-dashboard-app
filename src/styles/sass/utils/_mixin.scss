@@ -1,0 +1,21 @@
+@mixin flex($js: flex-start, $al: center, $dr: column) {
+  display: flex;
+  flex-direction: $dr;
+  justify-content: $js;
+  align-items: $al;
+}
+@mixin font($ff, $fs, $w, $cl, $pd, $mr) {
+  font-family: $ff;
+  font-size: $fs;
+  font-weight: $w;
+  color: $cl;
+  padding: $pd;
+  margin: $mr;
+}
+@mixin button($ff, $fs, $w, $cl, $pd, $mr, $bg, $br) {
+  @include font($ff, $fs, $w, $cl, $pd, $mr);
+  background-color: $bg;
+  border: none;
+  border-radius: $br;
+  cursor: pointer;
+}
