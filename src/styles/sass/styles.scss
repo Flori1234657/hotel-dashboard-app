@@ -42,7 +42,7 @@ body {
   @include mix.flex($dr: row, $al: flex-start);
   aside {
     width: 17%;
-    height: 100vh;
+    min-height: 100vh;
     @include sideNav.style();
   }
   .conRight {

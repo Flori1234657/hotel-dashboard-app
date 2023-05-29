@@ -137,7 +137,7 @@ body {
 }
 .homeContainer aside {
   width: 17%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -174,6 +174,7 @@ body {
   font-size: clamp(1.44rem, 0.19rem + 1.67vw, 2.06rem);
   border-top-right-radius: 0.4em;
   border-bottom-right-radius: 0.4em;
+  margin-bottom: 0.5em;
 }
 .homeContainer aside nav div img {
   width: 15%;
@@ -199,14 +200,31 @@ body {
   background-color: #253249;
   cursor: pointer;
 }
-.homeContainer aside nav div:first-child {
-  background-color: #7a9ffb;
-}
 .homeContainer aside nav div:nth-child(3) h4 {
   margin-left: 1.4em;
 }
 .homeContainer aside nav div:nth-child(4) h4 {
   margin-left: 0.7em;
+}
+.homeContainer aside nav ul {
+  width: 65%;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  list-style-type: none;
+}
+.homeContainer aside nav ul li {
+  font-family: "Hind", sans-serif;
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  font-weight: 400;
+  color: #f5f5fb;
+  padding: 0;
+  margin: 0;
+}
+.homeContainer aside nav ul li:last-child {
+  color: #8f98a9;
 }
 .homeContainer aside button {
   font-family: "Kanit", sans-serif;
@@ -214,7 +232,7 @@ body {
   font-weight: 400;
   color: #f5f5fb;
   padding: 0.3em 3.2em;
-  margin: 12.5em 0 0 0;
+  margin: 12em 0 0 0;
   background-color: #970606;
   border: none;
   border-radius: 0.4em;

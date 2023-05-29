@@ -29,6 +29,7 @@
       font-size: var.$s_PCsm23-33;
       border-top-right-radius: 0.4em;
       border-bottom-right-radius: 0.4em;
+      margin-bottom: 0.5em;
       img {
         width: 15%;
         margin-left: 4%;
@@ -58,9 +59,7 @@
         cursor: pointer;
       }
     }
-    div:first-child {
-      background-color: var.$col-mainTxt_Ifno300;
-    }
+
     div:nth-child(3) {
       h4 {
         margin-left: 1.4em;
@@ -71,6 +70,25 @@
         margin-left: 0.7em;
       }
     }
+    ul {
+      width: 65%;
+      align-self: center;
+      @include mix.flex($al: flex-start);
+      list-style-type: none;
+      li {
+        @include mix.font(
+          var.$hind,
+          var.$s_PCsm19-28,
+          400,
+          var.$col-subTxt_Neutral100,
+          0,
+          0
+        );
+      }
+      li:last-child {
+        color: var.$col-secSubTxt_Neutral300;
+      }
+    }
   }
   button {
     @include mix.button(
@@ -79,7 +97,7 @@
       400,
       var.$col-subTxt_Neutral100,
       0.3em 3.2em,
-      12.5em 0 0 0,
+      12em 0 0 0,
       var.$col-dilBtn_Error700,
       0.4em
     );
