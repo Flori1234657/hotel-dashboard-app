@@ -7,7 +7,7 @@
   @include mix.flex($dr: row, $js: space-between);
   > img {
     width: 4%;
-    font-size: var.$s_PCsm19-28;
+    font-size: var.$s_PCsm16-23;
     margin-left: 1em;
   }
   .headerRight {
@@ -24,14 +24,14 @@
         order: 2;
         width: 15%;
         border-radius: 50%;
-        font-size: var.$s_PCsm19-28;
-        border: 0.2em solid var.$col-googleAuthHov_info500;
+        font-size: var.$s_PCsm16-23;
+        border: 0.15em solid var.$col-googleAuthHov_info500;
         padding: 0.1em;
       }
       figcaption {
         @include mix.font(
           var.$libreFranklin,
-          var.$s_PCsm19-28,
+          var.$s_PCsm16-23,
           500,
           var.$col-subTxt_Neutral100,
           1em 0.5em 1em 0,

@@ -42,7 +42,7 @@ body {
 }
 .login > h1 {
   font-family: "Hind", sans-serif;
-  font-size: clamp(2.5rem, 0.38rem + 2.83vw, 3.56rem);
+  font-size: clamp(2.06rem, 0.19rem + 2.5vw, 3rem);
   font-weight: bold;
   color: #7a9ffb;
   padding: 0;
@@ -51,10 +51,10 @@ body {
   padding-bottom: 1em;
 }
 .login form {
-  width: 25%;
+  width: 20%;
   background-color: white;
-  max-width: 450px;
-  font-size: clamp(1.75rem, 0.25rem + 2vw, 2.5rem);
+  max-width: 400px;
+  font-size: clamp(1.44rem, 0.19rem + 1.67vw, 2.06rem);
   border-radius: 0.3em;
   display: flex;
   flex-direction: column;
@@ -70,12 +70,12 @@ body {
 }
 .login form div:first-child img {
   width: 100%;
-  font-size: clamp(1.75rem, 0.25rem + 2vw, 2.5rem);
+  font-size: clamp(1.44rem, 0.19rem + 1.67vw, 2.06rem);
   padding: 1.5em 0 0.5em 0;
 }
 .login form div:first-child h1 {
   font-family: "Hind", sans-serif;
-  font-size: clamp(1.75rem, 0.25rem + 2vw, 2.5rem);
+  font-size: clamp(1.44rem, 0.19rem + 1.67vw, 2.06rem);
   font-weight: bold;
   color: black;
   padding: 0 0 1.5em 0;
@@ -87,13 +87,13 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: clamp(1.75rem, 0.25rem + 2vw, 2.5rem);
+  font-size: clamp(1.44rem, 0.19rem + 1.67vw, 2.06rem);
   padding: 0 0 1.5em 0;
 }
 .login form .loginBtns button {
   width: 75%;
   font-family: "Libre Franklin", sans-serif;
-  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  font-size: clamp(1rem, 0.13rem + 1.17vw, 1.44rem);
   font-weight: bold;
   color: white;
   padding: 0.6em 0;
@@ -114,7 +114,7 @@ body {
 }
 .login form p {
   font-family: "Kanit", sans-serif;
-  font-size: clamp(0.69rem, 0.06rem + 0.83vw, 1rem);
+  font-size: clamp(0.56rem, 0.06rem + 0.67vw, 0.81rem);
   font-weight: 500;
   color: black;
   padding: 0 5em 3.5em 2em;
@@ -147,12 +147,12 @@ body {
 .homeContainer aside > img {
   width: 75%;
   align-self: center;
-  font-size: clamp(2.06rem, 0.19rem + 2.5vw, 3rem);
+  font-size: clamp(1.75rem, 0.25rem + 2vw, 2.5rem);
   padding: 0.5em 0;
 }
 .homeContainer aside h2 {
   font-family: "Kanit", sans-serif;
-  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  font-size: clamp(1rem, 0.13rem + 1.17vw, 1.44rem);
   font-weight: 600;
   color: #7a9ffb;
   padding: 0;
@@ -171,7 +171,7 @@ body {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  font-size: clamp(1.44rem, 0.19rem + 1.67vw, 2.06rem);
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
   border-top-right-radius: 0.4em;
   border-bottom-right-radius: 0.4em;
   margin-bottom: 0.5em;
@@ -182,7 +182,7 @@ body {
 }
 .homeContainer aside nav div h3 {
   font-family: "Kanit", sans-serif;
-  font-size: clamp(1.44rem, 0.19rem + 1.67vw, 2.06rem);
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
   font-weight: 300;
   color: #f5f5fb;
   padding: 0.3em 0;
@@ -190,7 +190,7 @@ body {
 }
 .homeContainer aside nav div h4 {
   font-family: "Kanit", sans-serif;
-  font-size: clamp(1.44rem, 0.19rem + 1.67vw, 2.06rem);
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
   font-weight: 400;
   color: #f5f5fb;
   padding: 0 0 0 0.3em;
@@ -217,7 +217,7 @@ body {
 }
 .homeContainer aside nav ul li {
   font-family: "Hind", sans-serif;
-  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  font-size: clamp(1rem, 0.13rem + 1.17vw, 1.44rem);
   font-weight: 400;
   color: #f5f5fb;
   padding: 0;
@@ -228,7 +228,7 @@ body {
 }
 .homeContainer aside button {
   font-family: "Kanit", sans-serif;
-  font-size: clamp(1.44rem, 0.19rem + 1.67vw, 2.06rem);
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
   font-weight: 400;
   color: #f5f5fb;
   padding: 0.3em 3.2em;
@@ -256,7 +256,7 @@ body {
 }
 .homeContainer .conRight header > img {
   width: 4%;
-  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  font-size: clamp(1rem, 0.13rem + 1.17vw, 1.44rem);
   margin-left: 1em;
 }
 .homeContainer .conRight header .headerRight {
@@ -280,13 +280,13 @@ body {
   order: 2;
   width: 15%;
   border-radius: 50%;
-  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
-  border: 0.2em solid #3568e8;
+  font-size: clamp(1rem, 0.13rem + 1.17vw, 1.44rem);
+  border: 0.15em solid #3568e8;
   padding: 0.1em;
 }
 .homeContainer .conRight header .headerRight figure figcaption {
   font-family: "Libre Franklin", sans-serif;
-  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  font-size: clamp(1rem, 0.13rem + 1.17vw, 1.44rem);
   font-weight: 500;
   color: #f5f5fb;
   padding: 1em 0.5em 1em 0;
@@ -307,12 +307,12 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
   line-height: 1.3;
-  font-size: clamp(1.75rem, 0.25rem + 2vw, 2.5rem);
+  font-size: clamp(1.44rem, 0.19rem + 1.67vw, 2.06rem);
   margin: 1em 0 1em 0.9em;
 }
 .homeContainer .conRight .homeMain .homeMainText h1 {
   font-family: "Hind", sans-serif;
-  font-size: clamp(2.06rem, 0.19rem + 2.5vw, 3rem);
+  font-size: clamp(1.75rem, 0.25rem + 2vw, 2.5rem);
   font-weight: 500;
   color: #7a9ffb;
   padding: 0;
@@ -320,7 +320,7 @@ body {
 }
 .homeContainer .conRight .homeMain .homeMainText h2 {
   font-family: "Hind", sans-serif;
-  font-size: clamp(1.75rem, 0.25rem + 2vw, 2.5rem);
+  font-size: clamp(1.44rem, 0.19rem + 1.67vw, 2.06rem);
   font-weight: 500;
   color: #f5f5fb;
   padding: 0;
@@ -328,7 +328,7 @@ body {
 }
 .homeContainer .conRight .homeMain .teDhenatCont {
   width: 95%;
-  font-size: clamp(1.75rem, 0.25rem + 2vw, 2.5rem);
+  font-size: clamp(1.44rem, 0.19rem + 1.67vw, 2.06rem);
   margin-left: 0.9em;
   display: flex;
   flex-direction: column;
@@ -345,7 +345,7 @@ body {
 .homeContainer .conRight .homeMain .teDhenatCont .firstInfoCont .cardCont {
   width: 24%;
   background-color: #0d1627;
-  font-size: clamp(1.44rem, 0.19rem + 1.67vw, 2.06rem);
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
   border-radius: 0.4em;
   display: flex;
   flex-direction: column;
@@ -361,7 +361,7 @@ body {
 }
 .homeContainer .conRight .homeMain .teDhenatCont .firstInfoCont .cardCont .txtIcn img {
   width: 20%;
-  font-size: clamp(1.44rem, 0.19rem + 1.67vw, 2.06rem);
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
   align-self: flex-start;
   margin-top: 0.7em;
   margin-left: 0.5em;
@@ -373,12 +373,12 @@ body {
   justify-content: center;
   align-items: flex-end;
   overflow: hidden;
-  font-size: clamp(1.44rem, 0.19rem + 1.67vw, 2.06rem);
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
   margin-right: 0.5em;
 }
 .homeContainer .conRight .homeMain .teDhenatCont .firstInfoCont .cardCont .txtIcn .text h3 {
   font-family: "Libre Franklin", sans-serif;
-  font-size: clamp(1.44rem, 0.19rem + 1.67vw, 2.06rem);
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
   font-weight: 400;
   color: #f5f5fb;
   padding: 0.8em 0 0 0;
@@ -387,7 +387,7 @@ body {
 }
 .homeContainer .conRight .homeMain .teDhenatCont .firstInfoCont .cardCont .txtIcn .text h2 {
   font-family: "Libre Franklin", sans-serif;
-  font-size: clamp(1.75rem, 0.25rem + 2vw, 2.5rem);
+  font-size: clamp(1.44rem, 0.19rem + 1.67vw, 2.06rem);
   font-weight: 500;
   color: #f5f5fb;
   padding: 0 0 1em 0;
@@ -398,7 +398,7 @@ body {
   aspect-ratio: 33;
   background-color: #253249;
   align-self: center;
-  font-size: clamp(1.44rem, 0.19rem + 1.67vw, 2.06rem);
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
   margin-bottom: 1em;
   border-radius: 0.4em;
   overflow: hidden;
@@ -412,13 +412,13 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  font-size: clamp(1.75rem, 0.25rem + 2vw, 2.5rem);
+  font-size: clamp(1.44rem, 0.19rem + 1.67vw, 2.06rem);
   margin: 1em 0 0 0;
 }
 .homeContainer .conRight .homeMain .teDhenatCont .graphCont .graphChart {
   width: 60%;
   background-color: #0d1627;
-  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  font-size: clamp(1rem, 0.13rem + 1.17vw, 1.44rem);
   border-radius: 0.49em;
   display: flex;
   flex-direction: column;
@@ -439,7 +439,7 @@ body {
 }
 .homeContainer .conRight .homeMain .teDhenatCont .graphCont .graphChart .grChartUp h3 {
   font-family: "Libre Franklin", sans-serif;
-  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  font-size: clamp(1rem, 0.13rem + 1.17vw, 1.44rem);
   font-weight: 600;
   color: #8f98a9;
   padding: 0.7em 0;
@@ -453,7 +453,7 @@ body {
 .homeContainer .conRight .homeMain .teDhenatCont .graphCont .secondChart {
   width: 38.7%;
   background-color: #0d1627;
-  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  font-size: clamp(1rem, 0.13rem + 1.17vw, 1.44rem);
   border-radius: 0.49em;
   display: flex;
   flex-direction: column;
@@ -474,7 +474,7 @@ body {
 }
 .homeContainer .conRight .homeMain .teDhenatCont .graphCont .secondChart div:first-child h3 {
   font-family: "Libre Franklin", sans-serif;
-  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  font-size: clamp(1rem, 0.13rem + 1.17vw, 1.44rem);
   font-weight: 600;
   color: #8f98a9;
   padding: 0.7em 0;
@@ -483,8 +483,8 @@ body {
 .homeContainer .conRight .homeMain .teDhenatCont .graphCont .secondChart .rrethorChart {
   width: 60%;
   align-self: center;
-  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
-  padding-bottom: 2.65em;
+  font-size: clamp(1rem, 0.13rem + 1.17vw, 1.44rem);
+  padding-bottom: 3.15em;
 }
 
 /*# sourceMappingURL=index.css.map */

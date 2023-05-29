@@ -5,7 +5,7 @@
   > h1 {
     @include mix.font(
       var.$hind,
-      var.$s_PCsm40-57,
+      var.$s_PCsm33-48,
       bold,
       var.$col-mainTxt_Ifno300,
       0,
@@ -15,10 +15,10 @@
     padding-bottom: 1em;
   }
   form {
-    width: 25%;
+    width: 20%;
     background-color: white;
-    max-width: 450px;
-    font-size: var.$s_PCsm28-40;
+    max-width: 400px;
+    font-size: var.$s_PCsm23-33;
     border-radius: 0.3em;
     @include mix.flex($js: center);
     div:first-child {
@@ -26,13 +26,13 @@
       width: 60%;
       img {
         width: 100%;
-        font-size: var.$s_PCsm28-40;
+        font-size: var.$s_PCsm23-33;
         padding: 1.5em 0 0.5em 0;
       }
       h1 {
         @include mix.font(
           var.$hind,
-          var.$s_PCsm28-40,
+          var.$s_PCsm23-33,
           bold,
           black,
           0 0 1.5em 0,
@@ -43,13 +43,13 @@
     .loginBtns {
       width: 100%;
       @include mix.flex($js: center);
-      font-size: var.$s_PCsm28-40;
+      font-size: var.$s_PCsm23-33;
       padding: 0 0 1.5em 0;
       button {
         width: 75%;
         @include mix.button(
           var.$libreFranklin,
-          var.$s_PCsm19-28,
+          var.$s_PCsm16-23,
           bold,
           white,
           0.6em 0,
@@ -71,7 +71,7 @@
     p {
       @include mix.font(
         var.$kanit,
-        var.$s_PCsm11-16,
+        var.$s_PCsm9-13,
         500,
         black,
         0 5em 3.5em 2em,

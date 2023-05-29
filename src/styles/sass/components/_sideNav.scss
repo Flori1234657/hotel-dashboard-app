@@ -7,13 +7,13 @@
   > img {
     width: 75%;
     align-self: center;
-    font-size: var.$s_PCsm33-48;
+    font-size: var.$s_PCsm28-40;
     padding: 0.5em 0;
   }
   h2 {
     @include mix.font(
       var.$kanit,
-      var.$s_PCsm19-28,
+      var.$s_PCsm16-23,
       600,
       var.$col-mainTxt_Ifno300,
       0,
@@ -26,7 +26,7 @@
     div {
       width: 95%;
       @include mix.flex($dr: row);
-      font-size: var.$s_PCsm23-33;
+      font-size: var.$s_PCsm19-28;
       border-top-right-radius: 0.4em;
       border-bottom-right-radius: 0.4em;
       margin-bottom: 0.5em;
@@ -37,7 +37,7 @@
       h3 {
         @include mix.font(
           var.$kanit,
-          var.$s_PCsm23-33,
+          var.$s_PCsm19-28,
           300,
           var.$col-subTxt_Neutral100,
           0.3em 0,
@@ -47,7 +47,7 @@
       h4 {
         @include mix.font(
           var.$kanit,
-          var.$s_PCsm23-33,
+          var.$s_PCsm19-28,
           400,
           var.$col-subTxt_Neutral100,
           0 0 0 0.3em,
@@ -78,7 +78,7 @@
       li {
         @include mix.font(
           var.$hind,
-          var.$s_PCsm19-28,
+          var.$s_PCsm16-23,
           400,
           var.$col-subTxt_Neutral100,
           0,
@@ -93,7 +93,7 @@
   button {
     @include mix.button(
       var.$kanit,
-      var.$s_PCsm23-33,
+      var.$s_PCsm19-28,
       400,
       var.$col-subTxt_Neutral100,
       0.3em 3.2em,

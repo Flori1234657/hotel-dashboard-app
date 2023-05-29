@@ -28,9 +28,11 @@ $libreFranklin: "Libre Franklin", sans-serif;
 $kanit: "Kanit", sans-serif;
 
 //sizes
-$s_PCsm40-57: clamp(2.5rem, calc(0.38rem + 2.83vw), 3.56rem);
-$s_PCsm28-40: clamp(1.75rem, calc(0.25rem + 2vw), 2.5rem);
+
 $s_PCsm33-48: clamp(2.06rem, calc(0.19rem + 2.5vw), 3rem);
-$s_PCsm19-28: clamp(1.19rem, calc(0.06rem + 1.5vw), 1.75rem);
 $s_PCsm23-33: clamp(1.44rem, calc(0.19rem + 1.67vw), 2.06rem);
-$s_PCsm11-16: clamp(0.69rem, calc(0.06rem + 0.83vw), 1rem);
+$s_PCsm28-40: clamp(1.75rem, calc(0.25rem + 2vw), 2.5rem);
+$s_PCsm16-23: clamp(1rem, calc(0.13rem + 1.17vw), 1.44rem);
+$s_PCsm19-28: clamp(1.19rem, calc(0.06rem + 1.5vw), 1.75rem);
+$s_PCsm9-13: clamp(0.56rem, calc(0.06rem + 0.67vw), 0.81rem);
+//persh
