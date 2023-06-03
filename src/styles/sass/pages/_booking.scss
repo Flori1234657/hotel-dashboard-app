@@ -1,0 +1,11 @@
+@use "../utils/mixin" as mix;
+@use "../utils/variables" as var;
+@use "../components/bkFp" as fp;
+@use "../components/bkSp" as sp;
+
+@mixin firstPage() {
+  @include fp.styles();
+}
+@mixin secondPage() {
+  @include sp.styles();
+}

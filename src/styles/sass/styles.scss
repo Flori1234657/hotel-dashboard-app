@@ -4,6 +4,9 @@
 @use "./components/sideNav" as sideNav;
 @use "./components/header" as header;
 @use "./pages/home" as home;
+@use "./pages/booking" as bkng;
+@use "./pages/rooms" as rooms;
+@use "./pages/calendar" as calendar;
 
 *,
 ::after,
@@ -53,6 +56,19 @@ body {
     }
     .homeMain {
       @include home.styles();
+    }
+    .bookingFirstPage {
+      @include bkng.firstPage();
+    }
+    .booking_secondPage {
+      @include bkng.secondPage();
+    }
+    .rmvRoom,
+    .shtoRoom {
+      @include rooms.styles();
+    }
+    .calendar {
+      @include calendar.styles();
     }
   }
 }

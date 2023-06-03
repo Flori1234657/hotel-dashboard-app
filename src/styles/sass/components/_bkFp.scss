@@ -1,0 +1,218 @@
+//booking first page
+@use "../utils/mixin" as mix;
+@use "../utils/variables" as var;
+
+@mixin styles() {
+  width: 100%;
+  @include mix.flex($al: flex-start);
+  .bookingFirstPage_txt {
+    width: 50%;
+    @include mix.flex($al: flex-start);
+    line-height: 1.3;
+    font-size: var.$s_PCsm23-33;
+    margin: 1em 0 1em 1.05em;
+    h1 {
+      @include mix.font(
+        var.$hind,
+        var.$s_PCsm28-40,
+        500,
+        var.$col-mainTxt_Ifno300,
+        0,
+        0
+      );
+    }
+    h2 {
+      @include mix.font(
+        var.$hind,
+        var.$s_PCsm23-33,
+        500,
+        var.$col-subTxt_Neutral100,
+        0,
+        0
+      );
+    }
+  }
+  .bookingPanel {
+    width: 95%;
+    align-self: center;
+    box-shadow: var.$bxshadow1;
+    @include mix.flex();
+    .panelUp {
+      width: 100%;
+      @include mix.flex($js: space-between, $dr: row);
+      background-color: var.$col-mainTxt_Ifno300;
+      font-size: var.$s_PCsm13-19;
+      border-top-right-radius: 0.4em;
+      border-top-left-radius: 0.4em;
+
+      .optLeft {
+        width: 35%;
+        @include mix.flex($dr: row, $js: space-around);
+        h3 {
+          @include mix.font(
+            var.$hind,
+            var.$s_PCsm19-28,
+            400,
+            var.$col-subTxt_Neutral100,
+            0.6em 0,
+            0
+          );
+        }
+        .searchField {
+          border: 1px solid black;
+          width: 45%;
+          @include mix.flex($dr: row, $js: center);
+          background-color: var.$col-60_Neutral900;
+          font-size: var.$s_PCsm19-28;
+          border-radius: 0.4em;
+          img {
+            width: 12%;
+            cursor: pointer;
+          }
+          input {
+            width: 80%;
+            background-color: transparent;
+            border: none;
+            @include mix.font(
+              var.$libreFranklin,
+              var.$s_PCsm13-19,
+              500,
+              var.$col-secSubTxt_Neutral300,
+              0.6em 0,
+              0
+            );
+            &:focus {
+              outline: none;
+            }
+            &::placeholder {
+              @include mix.font(
+                var.$libreFranklin,
+                var.$s_PCsm13-19,
+                500,
+                var.$col-secSubTxt_Neutral300,
+                0.5em 0,
+                0
+              );
+            }
+          }
+        }
+      }
+      .optRight {
+        width: 20%;
+        @include mix.flex($dr: row, $js: center);
+        gap: 8%;
+        div {
+          width: 18%;
+          aspect-ratio: 1;
+          background-color: var.$col-60_Neutral900;
+          border-radius: 50%;
+          @include mix.flex($js: center);
+          img {
+            width: 65%;
+          }
+          cursor: pointer;
+        }
+      }
+    }
+    .panelDown {
+      width: 100%;
+      aspect-ratio: 2.63;
+      overflow: hidden;
+      background-color: var.$col-60_Neutral900;
+      font-size: var.$s_PCsm19-28;
+      border-bottom-left-radius: 0.4em;
+      border-bottom-right-radius: 0.4em;
+      .table {
+        width: 100%;
+        height: 95%;
+        @include mix.flex();
+        .tHead {
+          width: 97%;
+          .tRow {
+            width: 100%;
+            @include mix.flex($dr: row);
+            h5 {
+              @include mix.font(
+                var.$libreFranklin,
+                var.$s_PCsm16-23,
+                500,
+                var.$col-mainTxt_Ifno300,
+                1em 0,
+                0
+              );
+            }
+            h5:nth-child(7) {
+              margin-left: 5em;
+            }
+            h5:nth-child(2) {
+              margin-left: var.$spc_110-170;
+            }
+            h5:nth-child(3) {
+              margin-left: var.$spc_86-133;
+            }
+            h5:nth-child(4) {
+              margin-left: var.$spc_103-161;
+            }
+            h5:nth-child(5) {
+              margin-left: var.$spc_59-94;
+            }
+            h5:nth-child(6) {
+              margin-left: var.$spc_85-132;
+            }
+          }
+        }
+        .tBody {
+          width: 97%;
+          @include mix.flex();
+          overflow-y: scroll;
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+          .tr {
+            width: 100%;
+            border-color: transparent;
+            @include mix.flex($dr: row, $js: space-between);
+            white-space: nowrap;
+            h5 {
+              width: 12%;
+              overflow-x: scroll;
+              -ms-overflow-style: none;
+              scrollbar-width: none;
+              @include mix.font(
+                var.$libreFranklin,
+                var.$s_PCsm13-19,
+                500,
+                var.$col-secSubTxt_Neutral300,
+                0,
+                0
+              );
+              img {
+                width: var.$s_PCsm23-33;
+                cursor: pointer;
+              }
+            }
+            h5::-webkit-scrollbar {
+              display: none;
+              width: 0 !important;
+            }
+            h5:nth-child(7),
+            h5:nth-child(8) {
+              width: 3%;
+            }
+            h5:nth-child(5),
+            h5:nth-child(4) {
+              width: 9%;
+            }
+
+            .tdEmr {
+              margin: 0;
+            }
+          }
+        }
+        .tBody::-webkit-scrollbar {
+          display: none;
+          width: 0 !important;
+        }
+      }
+    }
+  }
+}

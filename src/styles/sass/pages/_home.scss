@@ -46,6 +46,7 @@
         background-color: var.$col-60_Neutral900;
         font-size: var.$s_PCsm19-28;
         border-radius: 0.4em;
+        box-shadow: var.$bxshadow1;
         @include mix.flex($al: flex-start, $js: center);
         .txtIcn {
           width: 100%;
@@ -111,6 +112,7 @@
         background-color: var.$col-60_Neutral900;
         font-size: var.$s_PCsm16-23;
         border-radius: 0.49em;
+        box-shadow: var.$bxshadow1;
         @include mix.flex($al: flex-start, $js: space-around);
         .grChartUp {
           width: 95%;
@@ -133,7 +135,7 @@
         }
         .grChartDown {
           width: 95%;
-          height: 80%;
+
           align-self: center;
         }
       }
@@ -142,6 +144,7 @@
         background-color: var.$col-60_Neutral900;
         font-size: var.$s_PCsm16-23;
         border-radius: 0.49em;
+        box-shadow: var.$bxshadow1;
         @include mix.flex($al: flex-start, $js: space-around);
         div:first-child {
           width: 95%;

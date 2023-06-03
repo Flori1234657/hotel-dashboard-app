@@ -222,6 +222,7 @@ body {
   color: #f5f5fb;
   padding: 0;
   margin: 0;
+  cursor: pointer;
 }
 .homeContainer aside nav ul li:last-child {
   color: #8f98a9;
@@ -232,7 +233,7 @@ body {
   font-weight: 400;
   color: #f5f5fb;
   padding: 0.3em 3.2em;
-  margin: 12em 0 0 0;
+  margin: 10em 0 4em 0;
   background-color: #970606;
   border: none;
   border-radius: 0.4em;
@@ -258,6 +259,7 @@ body {
   width: 4%;
   font-size: clamp(1rem, 0.13rem + 1.17vw, 1.44rem);
   margin-left: 1em;
+  cursor: pointer;
 }
 .homeContainer .conRight header .headerRight {
   width: 30%;
@@ -268,6 +270,7 @@ body {
 }
 .homeContainer .conRight header .headerRight > img {
   width: 10%;
+  cursor: pointer;
 }
 .homeContainer .conRight header .headerRight figure {
   width: 85%;
@@ -347,6 +350,7 @@ body {
   background-color: #0d1627;
   font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
   border-radius: 0.4em;
+  box-shadow: 0px 10px 31px -5px #0d1627;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -420,6 +424,7 @@ body {
   background-color: #0d1627;
   font-size: clamp(1rem, 0.13rem + 1.17vw, 1.44rem);
   border-radius: 0.49em;
+  box-shadow: 0px 10px 31px -5px #0d1627;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -447,7 +452,6 @@ body {
 }
 .homeContainer .conRight .homeMain .teDhenatCont .graphCont .graphChart .grChartDown {
   width: 95%;
-  height: 80%;
   align-self: center;
 }
 .homeContainer .conRight .homeMain .teDhenatCont .graphCont .secondChart {
@@ -455,6 +459,7 @@ body {
   background-color: #0d1627;
   font-size: clamp(1rem, 0.13rem + 1.17vw, 1.44rem);
   border-radius: 0.49em;
+  box-shadow: 0px 10px 31px -5px #0d1627;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -485,6 +490,935 @@ body {
   align-self: center;
   font-size: clamp(1rem, 0.13rem + 1.17vw, 1.44rem);
   padding-bottom: 3.15em;
+}
+.homeContainer .conRight .bookingFirstPage {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homeContainer .conRight .bookingFirstPage .bookingFirstPage_txt {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  line-height: 1.3;
+  font-size: clamp(1.44rem, 0.19rem + 1.67vw, 2.06rem);
+  margin: 1em 0 1em 1.05em;
+}
+.homeContainer .conRight .bookingFirstPage .bookingFirstPage_txt h1 {
+  font-family: "Hind", sans-serif;
+  font-size: clamp(1.75rem, 0.25rem + 2vw, 2.5rem);
+  font-weight: 500;
+  color: #7a9ffb;
+  padding: 0;
+  margin: 0;
+}
+.homeContainer .conRight .bookingFirstPage .bookingFirstPage_txt h2 {
+  font-family: "Hind", sans-serif;
+  font-size: clamp(1.44rem, 0.19rem + 1.67vw, 2.06rem);
+  font-weight: 500;
+  color: #f5f5fb;
+  padding: 0;
+  margin: 0;
+}
+.homeContainer .conRight .bookingFirstPage .bookingPanel {
+  width: 95%;
+  align-self: center;
+  box-shadow: 0px 10px 31px -5px #0d1627;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.homeContainer .conRight .bookingFirstPage .bookingPanel .panelUp {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #7a9ffb;
+  font-size: clamp(0.81rem, 0.06rem + 1vw, 1.19rem);
+  border-top-right-radius: 0.4em;
+  border-top-left-radius: 0.4em;
+}
+.homeContainer .conRight .bookingFirstPage .bookingPanel .panelUp .optLeft {
+  width: 35%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.homeContainer .conRight .bookingFirstPage .bookingPanel .panelUp .optLeft h3 {
+  font-family: "Hind", sans-serif;
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  font-weight: 400;
+  color: #f5f5fb;
+  padding: 0.6em 0;
+  margin: 0;
+}
+.homeContainer .conRight .bookingFirstPage .bookingPanel .panelUp .optLeft .searchField {
+  border: 1px solid black;
+  width: 45%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #0d1627;
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  border-radius: 0.4em;
+}
+.homeContainer .conRight .bookingFirstPage .bookingPanel .panelUp .optLeft .searchField img {
+  width: 12%;
+  cursor: pointer;
+}
+.homeContainer .conRight .bookingFirstPage .bookingPanel .panelUp .optLeft .searchField input {
+  width: 80%;
+  background-color: transparent;
+  border: none;
+  font-family: "Libre Franklin", sans-serif;
+  font-size: clamp(0.81rem, 0.06rem + 1vw, 1.19rem);
+  font-weight: 500;
+  color: #8f98a9;
+  padding: 0.6em 0;
+  margin: 0;
+}
+.homeContainer .conRight .bookingFirstPage .bookingPanel .panelUp .optLeft .searchField input:focus {
+  outline: none;
+}
+.homeContainer .conRight .bookingFirstPage .bookingPanel .panelUp .optLeft .searchField input::placeholder {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: clamp(0.81rem, 0.06rem + 1vw, 1.19rem);
+  font-weight: 500;
+  color: #8f98a9;
+  padding: 0.5em 0;
+  margin: 0;
+}
+.homeContainer .conRight .bookingFirstPage .bookingPanel .panelUp .optRight {
+  width: 20%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8%;
+}
+.homeContainer .conRight .bookingFirstPage .bookingPanel .panelUp .optRight div {
+  width: 18%;
+  aspect-ratio: 1;
+  background-color: #0d1627;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.homeContainer .conRight .bookingFirstPage .bookingPanel .panelUp .optRight div img {
+  width: 65%;
+}
+.homeContainer .conRight .bookingFirstPage .bookingPanel .panelDown {
+  width: 100%;
+  aspect-ratio: 2.63;
+  overflow: hidden;
+  background-color: #0d1627;
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  border-bottom-left-radius: 0.4em;
+  border-bottom-right-radius: 0.4em;
+}
+.homeContainer .conRight .bookingFirstPage .bookingPanel .panelDown .table {
+  width: 100%;
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.homeContainer .conRight .bookingFirstPage .bookingPanel .panelDown .table .tHead {
+  width: 97%;
+}
+.homeContainer .conRight .bookingFirstPage .bookingPanel .panelDown .table .tHead .tRow {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.homeContainer .conRight .bookingFirstPage .bookingPanel .panelDown .table .tHead .tRow h5 {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: clamp(1rem, 0.13rem + 1.17vw, 1.44rem);
+  font-weight: 500;
+  color: #7a9ffb;
+  padding: 1em 0;
+  margin: 0;
+}
+.homeContainer .conRight .bookingFirstPage .bookingPanel .panelDown .table .tHead .tRow h5:nth-child(7) {
+  margin-left: 5em;
+}
+.homeContainer .conRight .bookingFirstPage .bookingPanel .panelDown .table .tHead .tRow h5:nth-child(2) {
+  margin-left: clamp(6.9rem, -0.55rem + 9.93vw, 10.63rem);
+}
+.homeContainer .conRight .bookingFirstPage .bookingPanel .panelDown .table .tHead .tRow h5:nth-child(3) {
+  margin-left: clamp(5.4rem, -0.42rem + 7.77vw, 8.31rem);
+}
+.homeContainer .conRight .bookingFirstPage .bookingPanel .panelDown .table .tHead .tRow h5:nth-child(4) {
+  margin-left: clamp(6.45rem, -0.77rem + 9.63vw, 10.06rem);
+}
+.homeContainer .conRight .bookingFirstPage .bookingPanel .panelDown .table .tHead .tRow h5:nth-child(5) {
+  margin-left: clamp(3.7rem, -0.65rem + 5.8vw, 5.88rem);
+}
+.homeContainer .conRight .bookingFirstPage .bookingPanel .panelDown .table .tHead .tRow h5:nth-child(6) {
+  margin-left: clamp(5.35rem, -0.45rem + 7.73vw, 8.25rem);
+}
+.homeContainer .conRight .bookingFirstPage .bookingPanel .panelDown .table .tBody {
+  width: 97%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.homeContainer .conRight .bookingFirstPage .bookingPanel .panelDown .table .tBody .tr {
+  width: 100%;
+  border-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  white-space: nowrap;
+}
+.homeContainer .conRight .bookingFirstPage .bookingPanel .panelDown .table .tBody .tr h5 {
+  width: 12%;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  font-family: "Libre Franklin", sans-serif;
+  font-size: clamp(0.81rem, 0.06rem + 1vw, 1.19rem);
+  font-weight: 500;
+  color: #8f98a9;
+  padding: 0;
+  margin: 0;
+}
+.homeContainer .conRight .bookingFirstPage .bookingPanel .panelDown .table .tBody .tr h5 img {
+  width: clamp(1.44rem, 0.19rem + 1.67vw, 2.06rem);
+  cursor: pointer;
+}
+.homeContainer .conRight .bookingFirstPage .bookingPanel .panelDown .table .tBody .tr h5::-webkit-scrollbar {
+  display: none;
+  width: 0 !important;
+}
+.homeContainer .conRight .bookingFirstPage .bookingPanel .panelDown .table .tBody .tr h5:nth-child(7),
+.homeContainer .conRight .bookingFirstPage .bookingPanel .panelDown .table .tBody .tr h5:nth-child(8) {
+  width: 3%;
+}
+.homeContainer .conRight .bookingFirstPage .bookingPanel .panelDown .table .tBody .tr h5:nth-child(5),
+.homeContainer .conRight .bookingFirstPage .bookingPanel .panelDown .table .tBody .tr h5:nth-child(4) {
+  width: 9%;
+}
+.homeContainer .conRight .bookingFirstPage .bookingPanel .panelDown .table .tBody .tr .tdEmr {
+  margin: 0;
+}
+.homeContainer .conRight .bookingFirstPage .bookingPanel .panelDown .table .tBody::-webkit-scrollbar {
+  display: none;
+  width: 0 !important;
+}
+.homeContainer .conRight .booking_secondPage {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homeContainer .conRight .booking_secondPage .homeMainText {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  line-height: 1.3;
+  font-size: clamp(1.44rem, 0.19rem + 1.67vw, 2.06rem);
+  margin: 1em 0 1em 1.05em;
+}
+.homeContainer .conRight .booking_secondPage .homeMainText h1 {
+  font-family: "Hind", sans-serif;
+  font-size: clamp(1.75rem, 0.25rem + 2vw, 2.5rem);
+  font-weight: 500;
+  color: #7a9ffb;
+  padding: 0;
+  margin: 0;
+}
+.homeContainer .conRight .booking_secondPage .homeMainText h2 {
+  font-family: "Hind", sans-serif;
+  font-size: clamp(1.44rem, 0.19rem + 1.67vw, 2.06rem);
+  font-weight: 500;
+  color: #f5f5fb;
+  padding: 0;
+  margin: 0;
+}
+.homeContainer .conRight .booking_secondPage .formNje {
+  background-color: #0d1627;
+  width: 45%;
+  max-width: 600px;
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  border-radius: 0.4em;
+  align-self: center;
+  box-shadow: 0px 10px 31px -5px #0d1627;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homeContainer .conRight .booking_secondPage .formNje > div {
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  width: 65%;
+  margin-left: 1.2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.homeContainer .conRight .booking_secondPage .formNje > div div {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homeContainer .conRight .booking_secondPage .formNje > div div label {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  font-weight: 500;
+  color: #8f98a9;
+  padding: 0.4em 0;
+  margin: 0;
+}
+.homeContainer .conRight .booking_secondPage .formNje > div div input {
+  width: 100%;
+  background-color: #253249;
+  border: none;
+  font-family: "Libre Franklin", sans-serif;
+  font-size: clamp(1rem, 0.13rem + 1.17vw, 1.44rem);
+  font-weight: 500;
+  color: #8f98a9;
+  padding: 0.5em 0.4em;
+  margin: 0;
+  border-radius: 0.475em;
+}
+.homeContainer .conRight .booking_secondPage .formNje > div div input:focus {
+  outline: none;
+}
+.homeContainer .conRight .booking_secondPage .formNje > div div input::placeholder {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: clamp(1rem, 0.13rem + 1.17vw, 1.44rem);
+  font-weight: 500;
+  color: #8f98a9;
+  padding: 0.5em 0.4em;
+  margin: 0;
+}
+.homeContainer .conRight .booking_secondPage .formNje > div div h4 {
+  font-family: "Kanit", sans-serif;
+  font-size: clamp(0.81rem, 0.06rem + 1vw, 1.19rem);
+  font-weight: 400;
+  color: #cb1919;
+  padding: 0.2em 0.5em;
+  margin: 0;
+}
+.homeContainer .conRight .booking_secondPage .formNje button {
+  font-family: "Kanit", sans-serif;
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  font-weight: 400;
+  color: #f5f5fb;
+  padding: 0.2em 1.2em;
+  margin: 0 1em 0 0;
+  background-color: #e88c35;
+  border: none;
+  border-radius: 0.4em;
+  cursor: pointer;
+  align-self: flex-end;
+}
+.homeContainer .conRight .booking_secondPage .formNje button:hover {
+  background-color: #f3a052;
+}
+.homeContainer .conRight .booking_secondPage .formNje h5 {
+  font-family: "Kanit", sans-serif;
+  font-size: clamp(0.81rem, 0.06rem + 1vw, 1.19rem);
+  font-weight: 500;
+  color: #7a9ffb;
+  padding: 0 0 1em 0;
+  margin: 0;
+  align-self: center;
+}
+.homeContainer .conRight .booking_secondPage .formNje .nameSurname {
+  margin-top: 0.5em;
+}
+.homeContainer .conRight .booking_secondPage .formDy {
+  background-color: #0d1627;
+  width: 45%;
+  max-width: 600px;
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  border-radius: 0.4em;
+  align-self: center;
+  box-shadow: 0px 10px 31px -5px #0d1627;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homeContainer .conRight .booking_secondPage .formDy .roomType,
+.homeContainer .conRight .booking_secondPage .formDy .email,
+.homeContainer .conRight .booking_secondPage .formDy .telNr {
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  width: 65%;
+  margin-left: 1.2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homeContainer .conRight .booking_secondPage .formDy .roomType label,
+.homeContainer .conRight .booking_secondPage .formDy .email label,
+.homeContainer .conRight .booking_secondPage .formDy .telNr label {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  font-weight: 500;
+  color: #8f98a9;
+  padding: 0.4em 0;
+  margin: 0;
+}
+.homeContainer .conRight .booking_secondPage .formDy .roomType input,
+.homeContainer .conRight .booking_secondPage .formDy .email input,
+.homeContainer .conRight .booking_secondPage .formDy .telNr input {
+  width: 80%;
+  background-color: #253249;
+  border: none;
+  font-family: "Libre Franklin", sans-serif;
+  font-size: clamp(1rem, 0.13rem + 1.17vw, 1.44rem);
+  font-weight: 500;
+  color: #8f98a9;
+  padding: 0.5em 0.4em;
+  margin: 0;
+  border-radius: 0.475em;
+}
+.homeContainer .conRight .booking_secondPage .formDy .roomType input:focus,
+.homeContainer .conRight .booking_secondPage .formDy .email input:focus,
+.homeContainer .conRight .booking_secondPage .formDy .telNr input:focus {
+  outline: none;
+}
+.homeContainer .conRight .booking_secondPage .formDy .roomType input::placeholder,
+.homeContainer .conRight .booking_secondPage .formDy .email input::placeholder,
+.homeContainer .conRight .booking_secondPage .formDy .telNr input::placeholder {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: clamp(1rem, 0.13rem + 1.17vw, 1.44rem);
+  font-weight: 500;
+  color: #8f98a9;
+  padding: 0.5em 0.4em;
+  margin: 0;
+}
+.homeContainer .conRight .booking_secondPage .formDy .roomType select,
+.homeContainer .conRight .booking_secondPage .formDy .email select,
+.homeContainer .conRight .booking_secondPage .formDy .telNr select {
+  width: 55%;
+  background-color: #253249;
+  border: none;
+  font-family: "Libre Franklin", sans-serif;
+  font-size: clamp(1rem, 0.13rem + 1.17vw, 1.44rem);
+  font-weight: 500;
+  color: #8f98a9;
+  padding: 0.5em 0.4em;
+  margin: 0;
+  border-radius: 0.475em;
+}
+.homeContainer .conRight .booking_secondPage .formDy .roomType select:focus,
+.homeContainer .conRight .booking_secondPage .formDy .email select:focus,
+.homeContainer .conRight .booking_secondPage .formDy .telNr select:focus {
+  outline: none;
+}
+.homeContainer .conRight .booking_secondPage .formDy .roomType h4,
+.homeContainer .conRight .booking_secondPage .formDy .email h4,
+.homeContainer .conRight .booking_secondPage .formDy .telNr h4 {
+  font-family: "Kanit", sans-serif;
+  font-size: clamp(0.81rem, 0.06rem + 1vw, 1.19rem);
+  font-weight: 400;
+  color: #cb1919;
+  padding: 0.2em 0.5em;
+  margin: 0;
+}
+.homeContainer .conRight .booking_secondPage .formDy .roomType {
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  margin-top: 0.5em;
+}
+.homeContainer .conRight .booking_secondPage .formDy .btnCon {
+  width: 89%;
+  align-self: center;
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  margin-top: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.homeContainer .conRight .booking_secondPage .formDy .btnCon button {
+  font-family: "Kanit", sans-serif;
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  font-weight: 400;
+  color: #f5f5fb;
+  padding: 0.2em 1.2em;
+  margin: 0;
+  background-color: #069715;
+  border: none;
+  border-radius: 0.4em;
+  cursor: pointer;
+}
+.homeContainer .conRight .booking_secondPage .formDy .btnCon button:hover {
+  background-color: #19cb2a;
+}
+.homeContainer .conRight .booking_secondPage .formDy .btnCon button:nth-child(1) {
+  background-color: #970606;
+}
+.homeContainer .conRight .booking_secondPage .formDy .btnCon button:nth-child(1):hover {
+  background-color: #cb1919;
+}
+.homeContainer .conRight .booking_secondPage .formDy .cmimiText {
+  width: 55%;
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  margin-left: 1.2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homeContainer .conRight .booking_secondPage .formDy .cmimiText h3 {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  font-weight: 500;
+  color: #8f98a9;
+  padding: 0;
+  margin: 0 0 0.2em 0;
+}
+.homeContainer .conRight .booking_secondPage .formDy .cmimiText h4 {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  font-weight: 700;
+  color: #f5f5fb;
+  padding: 0;
+  margin: 0 0 0 0;
+}
+.homeContainer .conRight .booking_secondPage .formDy h5 {
+  font-family: "Kanit", sans-serif;
+  font-size: clamp(0.81rem, 0.06rem + 1vw, 1.19rem);
+  font-weight: 500;
+  color: #7a9ffb;
+  padding: 0 0 1em 0;
+  margin: 0;
+  align-self: center;
+}
+.homeContainer .conRight .booking_secondPage .sbmitOption {
+  background-color: #0d1627;
+  width: 45%;
+  max-width: 600px;
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  border-radius: 0.4em;
+  align-self: center;
+  box-shadow: 0px 10px 31px -5px #0d1627;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.homeContainer .conRight .booking_secondPage .sbmitOption img {
+  width: 15%;
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  padding: 3em 0 0 0;
+}
+.homeContainer .conRight .booking_secondPage .sbmitOption h1 {
+  font-family: "Hind", sans-serif;
+  font-size: clamp(2.06rem, 0.19rem + 2.5vw, 3rem);
+  font-weight: 700;
+  color: #f5f5fb;
+  padding: 0;
+  margin: 0.2em 0 0 0;
+}
+.homeContainer .conRight .booking_secondPage .sbmitOption button {
+  font-family: "Kanit", sans-serif;
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  font-weight: 400;
+  color: #f5f5fb;
+  padding: 0.2em 1.2em;
+  margin: 1em 0 4em 0;
+  background-color: #069715;
+  border: none;
+  border-radius: 0.4em;
+  cursor: pointer;
+}
+.homeContainer .conRight .booking_secondPage .sbmitOption button:hover {
+  background-color: #19cb2a;
+}
+.homeContainer .conRight .rmvRoom,
+.homeContainer .conRight .shtoRoom {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homeContainer .conRight .rmvRoom .rmvRm_fp_txt,
+.homeContainer .conRight .rmvRoom .shtoRoom_sp_txt,
+.homeContainer .conRight .shtoRoom .rmvRm_fp_txt,
+.homeContainer .conRight .shtoRoom .shtoRoom_sp_txt {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  line-height: 1.3;
+  font-size: clamp(1.44rem, 0.19rem + 1.67vw, 2.06rem);
+  margin: 1em 0 1em 1.05em;
+}
+.homeContainer .conRight .rmvRoom .rmvRm_fp_txt h1,
+.homeContainer .conRight .rmvRoom .shtoRoom_sp_txt h1,
+.homeContainer .conRight .shtoRoom .rmvRm_fp_txt h1,
+.homeContainer .conRight .shtoRoom .shtoRoom_sp_txt h1 {
+  font-family: "Hind", sans-serif;
+  font-size: clamp(1.75rem, 0.25rem + 2vw, 2.5rem);
+  font-weight: 500;
+  color: #7a9ffb;
+  padding: 0;
+  margin: 0;
+}
+.homeContainer .conRight .rmvRoom .rmvRm_fp_txt h2,
+.homeContainer .conRight .rmvRoom .shtoRoom_sp_txt h2,
+.homeContainer .conRight .shtoRoom .rmvRm_fp_txt h2,
+.homeContainer .conRight .shtoRoom .shtoRoom_sp_txt h2 {
+  font-family: "Hind", sans-serif;
+  font-size: clamp(1.44rem, 0.19rem + 1.67vw, 2.06rem);
+  font-weight: 500;
+  color: #f5f5fb;
+  padding: 0;
+  margin: 0;
+}
+.homeContainer .conRight .rmvRoom .funcContainer,
+.homeContainer .conRight .shtoRoom .funcContainer {
+  width: 95%;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.homeContainer .conRight .rmvRoom .funcContainer .rmvRomForm,
+.homeContainer .conRight .rmvRoom .funcContainer .shtoRomForm,
+.homeContainer .conRight .shtoRoom .funcContainer .rmvRomForm,
+.homeContainer .conRight .shtoRoom .funcContainer .shtoRomForm {
+  background-color: #0d1627;
+  width: 35%;
+  max-width: 600px;
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  border-radius: 0.4em;
+  box-shadow: 0px 10px 31px -5px #0d1627;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homeContainer .conRight .rmvRoom .funcContainer .rmvRomForm div:first-child,
+.homeContainer .conRight .rmvRoom .funcContainer .shtoRomForm div:first-child,
+.homeContainer .conRight .shtoRoom .funcContainer .rmvRomForm div:first-child,
+.homeContainer .conRight .shtoRoom .funcContainer .shtoRomForm div:first-child {
+  width: 70%;
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  margin-left: 1.2em;
+  margin-top: 0.7em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homeContainer .conRight .rmvRoom .funcContainer .rmvRomForm div:first-child label,
+.homeContainer .conRight .rmvRoom .funcContainer .shtoRomForm div:first-child label,
+.homeContainer .conRight .shtoRoom .funcContainer .rmvRomForm div:first-child label,
+.homeContainer .conRight .shtoRoom .funcContainer .shtoRomForm div:first-child label {
+  font-family: "Hind", sans-serif;
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  font-weight: 500;
+  color: #8f98a9;
+  padding: 0;
+  margin: 0;
+}
+.homeContainer .conRight .rmvRoom .funcContainer .rmvRomForm div:first-child select,
+.homeContainer .conRight .rmvRoom .funcContainer .shtoRomForm div:first-child select,
+.homeContainer .conRight .shtoRoom .funcContainer .rmvRomForm div:first-child select,
+.homeContainer .conRight .shtoRoom .funcContainer .shtoRomForm div:first-child select {
+  width: 70%;
+  background-color: #253249;
+  border: none;
+  font-family: "Libre Franklin", sans-serif;
+  font-size: clamp(1rem, 0.13rem + 1.17vw, 1.44rem);
+  font-weight: 500;
+  color: #8f98a9;
+  padding: 0.5em 0.4em;
+  margin: 0.4em 0;
+  border-radius: 0.475em;
+}
+.homeContainer .conRight .rmvRoom .funcContainer .rmvRomForm div:first-child select:focus,
+.homeContainer .conRight .rmvRoom .funcContainer .shtoRomForm div:first-child select:focus,
+.homeContainer .conRight .shtoRoom .funcContainer .rmvRomForm div:first-child select:focus,
+.homeContainer .conRight .shtoRoom .funcContainer .shtoRomForm div:first-child select:focus {
+  outline: none;
+}
+.homeContainer .conRight .rmvRoom .funcContainer .rmvRomForm .quantityDiv,
+.homeContainer .conRight .rmvRoom .funcContainer .shtoRomForm .quantityDiv,
+.homeContainer .conRight .shtoRoom .funcContainer .rmvRomForm .quantityDiv,
+.homeContainer .conRight .shtoRoom .funcContainer .shtoRomForm .quantityDiv {
+  width: 70%;
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  margin-left: 1.2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homeContainer .conRight .rmvRoom .funcContainer .rmvRomForm .quantityDiv label,
+.homeContainer .conRight .rmvRoom .funcContainer .shtoRomForm .quantityDiv label,
+.homeContainer .conRight .shtoRoom .funcContainer .rmvRomForm .quantityDiv label,
+.homeContainer .conRight .shtoRoom .funcContainer .shtoRomForm .quantityDiv label {
+  font-family: "Hind", sans-serif;
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  font-weight: 500;
+  color: #8f98a9;
+  padding: 0;
+  margin: 0;
+}
+.homeContainer .conRight .rmvRoom .funcContainer .rmvRomForm .quantityDiv input,
+.homeContainer .conRight .rmvRoom .funcContainer .shtoRomForm .quantityDiv input,
+.homeContainer .conRight .shtoRoom .funcContainer .rmvRomForm .quantityDiv input,
+.homeContainer .conRight .shtoRoom .funcContainer .shtoRomForm .quantityDiv input {
+  width: 20%;
+  background-color: #253249;
+  border: none;
+  font-family: "Libre Franklin", sans-serif;
+  font-size: clamp(1rem, 0.13rem + 1.17vw, 1.44rem);
+  font-weight: 500;
+  color: #8f98a9;
+  padding: 0.5em 0.4em;
+  margin: 0;
+  border-radius: 0.475em;
+}
+.homeContainer .conRight .rmvRoom .funcContainer .rmvRomForm .quantityDiv input:focus,
+.homeContainer .conRight .rmvRoom .funcContainer .shtoRomForm .quantityDiv input:focus,
+.homeContainer .conRight .shtoRoom .funcContainer .rmvRomForm .quantityDiv input:focus,
+.homeContainer .conRight .shtoRoom .funcContainer .shtoRomForm .quantityDiv input:focus {
+  outline: none;
+}
+.homeContainer .conRight .rmvRoom .funcContainer .rmvRomForm .quantityDiv input::placeholder,
+.homeContainer .conRight .rmvRoom .funcContainer .shtoRomForm .quantityDiv input::placeholder,
+.homeContainer .conRight .shtoRoom .funcContainer .rmvRomForm .quantityDiv input::placeholder,
+.homeContainer .conRight .shtoRoom .funcContainer .shtoRomForm .quantityDiv input::placeholder {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: clamp(1rem, 0.13rem + 1.17vw, 1.44rem);
+  font-weight: 500;
+  color: #8f98a9;
+  padding: 0.5em 0.4em;
+  margin: 0;
+}
+.homeContainer .conRight .rmvRoom .funcContainer .rmvRomForm button,
+.homeContainer .conRight .rmvRoom .funcContainer .shtoRomForm button,
+.homeContainer .conRight .shtoRoom .funcContainer .rmvRomForm button,
+.homeContainer .conRight .shtoRoom .funcContainer .shtoRomForm button {
+  font-family: "Kanit", sans-serif;
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  font-weight: 400;
+  color: #f5f5fb;
+  padding: 0.2em 1.2em;
+  margin: 2em 0 1em 1.2em;
+  background-color: #970606;
+  border: none;
+  border-radius: 0.4em;
+  cursor: pointer;
+}
+.homeContainer .conRight .rmvRoom .funcContainer .rmvRomForm button:hover,
+.homeContainer .conRight .rmvRoom .funcContainer .shtoRomForm button:hover,
+.homeContainer .conRight .shtoRoom .funcContainer .rmvRomForm button:hover,
+.homeContainer .conRight .shtoRoom .funcContainer .shtoRomForm button:hover {
+  background-color: #cb1919;
+}
+.homeContainer .conRight .rmvRoom .funcContainer .rmvRomForm .shtojeBtn,
+.homeContainer .conRight .rmvRoom .funcContainer .shtoRomForm .shtojeBtn,
+.homeContainer .conRight .shtoRoom .funcContainer .rmvRomForm .shtojeBtn,
+.homeContainer .conRight .shtoRoom .funcContainer .shtoRomForm .shtojeBtn {
+  background-color: #069715;
+}
+.homeContainer .conRight .rmvRoom .funcContainer .rmvRomForm .shtojeBtn:hover,
+.homeContainer .conRight .rmvRoom .funcContainer .shtoRomForm .shtojeBtn:hover,
+.homeContainer .conRight .shtoRoom .funcContainer .rmvRomForm .shtojeBtn:hover,
+.homeContainer .conRight .shtoRoom .funcContainer .shtoRomForm .shtojeBtn:hover {
+  background-color: #19cb2a;
+}
+.homeContainer .conRight .rmvRoom .funcContainer .barchart,
+.homeContainer .conRight .shtoRoom .funcContainer .barchart {
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  background-color: #0d1627;
+  width: 50%;
+  height: 13.3em;
+  padding: 0.5em;
+  max-width: 600px;
+  border-radius: 0.4em;
+  box-shadow: 0px 10px 31px -5px #0d1627;
+}
+.homeContainer .conRight .calendar {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homeContainer .conRight .calendar .calendar_txt {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  line-height: 1.3;
+  font-size: clamp(1.44rem, 0.19rem + 1.67vw, 2.06rem);
+  margin: 1em 0 1em 1.05em;
+}
+.homeContainer .conRight .calendar .calendar_txt h1 {
+  font-family: "Hind", sans-serif;
+  font-size: clamp(1.75rem, 0.25rem + 2vw, 2.5rem);
+  font-weight: 500;
+  color: #7a9ffb;
+  padding: 0;
+  margin: 0;
+}
+.homeContainer .conRight .calendar .calendar_txt h2 {
+  font-family: "Hind", sans-serif;
+  font-size: clamp(1.44rem, 0.19rem + 1.67vw, 2.06rem);
+  font-weight: 500;
+  color: #f5f5fb;
+  padding: 0;
+  margin: 0;
+}
+.homeContainer .conRight .calendar .shikoRezerv_cont {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.homeContainer .conRight .calendar .shikoRezerv_cont .calendar-cont {
+  background-color: #0d1627;
+  width: 35%;
+  max-width: 600px;
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  border-radius: 0.4em;
+  box-shadow: 0px 10px 31px -5px #0d1627;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.homeContainer .conRight .calendar .shikoRezerv_cont .calendar-cont h3 {
+  font-family: "Hind", sans-serif;
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  font-weight: 500;
+  color: #f5f5fb;
+  padding: 1em 0 0 0;
+  margin: 0;
+}
+.homeContainer .conRight .calendar .shikoRezerv_cont .calendar-cont h5 {
+  font-family: "Hind", sans-serif;
+  font-size: clamp(1rem, 0.13rem + 1.17vw, 1.44rem);
+  font-weight: 500;
+  color: #8f98a9;
+  padding: 0 0 0.5em 0;
+  margin: 0;
+}
+.homeContainer .conRight .calendar .shikoRezerv_cont .calendar-cont .calendar_component {
+  font-size: 8px;
+  background-color: #0d1627;
+}
+.homeContainer .conRight .calendar .shikoRezerv_cont .calendar-cont .calendar_component .Calendar__weekDays {
+  color: #7a9ffb;
+}
+.homeContainer .conRight .calendar .shikoRezerv_cont .calendar-cont .calendar_component .Calendar__header .Calendar__monthArrowWrapper.-right .Calendar__monthArrow {
+  background-image: url("../../assets/images/icons/rightArrowWhite.png");
+  transform: rotateZ(270deg);
+}
+.homeContainer .conRight .calendar .shikoRezerv_cont .calendar-cont .calendar_component .Calendar__header .Calendar__monthArrowWrapper.-left .Calendar__monthArrow {
+  background-image: url("../../assets/images/icons/rightArrowWhite.png");
+  transform: rotateZ(270deg);
+}
+.homeContainer .conRight .calendar .shikoRezerv_cont .calendar-cont .calendar_component .Calendar__header .Calendar__monthYearContainer .Calendar__monthYear.-shown .Calendar__monthText,
+.homeContainer .conRight .calendar .shikoRezerv_cont .calendar-cont .calendar_component .Calendar__header .Calendar__monthYearContainer .Calendar__monthYear.-shown .Calendar__yearText {
+  color: white;
+}
+.homeContainer .conRight .calendar .shikoRezerv_cont .calendar-cont .calendar_component .Calendar__sectionWrapper .Calendar__section .Calendar__weekRow .Calendar__day {
+  color: #f5f5fb;
+}
+.homeContainer .conRight .calendar .shikoRezerv_cont .calendar-cont .selectedDayCalendar {
+  color: white;
+}
+.homeContainer .conRight .calendar .shikoRezerv_cont .calendar-cont .CalendarToday {
+  color: #8f98a9;
+}
+.homeContainer .conRight .calendar .shikoRezerv_cont .dateInformat {
+  background-color: #0d1627;
+  width: 45%;
+  max-width: 600px;
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  border-radius: 0.4em;
+  box-shadow: 0px 10px 31px -5px #0d1627;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homeContainer .conRight .calendar .shikoRezerv_cont .dateInformat h3 {
+  font-family: "Hind", sans-serif;
+  font-size: clamp(1.44rem, 0.19rem + 1.67vw, 2.06rem);
+  font-weight: 500;
+  color: #f5f5fb;
+  padding: 0.8em 0 0 1em;
+  margin: 0;
+}
+.homeContainer .conRight .calendar .shikoRezerv_cont .dateInformat h5 {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: clamp(0.81rem, 0.06rem + 1vw, 1.19rem);
+  font-weight: 400;
+  color: #19cb2a;
+  padding: 0 0 0 1.9em;
+  margin: 0;
+}
+.homeContainer .conRight .calendar .shikoRezerv_cont .dateInformat .lista {
+  width: 80%;
+  font-size: clamp(1.44rem, 0.19rem + 1.67vw, 2.06rem);
+  margin-left: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.homeContainer .conRight .calendar .shikoRezerv_cont .dateInformat .lista ul {
+  list-style-type: none;
+}
+.homeContainer .conRight .calendar .shikoRezerv_cont .dateInformat .lista ul li {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
+  font-weight: 400;
+  color: #8f98a9;
+  padding: 0.5em 0.5em 0 0;
+  margin: 0;
+}
+.homeContainer .conRight .calendar .shikoRezerv_cont .dateInformat .lista ul li:first-child {
+  margin-top: 1em;
+}
+.homeContainer .conRight .calendar .shikoRezerv_cont .dateInformat .lista ul li:last-child {
+  padding-bottom: 2em;
+}
+.homeContainer .conRight .calendar .shikoRezerv_cont .dateInformat .lista ul:last-child li {
+  color: #f5f5fb;
 }
 
 /*# sourceMappingURL=index.css.map */

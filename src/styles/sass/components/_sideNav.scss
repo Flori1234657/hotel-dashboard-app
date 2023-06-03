@@ -84,6 +84,7 @@
           0,
           0
         );
+        cursor: pointer;
       }
       li:last-child {
         color: var.$col-secSubTxt_Neutral300;
@@ -97,7 +98,7 @@
       400,
       var.$col-subTxt_Neutral100,
       0.3em 3.2em,
-      12em 0 0 0,
+      10em 0 4em 0,
       var.$col-dilBtn_Error700,
       0.4em
     );
