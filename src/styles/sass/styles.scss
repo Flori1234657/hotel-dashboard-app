@@ -49,8 +49,26 @@ body {
     @include sideNav.style();
   }
   .conRight {
-    width: 83%;
+    width: 100%;
     order: 2;
+    .preloader {
+      position: absolute;
+      z-index: 1000;
+      width: 100vw;
+      height: 100vh;
+      background-color: var.$col-60_Neutral900;
+      @include mix.flex();
+      h1 {
+        @include mix.font(
+          var.$hind,
+          var.$s_PCsm40-58,
+          800,
+          var.$col-subTxt_Neutral100,
+          0,
+          0
+        );
+      }
+    }
     header {
       @include header.styles();
     }

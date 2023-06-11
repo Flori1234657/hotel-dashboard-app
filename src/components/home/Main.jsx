@@ -6,7 +6,7 @@ import trePikat from "../../assets/images/icons/trePikatMenu.png";
 import LineChart from "../chart/LineChart";
 import RrethorChart from "../chart/RrethorChart";
 
-const Main = () => {
+const Main = ({ shfaqNav }) => {
   return (
     <main className="homeMain">
       <section className="homeMainText">
@@ -20,7 +20,7 @@ const Main = () => {
               {" "}
               <img src={leter} alt="paper icon" />
               <div className="text">
-                <h3>Total Rez.</h3>
+                <h3>{shfaqNav ? "Total rez." : "Rezervime total"}</h3>
                 <h2>1,230</h2>
               </div>
             </div>
@@ -33,7 +33,7 @@ const Main = () => {
             <div className="txtIcn">
               <img src={krevat} alt="bed icon" />
               <div className="text">
-                <h3>Dhoma Diz.</h3>
+                <h3>{shfaqNav ? "Dhoma diz." : "Dhoma të lira"}</h3>
                 <h2>130</h2>
               </div>
             </div>

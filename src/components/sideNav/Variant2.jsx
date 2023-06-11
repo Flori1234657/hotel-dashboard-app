@@ -57,7 +57,7 @@ const Variant2 = ({ objProp, setVariant }) => {
         <div
           onClick={() => {
             setVariant("v1");
-            nav("/home.userflori");
+            nav("/home.userAlbanian%20HD");
           }}
         >
           <img src={objProp.hm} alt="" />
@@ -67,7 +67,7 @@ const Variant2 = ({ objProp, setVariant }) => {
           onClick={() => {
             setVariant("v2");
             returnActiveFirstPage();
-            nav("/booking.userflori");
+            nav("/booking.userAlbanian%20HD");
           }}
           style={{ backgroundColor: "#7a9ffb" }}
         >
@@ -83,7 +83,7 @@ const Variant2 = ({ objProp, setVariant }) => {
           onClick={() => {
             setVariant("v3");
             returnActiveFirstPage();
-            nav("/rooms.userflori");
+            nav("/rooms.userAlbanian%20HD");
           }}
         >
           <img src={objProp.rm} alt="" />
@@ -93,7 +93,7 @@ const Variant2 = ({ objProp, setVariant }) => {
         <div
           onClick={() => {
             setVariant("v4");
-            nav("/calendar.userflori");
+            nav("/calendar.userAlbanian%20HD");
           }}
         >
           <img src={objProp.cl} alt="" />

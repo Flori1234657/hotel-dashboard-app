@@ -3,7 +3,7 @@ import Header from "../components/home/Header";
 import "react-modern-calendar-datepicker/lib/DatePicker.css";
 import DatePicker, { Calendar } from "react-modern-calendar-datepicker";
 
-const Kalendar = ({ setShfaqNav }) => {
+const Kalendar = ({ setShfaqNav, shfaqNav }) => {
   const [selectedDate, setSelectedDate] = useState(null);
 
   useEffect(() => {
@@ -12,7 +12,7 @@ const Kalendar = ({ setShfaqNav }) => {
 
   return (
     <div className="conRight">
-      <Header />
+      <Header setShfaqNav={setShfaqNav} shfaqNav={shfaqNav} />
       <main className="calendar">
         <section className="calendar_txt">
           <h1>Kalendari</h1>

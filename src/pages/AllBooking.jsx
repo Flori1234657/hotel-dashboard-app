@@ -4,8 +4,9 @@ import FirstPage from "../components/booking/FirstPage";
 import SecondPage from "../components/booking/SecondPage";
 import { PageContext } from "../App";
 
-const AllBooking = ({ setShfaqNav }) => {
+const AllBooking = ({ setShfaqNav, shfaqNav }) => {
   const pages = useContext(PageContext);
+
   const [pageForRender, setPageForRender] = useState(() => {
     if (pages.switchPageObj.bkPg.fp == "active") {
       return <FirstPage />;
@@ -17,7 +18,6 @@ const AllBooking = ({ setShfaqNav }) => {
   useEffect(() => {
     setShfaqNav(true);
   }, []);
-
   useEffect(() => {
     setPageForRender(() => {
       if (pages.switchPageObj.bkPg.fp == "active") {
@@ -29,7 +29,7 @@ const AllBooking = ({ setShfaqNav }) => {
   }, [pages.switchPageObj]);
   return (
     <div className="conRight">
-      <Header />
+      <Header setShfaqNav={setShfaqNav} shfaqNav={shfaqNav} />
       {pageForRender}
     </div>
   );

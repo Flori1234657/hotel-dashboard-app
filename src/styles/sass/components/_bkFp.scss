@@ -207,6 +207,33 @@
               margin: 0;
             }
           }
+          .openedDialog {
+            position: absolute;
+            background-color: var.$col-googleAuthHov_info500;
+            font-size: var.$s_PCsm19-28;
+            border-radius: 0.4em;
+            ul {
+              list-style-type: none;
+              li {
+                @include mix.font(
+                  var.$hind,
+                  var.$s_PCsm16-23,
+                  500,
+                  var.$col-subTxt_Neutral100,
+                  0.5em 2.5em 0 0.5em,
+                  0
+                );
+                cursor: pointer;
+                a {
+                  text-decoration: none;
+                  color: var.$col-subTxt_Neutral100;
+                }
+              }
+              li:last-child {
+                padding-bottom: 0.5em;
+              }
+            }
+          }
         }
         .tBody::-webkit-scrollbar {
           display: none;

@@ -9,7 +9,7 @@ import Variant3 from "./sideNav/Variant3";
 import Variant4 from "./sideNav/Variant4";
 import { useEffect, useState } from "react";
 
-const SideNav = () => {
+const SideNav = ({ shfaqNav }) => {
   const [variant, setVariant] = useState("v1");
   const props = {
     cl: calendar,
@@ -42,7 +42,11 @@ const SideNav = () => {
     });
   }, [variant]);
 
-  return <aside>{sdNv}</aside>;
+  return (
+    <aside style={shfaqNav ? { display: "flex" } : { display: "none" }}>
+      {sdNv}
+    </aside>
+  );
 };
 
 export default SideNav;

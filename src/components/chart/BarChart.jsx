@@ -1,8 +1,12 @@
 import { Bar } from "react-chartjs-2";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Chart as ChartJS } from "chart.js/auto";
+import { PageContext } from "../../App";
 
 const BarChart = () => {
+  const dta = useContext(PageContext);
+  const [data, setData] = useState(dta.firestoreData);
+
   const [earnData, setEarnData] = useState({
     labels: ["Dhoma Teke", "Dhoma Çif", "Dhoma Familjare"],
     datasets: [

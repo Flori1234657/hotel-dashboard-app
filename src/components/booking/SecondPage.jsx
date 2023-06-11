@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import FirstOp from "./shtoRezv/FirstOp";
 import SecondOp from "./shtoRezv/SecondOp";
 import SubSuccess from "./shtoRezv/SubSuccess";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../../config/firebase";
+import { ditQendrimi, fillData, cmimi } from "./shtoRezv/dataObjFill";
 
 const SecondPage = () => {
   const [optRendr, setOptRendr] = useState("FirstOp");
@@ -9,13 +12,68 @@ const SecondPage = () => {
     <FirstOp setOptRendr={setOptRendr} />
   );
 
+  const dataSot = new Date();
+
+  const [formData, setFormData] = useState({ form1: "", form2: "" });
+
+  const handleSetDate = async () => {
+    fillData(
+      formData.form1.ditaArdhjes,
+      formData.form1.ditaIkjes,
+      formData.form2.dhoma
+    );
+
+    const objPerDergim = {
+      derguarNe: {
+        data: `${dataSot.getMonth()}/${dataSot.getDate()}/${dataSot.getFullYear()}`,
+        ora: `${dataSot.getHours()}:${dataSot.getMinutes()}`,
+      },
+      dhoma: formData.form2.dhoma,
+      ditaArdjhes: formData.form1.ditaArdhjes,
+      ditaIkjes: formData.form1.ditaIkjes,
+      ditetEQendrimitL: ditQendrimi,
+      email: formData.form2.email,
+      emri: formData.form1.emri,
+      idja: `${formData.form1.emri}_${formData.form2.telefon}_${formData.form1.mbiemri}`,
+      mbiemri: formData.form1.mbiemri,
+      perTuPaguar: cmimi,
+      persona: {
+        femij: formData.form1.femij,
+        teRritur: formData.form1.teRritur,
+      },
+      pranuar: false,
+      telefon: formData.form2.telefon,
+    };
+    try {
+      await addDoc(collection(db, "Rezervimet"), objPerDergim).then(() => {
+        setReturnPage(<SubSuccess setOptRendr={setOptRendr} />);
+      });
+    } catch (error) {
+      alert("Pati një problem me serverin");
+      setOptRendr("FirstOp");
+    }
+  };
+
   useEffect(() => {
     if (optRendr == "FirstOp")
-      setReturnPage(<FirstOp setOptRendr={setOptRendr} />);
+      setReturnPage(
+        <FirstOp
+          setOptRendr={setOptRendr}
+          formData={formData}
+          setFormData={setFormData}
+        />
+      );
     if (optRendr == "SecondOp")
-      setReturnPage(<SecondOp setOptRendr={setOptRendr} />);
-    if (optRendr == "SuccessOp")
-      setReturnPage(<SubSuccess setOptRendr={setOptRendr} />);
+      setReturnPage(
+        <SecondOp
+          setOptRendr={setOptRendr}
+          formData={formData}
+          setFormData={setFormData}
+        />
+      );
+    if (optRendr == "SuccessOp") {
+      handleSetDate();
+    }
   }, [optRendr]);
 
   return (

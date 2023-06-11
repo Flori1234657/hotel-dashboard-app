@@ -4,7 +4,7 @@ import FirstRmsPage from "../components/rooms/FirstRmsPage";
 import Header from "../components/home/Header";
 import { PageContext } from "../App";
 
-const Rooms = ({ setShfaqNav }) => {
+const Rooms = ({ setShfaqNav, shfaqNav }) => {
   const pages = useContext(PageContext);
   const [pageForRender, setPageForRender] = useState(() => {
     if (pages.switchPageObj.rooPg.fp == "active") {
@@ -29,7 +29,7 @@ const Rooms = ({ setShfaqNav }) => {
 
   return (
     <div className="conRight">
-      <Header />
+      <Header setShfaqNav={setShfaqNav} shfaqNav={shfaqNav} />
       {pageForRender}
     </div>
   );

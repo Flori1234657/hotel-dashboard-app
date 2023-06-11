@@ -2,9 +2,51 @@ import SearchIcon from "../../assets/images/icons/search.png";
 import GoBckArr from "../../assets/images/icons/goBackArr.png";
 import Add from "../../assets/images/icons/plus.png";
 import Veprimet from "../../assets/images/icons/materialiconsround_24px.png";
-import { guestObj } from "../Data";
+import { PageContext } from "../../App";
+import { useContext, useEffect, useState } from "react";
+import OnImgClick from "./OnImgClick";
 
 const FirstPage = () => {
+  const dta = useContext(PageContext);
+  const [data, setData] = useState(dta.firestoreData);
+  const [dcsId, setDcsId] = useState("");
+  const [showOptions, setShowOptions] = useState(false);
+  const [sameId, setSameID] = useState("");
+  const [pozicioniOpti, setPozicioniOpt] = useState({
+    top: 0,
+    left: 0,
+  });
+  const [dataForSpecific, setDataForSpecific] = useState();
+  useEffect(() => {
+    const refr = [...document.getElementById("bkfpID").childNodes];
+
+    //marrim ato qe jan te pranuar per ti ndryshuar stilimet InshaaAllah
+    const elems = refr.map((el, i) => {
+      if (data[i] != null) {
+        if (
+          el.childNodes[0].innerText == `${data[i].emri} ${data[i].mbiemri}`
+        ) {
+          if (data[i].pranuar === true) {
+            return el;
+          }
+        }
+        return;
+      }
+      return;
+    });
+    elems.forEach((el) => {
+      if (el != undefined) {
+        el.childNodes.forEach((il) => {
+          il.style.color = "#069715";
+        });
+      }
+    });
+  }, [data]);
+
+  useEffect(() => {
+    setData(dta.firestoreData);
+  }, [dta]);
+
   return (
     <main className="bookingFirstPage">
       <section className="bookingFirstPage_txt">
@@ -43,21 +85,50 @@ const FirstPage = () => {
               </div>
             </div>
 
-            <div className="tBody">
-              {guestObj.map((el) => (
-                <div className="tr" key={el.numri}>
-                  <h5 className="tdEmr">{el.emri}</h5>
-                  <h5>{el.numri}</h5>
+            <div className="tBody" id="bkfpID">
+              {data.map((el) => (
+                <div className="tr" key={`${el.idja}${el.mbiemri}`}>
+                  <h5 className="tdEmr">{`${el.emri} ${el.mbiemri}`}</h5>
+                  <h5>{el.telefon}</h5>
                   <h5>{el.email}</h5>
-                  <h5>{el.ardhja}</h5>
-                  <h5>{el.ikja}</h5>
+                  <h5>{el.ditaArdjhes}</h5>
+                  <h5>{el.ditaIkjes}</h5>
                   <h5>{el.dhoma}</h5>
-                  <h5>{el.vizitor}</h5>
+                  <h5>{`${
+                    Number(el.persona.femij) + Number(el.persona.teRritur)
+                  }`}</h5>
                   <h5>
-                    <img src={Veprimet} alt="" />
+                    <img
+                      src={Veprimet}
+                      alt="icon"
+                      onClick={(e) => {
+                        setShowOptions(!showOptions);
+                        setSameID(`${el.telefon}/${el.emri}`);
+                        setPozicioniOpt({
+                          top: `${e.target.offsetTop + 4}px`,
+                          left: `${e.target.offsetLeft - 101}px`,
+                        });
+                        setDataForSpecific(el);
+                        setDcsId(dta.docsId[data.indexOf(el)]);
+                      }}
+                    />
                   </h5>
                 </div>
               ))}
+              {showOptions ? (
+                <OnImgClick
+                  pozicioniOpti={pozicioniOpti}
+                  dataForSpecific={dataForSpecific}
+                  docsId={dcsId}
+                  setDataForSpecific={setDataForSpecific}
+                  rrimerrTeDhenat={dta.setRegetData}
+                  setShowOptions={setShowOptions}
+                  dhomatFirebase={dta.firestoreDhomatDat}
+                  statsData={dta.statsData}
+                />
+              ) : (
+                ""
+              )}
             </div>
           </div>
         </section>

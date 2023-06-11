@@ -29,6 +29,7 @@ $kanit: "Kanit", sans-serif;
 
 //sizes
 
+$s_PCsm40-58: clamp(2.5rem, calc(0.25rem + 3vw), 3.63rem);
 $s_PCsm33-48: clamp(2.06rem, calc(0.19rem + 2.5vw), 3rem);
 $s_PCsm23-33: clamp(1.44rem, calc(0.19rem + 1.67vw), 2.06rem);
 $s_PCsm28-40: clamp(1.75rem, calc(0.25rem + 2vw), 2.5rem);
