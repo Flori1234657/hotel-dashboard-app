@@ -80,6 +80,7 @@ const SecondOp = ({ setOptRendr, formData, setFormData }) => {
               onClick={() => {
                 setOptRendr("FirstOp");
               }}
+              type="reset"
             >
               Mbrapa
             </button>

@@ -836,12 +836,12 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
 }
-.homeContainer .conRight .booking_secondPage .formNje > div .name label,
-.homeContainer .conRight .booking_secondPage .formNje > div .surname label,
-.homeContainer .conRight .booking_secondPage .formNje > div .checkin label,
-.homeContainer .conRight .booking_secondPage .formNje > div .checkout label,
-.homeContainer .conRight .booking_secondPage .formNje > div .adults label,
-.homeContainer .conRight .booking_secondPage .formNje > div .childrens label {
+.homeContainer .conRight .booking_secondPage .formNje > div .name > label,
+.homeContainer .conRight .booking_secondPage .formNje > div .surname > label,
+.homeContainer .conRight .booking_secondPage .formNje > div .checkin > label,
+.homeContainer .conRight .booking_secondPage .formNje > div .checkout > label,
+.homeContainer .conRight .booking_secondPage .formNje > div .adults > label,
+.homeContainer .conRight .booking_secondPage .formNje > div .childrens > label {
   font-family: "Libre Franklin", sans-serif;
   font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
   font-weight: 500;
@@ -849,12 +849,12 @@ body {
   padding: 0.4em 0;
   margin: 0;
 }
-.homeContainer .conRight .booking_secondPage .formNje > div .name input,
-.homeContainer .conRight .booking_secondPage .formNje > div .surname input,
-.homeContainer .conRight .booking_secondPage .formNje > div .checkin input,
-.homeContainer .conRight .booking_secondPage .formNje > div .checkout input,
-.homeContainer .conRight .booking_secondPage .formNje > div .adults input,
-.homeContainer .conRight .booking_secondPage .formNje > div .childrens input {
+.homeContainer .conRight .booking_secondPage .formNje > div .name > input,
+.homeContainer .conRight .booking_secondPage .formNje > div .surname > input,
+.homeContainer .conRight .booking_secondPage .formNje > div .checkin > input,
+.homeContainer .conRight .booking_secondPage .formNje > div .checkout > input,
+.homeContainer .conRight .booking_secondPage .formNje > div .adults > input,
+.homeContainer .conRight .booking_secondPage .formNje > div .childrens > input {
   width: 100%;
   background-color: #253249;
   border: none;
@@ -866,20 +866,20 @@ body {
   margin: 0;
   border-radius: 0.475em;
 }
-.homeContainer .conRight .booking_secondPage .formNje > div .name input:focus,
-.homeContainer .conRight .booking_secondPage .formNje > div .surname input:focus,
-.homeContainer .conRight .booking_secondPage .formNje > div .checkin input:focus,
-.homeContainer .conRight .booking_secondPage .formNje > div .checkout input:focus,
-.homeContainer .conRight .booking_secondPage .formNje > div .adults input:focus,
-.homeContainer .conRight .booking_secondPage .formNje > div .childrens input:focus {
+.homeContainer .conRight .booking_secondPage .formNje > div .name > input:focus,
+.homeContainer .conRight .booking_secondPage .formNje > div .surname > input:focus,
+.homeContainer .conRight .booking_secondPage .formNje > div .checkin > input:focus,
+.homeContainer .conRight .booking_secondPage .formNje > div .checkout > input:focus,
+.homeContainer .conRight .booking_secondPage .formNje > div .adults > input:focus,
+.homeContainer .conRight .booking_secondPage .formNje > div .childrens > input:focus {
   outline: none;
 }
-.homeContainer .conRight .booking_secondPage .formNje > div .name input::placeholder,
-.homeContainer .conRight .booking_secondPage .formNje > div .surname input::placeholder,
-.homeContainer .conRight .booking_secondPage .formNje > div .checkin input::placeholder,
-.homeContainer .conRight .booking_secondPage .formNje > div .checkout input::placeholder,
-.homeContainer .conRight .booking_secondPage .formNje > div .adults input::placeholder,
-.homeContainer .conRight .booking_secondPage .formNje > div .childrens input::placeholder {
+.homeContainer .conRight .booking_secondPage .formNje > div .name > input::placeholder,
+.homeContainer .conRight .booking_secondPage .formNje > div .surname > input::placeholder,
+.homeContainer .conRight .booking_secondPage .formNje > div .checkin > input::placeholder,
+.homeContainer .conRight .booking_secondPage .formNje > div .checkout > input::placeholder,
+.homeContainer .conRight .booking_secondPage .formNje > div .adults > input::placeholder,
+.homeContainer .conRight .booking_secondPage .formNje > div .childrens > input::placeholder {
   font-family: "Libre Franklin", sans-serif;
   font-size: clamp(1rem, 0.13rem + 1.17vw, 1.44rem);
   font-weight: 500;
@@ -907,8 +907,31 @@ body {
 .homeContainer .conRight .booking_secondPage .formNje > div .adults .rdp,
 .homeContainer .conRight .booking_secondPage .formNje > div .childrens .rdp {
   position: absolute;
+  color: white;
+  background-color: rgba(53, 104, 232, 0.3411764706);
+  font-size: clamp(1rem, 0.13rem + 1.17vw, 1.44rem);
+  padding: 1em;
+  border-radius: 0.5em;
+  box-shadow: 0px 10px 31px -5px #0d1627;
+  margin: 0;
+  --rdp-cell-size: clamp(2.5rem, calc(0.25rem + 3vw), 3.63rem);
+  --rdp-caption-font-size: clamp(
+    1.19rem,
+    calc(0.06rem + 1.5vw),
+    1.75rem
+  );
+  --rdp-accent-color: #f3a052;
+  --rdp-background-color: #7a9ffb;
 }
-.homeContainer .conRight .booking_secondPage .formNje button {
+.homeContainer .conRight .booking_secondPage .formNje > div .name .rdp .my-today,
+.homeContainer .conRight .booking_secondPage .formNje > div .surname .rdp .my-today,
+.homeContainer .conRight .booking_secondPage .formNje > div .checkin .rdp .my-today,
+.homeContainer .conRight .booking_secondPage .formNje > div .checkout .rdp .my-today,
+.homeContainer .conRight .booking_secondPage .formNje > div .adults .rdp .my-today,
+.homeContainer .conRight .booking_secondPage .formNje > div .childrens .rdp .my-today {
+  color: #cb1919;
+}
+.homeContainer .conRight .booking_secondPage .formNje > button {
   font-family: "Kanit", sans-serif;
   font-size: clamp(1.19rem, 0.06rem + 1.5vw, 1.75rem);
   font-weight: 400;
@@ -921,7 +944,7 @@ body {
   cursor: pointer;
   align-self: flex-end;
 }
-.homeContainer .conRight .booking_secondPage .formNje button:hover {
+.homeContainer .conRight .booking_secondPage .formNje > button:hover {
   background-color: #f3a052;
 }
 .homeContainer .conRight .booking_secondPage .formNje h5 {

@@ -15,6 +15,7 @@ const SecondPage = () => {
   const dataSot = new Date();
 
   const [formData, setFormData] = useState({ form1: "", form2: "" });
+  const [ditetData, setDitetData] = useState({ ardh: "", ikj: "" });
 
   const handleSetDate = async () => {
     fillData(
@@ -29,8 +30,8 @@ const SecondPage = () => {
         ora: `${dataSot.getHours()}:${dataSot.getMinutes()}`,
       },
       dhoma: formData.form2.dhoma,
-      ditaArdjhes: formData.form1.ditaArdhjes,
-      ditaIkjes: formData.form1.ditaIkjes,
+      ditaArdjhes: ditetData.ardh,
+      ditaIkjes: ditetData.ikj,
       ditetEQendrimitL: ditQendrimi,
       email: formData.form2.email,
       emri: formData.form1.emri,
@@ -61,6 +62,8 @@ const SecondPage = () => {
           setOptRendr={setOptRendr}
           formData={formData}
           setFormData={setFormData}
+          setDitetData={setDitetData}
+          ditetData={ditetData}
         />
       );
     if (optRendr == "SecondOp")

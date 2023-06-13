@@ -54,7 +54,7 @@
       .childrens {
         width: 45%;
         @include mix.flex($al: flex-start);
-        label {
+        > label {
           @include mix.font(
             var.$libreFranklin,
             var.$s_PCsm19-28,
@@ -64,7 +64,7 @@
             0
           );
         }
-        input {
+        > input {
           width: 100%;
           background-color: var.$col-30_Neutral700;
           border: none;
@@ -104,10 +104,29 @@
         .rdp {
           //datepicker
           position: absolute;
+          color: white;
+          background-color: var.$col-googleAuthHovTransp_info500;
+          font-size: var.$s_PCsm16-23;
+          padding: 1em;
+          border-radius: 0.5em;
+          box-shadow: var.$bxshadow1;
+          margin: 0;
+
+          --rdp-cell-size: clamp(2.5rem, calc(0.25rem + 3vw), 3.63rem); //40-58
+          --rdp-caption-font-size: clamp(
+            1.19rem,
+            calc(0.06rem + 1.5vw),
+            1.75rem
+          ); //19-28
+          --rdp-accent-color: #f3a052;
+          --rdp-background-color: #7a9ffb;
+          .my-today {
+            color: var.$col-dilBtnHov_Error600;
+          }
         }
       }
     }
-    button {
+    > button {
       @include mix.button(
         var.$kanit,
         var.$s_PCsm19-28,
