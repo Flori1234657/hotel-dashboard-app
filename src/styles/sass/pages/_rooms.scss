@@ -78,6 +78,16 @@
             outline: none;
           }
         }
+        h4 {
+          @include mix.font(
+            var.$kanit,
+            var.$s_PCsm13-19,
+            400,
+            var.$col-dilBtnHov_Error600,
+            0.2em 0.5em,
+            0
+          );
+        }
       }
       .quantityDiv {
         width: 70%;
@@ -120,6 +130,16 @@
               0
             );
           }
+        }
+        h4 {
+          @include mix.font(
+            var.$kanit,
+            var.$s_PCsm13-19,
+            400,
+            var.$col-dilBtnHov_Error600,
+            0.2em 0.5em,
+            0
+          );
         }
       }
       button {

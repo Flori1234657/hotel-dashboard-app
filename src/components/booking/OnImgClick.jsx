@@ -66,8 +66,6 @@ const OnImgClick = ({
     }
     return obj;
   });
-  console.log(dataForSpecific);
-  console.log(newDhomatData);
 
   const setStateTrueOnFirebase = async () => {
     try {

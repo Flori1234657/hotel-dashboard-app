@@ -8,9 +8,21 @@ const Rooms = ({ setShfaqNav, shfaqNav }) => {
   const pages = useContext(PageContext);
   const [pageForRender, setPageForRender] = useState(() => {
     if (pages.switchPageObj.rooPg.fp == "active") {
-      return <FirstRmsPage />;
+      return (
+        <FirstRmsPage
+          dhomatDat={pages.firestoreDhomatDat[0]}
+          menaxhimDT={pages.statsData}
+          rgData={pages.setRegetData}
+        />
+      );
     } else {
-      return <SecondRmsPage />;
+      return (
+        <SecondRmsPage
+          dhomatDat={pages.firestoreDhomatDat[0]}
+          menaxhimDT={pages.statsData}
+          rgData={pages.setRegetData}
+        />
+      );
     }
   });
 
@@ -20,9 +32,21 @@ const Rooms = ({ setShfaqNav, shfaqNav }) => {
   useEffect(() => {
     setPageForRender(() => {
       if (pages.switchPageObj.rooPg.fp == "active") {
-        return <FirstRmsPage />;
+        return (
+          <FirstRmsPage
+            dhomatDat={pages.firestoreDhomatDat[0]}
+            menaxhimDT={pages.statsData}
+            rgData={pages.setRegetData}
+          />
+        );
       } else {
-        return <SecondRmsPage />;
+        return (
+          <SecondRmsPage
+            dhomatDat={pages.firestoreDhomatDat[0]}
+            menaxhimDT={pages.statsData}
+            rgData={pages.setRegetData}
+          />
+        );
       }
     });
   }, [pages.switchPageObj]);

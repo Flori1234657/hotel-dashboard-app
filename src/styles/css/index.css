@@ -1273,6 +1273,17 @@ body {
 .homeContainer .conRight .shtoRoom .funcContainer .shtoRomForm div:first-child select:focus {
   outline: none;
 }
+.homeContainer .conRight .rmvRoom .funcContainer .rmvRomForm div:first-child h4,
+.homeContainer .conRight .rmvRoom .funcContainer .shtoRomForm div:first-child h4,
+.homeContainer .conRight .shtoRoom .funcContainer .rmvRomForm div:first-child h4,
+.homeContainer .conRight .shtoRoom .funcContainer .shtoRomForm div:first-child h4 {
+  font-family: "Kanit", sans-serif;
+  font-size: clamp(0.81rem, 0.06rem + 1vw, 1.19rem);
+  font-weight: 400;
+  color: #cb1919;
+  padding: 0.2em 0.5em;
+  margin: 0;
+}
 .homeContainer .conRight .rmvRoom .funcContainer .rmvRomForm .quantityDiv,
 .homeContainer .conRight .rmvRoom .funcContainer .shtoRomForm .quantityDiv,
 .homeContainer .conRight .shtoRoom .funcContainer .rmvRomForm .quantityDiv,
@@ -1326,6 +1337,17 @@ body {
   font-weight: 500;
   color: #8f98a9;
   padding: 0.5em 0.4em;
+  margin: 0;
+}
+.homeContainer .conRight .rmvRoom .funcContainer .rmvRomForm .quantityDiv h4,
+.homeContainer .conRight .rmvRoom .funcContainer .shtoRomForm .quantityDiv h4,
+.homeContainer .conRight .shtoRoom .funcContainer .rmvRomForm .quantityDiv h4,
+.homeContainer .conRight .shtoRoom .funcContainer .shtoRomForm .quantityDiv h4 {
+  font-family: "Kanit", sans-serif;
+  font-size: clamp(0.81rem, 0.06rem + 1vw, 1.19rem);
+  font-weight: 400;
+  color: #cb1919;
+  padding: 0.2em 0.5em;
   margin: 0;
 }
 .homeContainer .conRight .rmvRoom .funcContainer .rmvRomForm button,
