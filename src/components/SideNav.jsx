@@ -7,9 +7,11 @@ import Variant1 from "./sideNav/Variant1";
 import Variant2 from "./sideNav/Variant2";
 import Variant3 from "./sideNav/Variant3";
 import Variant4 from "./sideNav/Variant4";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { PageContext } from "../App";
 
 const SideNav = ({ shfaqNav }) => {
+  const context = useContext(PageContext);
   const [variant, setVariant] = useState("v1");
   const props = {
     cl: calendar,
@@ -21,6 +23,12 @@ const SideNav = ({ shfaqNav }) => {
   const [sdNv, setSdNv] = useState(
     <Variant1 objProp={props} setVariant={setVariant} />
   );
+
+  useEffect(() => {
+    if (context.switchNavForNotif.initialState !== false) {
+      setVariant(context.switchNavForNotif.initialState);
+    }
+  }, [context.switchNavForNotif]);
 
   useEffect(() => {
     setSdNv(() => {

@@ -172,8 +172,6 @@ export const objektiINumritTeDhomaveShto = (
         break;
       }
     }
-    console.log(ditQendrimiArray);
-    console.log(obj);
     for (
       let i = 0;
       i < Number(ditQendrimiArray[ditQendrimiArray.length - 1]);

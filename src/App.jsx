@@ -33,6 +33,12 @@ function App() {
 
   const [regetData, setRegetData] = useState(false);
   const [preloader, setPreloader] = useState(true);
+
+  const [switchNavForNotif, setSwitchNavForNotif] = useState({
+    initialState: false,
+    switchUpdateForUseEffect: false,
+  });
+
   const getData = async () => {
     await getDocs(collection(db, "Rezervimet")).then((dcs) => {
       const dta = dcs.docs.map((doc) => doc.data());
@@ -74,6 +80,10 @@ function App() {
           setRegetData,
           firestoreDhomatDat,
           statsData,
+          switchNavForNotif,
+          setSwitchNavForNotif,
+          shfaqNav,
+          setShfaqNav,
         }}
       >
         <BrowserRouter>

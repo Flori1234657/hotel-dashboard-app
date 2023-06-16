@@ -14,7 +14,6 @@ const FirstPage = () => {
   const [sameId, setSameID] = useState("");
   const [pozicioniOpti, setPozicioniOpt] = useState({
     top: 0,
-    left: 0,
   });
   const [dataForSpecific, setDataForSpecific] = useState();
   useEffect(() => {
@@ -106,7 +105,6 @@ const FirstPage = () => {
                         setSameID(`${el.telefon}/${el.emri}`);
                         setPozicioniOpt({
                           top: `${e.target.offsetTop + 4}px`,
-                          left: `${e.target.offsetLeft - 101}px`,
                         });
                         setDataForSpecific(el);
                         setDcsId(dta.docsId[data.indexOf(el)]);

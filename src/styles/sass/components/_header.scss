@@ -1,5 +1,6 @@
 @use "../utils/mixin" as mix;
 @use "../utils/variables" as var;
+@use "./components/notificBox" as notifBox;
 
 @mixin styles() {
   width: 100%;
@@ -19,6 +20,7 @@
       width: 10%;
       cursor: pointer;
     }
+    @include notifBox.styles();
     figure {
       width: 85%;
       @include mix.flex($dr: row, $js: center);

@@ -1,0 +1,85 @@
+@use "../../utils/mixin" as mix;
+@use "../../utils/variables" as var;
+
+@mixin styles() {
+  .notificationBox {
+    width: 40%;
+    aspect-ratio: 2;
+    overflow-y: hidden;
+    position: absolute;
+    top: 4vw;
+    right: 22vw;
+    font-size: var.$s_PCsm19-28;
+    border-radius: 0.4em;
+    background-color: var.$col-googleAuthHov_info500;
+    @include mix.flex();
+    h1 {
+      @include mix.font(
+        var.$hind,
+        var.$s_PCsm28-40,
+        700,
+        var.$col-subTxt_Neutral100,
+        0.5em 0 0.2em 0,
+        0
+      );
+    }
+    ul {
+      width: 80%;
+      height: 65%;
+      overflow-y: scroll;
+      list-style-type: none;
+      li {
+        font-size: var.$s_PCsm19-28;
+        width: 100%;
+        margin-bottom: 0.4em;
+        @include mix.flex($dr: row, $js: space-around);
+        div {
+          width: 50%;
+          overflow: scroll;
+          h2 {
+            @include mix.font(
+              var.$kanit,
+              var.$s_PCsm16-23,
+              300,
+              var.$col-secSubTxt_Neutral300,
+              0,
+              0
+            );
+            white-space: nowrap;
+          }
+        }
+        div:first-child {
+          width: 30%;
+          h2 {
+            color: var.$col-subTxt_Neutral100;
+          }
+        }
+        button {
+          @include mix.button(
+            var.$libreFranklin,
+            var.$s_PCsm13-19,
+            500,
+            var.$col-subTxt_Neutral100,
+            0.3em 0.5em,
+            0,
+            var.$col-nextBtn_Warning500,
+            0.5em
+          );
+        }
+      }
+      li:last-child {
+        padding: 0 0 1em 0;
+      }
+    }
+    h4 {
+      @include mix.font(
+        var.$hind,
+        var.$s_PCsm28-40,
+        500,
+        var.$col-secSubTxt_Neutral300,
+        1.2em 0 0 0,
+        0
+      );
+    }
+  }
+}
