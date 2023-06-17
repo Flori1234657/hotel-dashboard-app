@@ -318,6 +318,8 @@ body {
   width: 80%;
   height: 65%;
   overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   list-style-type: none;
 }
 .homeContainer .conRight header .headerRight .notificationBox ul li {
@@ -332,6 +334,8 @@ body {
 .homeContainer .conRight header .headerRight .notificationBox ul li div {
   width: 50%;
   overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 .homeContainer .conRight header .headerRight .notificationBox ul li div h2 {
   font-family: "Kanit", sans-serif;
@@ -341,6 +345,10 @@ body {
   padding: 0;
   margin: 0;
   white-space: nowrap;
+}
+.homeContainer .conRight header .headerRight .notificationBox ul li div::-webkit-scrollbar {
+  display: none;
+  width: 0 !important;
 }
 .homeContainer .conRight header .headerRight .notificationBox ul li div:first-child {
   width: 30%;
@@ -362,6 +370,10 @@ body {
 }
 .homeContainer .conRight header .headerRight .notificationBox ul li:last-child {
   padding: 0 0 1em 0;
+}
+.homeContainer .conRight header .headerRight .notificationBox ul::-webkit-scrollbar {
+  display: none;
+  width: 0 !important;
 }
 .homeContainer .conRight header .headerRight .notificationBox h4 {
   font-family: "Hind", sans-serif;
@@ -1543,33 +1555,25 @@ body {
   padding: 0 0 0.5em 0;
   margin: 0;
 }
-.homeContainer .conRight .calendar .shikoRezerv_cont .calendar-cont .calendar_component {
-  font-size: 8px;
+.homeContainer .conRight .calendar .shikoRezerv_cont .calendar-cont .rdp {
+  color: white;
   background-color: #0d1627;
+  font-size: clamp(1rem, 0.13rem + 1.17vw, 1.44rem);
+  padding: 1em;
+  border-radius: 0.5em;
+  box-shadow: 0px 10px 31px -5px #0d1627;
+  margin: 0;
+  --rdp-cell-size: clamp(2.5rem, calc(0.25rem + 3vw), 3.63rem);
+  --rdp-caption-font-size: clamp(
+    1.19rem,
+    calc(0.06rem + 1.5vw),
+    1.75rem
+  );
+  --rdp-accent-color: #f3a052;
+  --rdp-background-color: #7a9ffb;
 }
-.homeContainer .conRight .calendar .shikoRezerv_cont .calendar-cont .calendar_component .Calendar__weekDays {
-  color: #7a9ffb;
-}
-.homeContainer .conRight .calendar .shikoRezerv_cont .calendar-cont .calendar_component .Calendar__header .Calendar__monthArrowWrapper.-right .Calendar__monthArrow {
-  background-image: url("../../assets/images/icons/rightArrowWhite.png");
-  transform: rotateZ(270deg);
-}
-.homeContainer .conRight .calendar .shikoRezerv_cont .calendar-cont .calendar_component .Calendar__header .Calendar__monthArrowWrapper.-left .Calendar__monthArrow {
-  background-image: url("../../assets/images/icons/rightArrowWhite.png");
-  transform: rotateZ(270deg);
-}
-.homeContainer .conRight .calendar .shikoRezerv_cont .calendar-cont .calendar_component .Calendar__header .Calendar__monthYearContainer .Calendar__monthYear.-shown .Calendar__monthText,
-.homeContainer .conRight .calendar .shikoRezerv_cont .calendar-cont .calendar_component .Calendar__header .Calendar__monthYearContainer .Calendar__monthYear.-shown .Calendar__yearText {
-  color: white;
-}
-.homeContainer .conRight .calendar .shikoRezerv_cont .calendar-cont .calendar_component .Calendar__sectionWrapper .Calendar__section .Calendar__weekRow .Calendar__day {
-  color: #f5f5fb;
-}
-.homeContainer .conRight .calendar .shikoRezerv_cont .calendar-cont .selectedDayCalendar {
-  color: white;
-}
-.homeContainer .conRight .calendar .shikoRezerv_cont .calendar-cont .CalendarToday {
-  color: #8f98a9;
+.homeContainer .conRight .calendar .shikoRezerv_cont .calendar-cont .rdp .calendar_component {
+  color: #cb1919;
 }
 .homeContainer .conRight .calendar .shikoRezerv_cont .dateInformat {
   background-color: #0d1627;

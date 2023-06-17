@@ -1,5 +1,5 @@
 const datTod = new Date();
-export const disabledDates = [];
+export let disabledDates = [];
 
 export const setDisabledDays = (dta) => {
   for (let i = 1; i <= 30; i++) {

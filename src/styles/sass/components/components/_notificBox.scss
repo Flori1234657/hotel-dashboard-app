@@ -27,6 +27,8 @@
       width: 80%;
       height: 65%;
       overflow-y: scroll;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
       list-style-type: none;
       li {
         font-size: var.$s_PCsm19-28;
@@ -36,6 +38,8 @@
         div {
           width: 50%;
           overflow: scroll;
+          -ms-overflow-style: none;
+          scrollbar-width: none;
           h2 {
             @include mix.font(
               var.$kanit,
@@ -47,6 +51,10 @@
             );
             white-space: nowrap;
           }
+        }
+        div::-webkit-scrollbar {
+          display: none;
+          width: 0 !important;
         }
         div:first-child {
           width: 30%;
@@ -70,6 +78,10 @@
       li:last-child {
         padding: 0 0 1em 0;
       }
+    }
+    ul::-webkit-scrollbar {
+      display: none;
+      width: 0 !important;
     }
     h4 {
       @include mix.font(

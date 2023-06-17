@@ -127,7 +127,11 @@ function App() {
             <Route
               path={`/calendar.user${routeHyr}`}
               element={
-                <Kalendar setShfaqNav={setShfaqNav} shfaqNav={shfaqNav} />
+                <Kalendar
+                  setShfaqNav={setShfaqNav}
+                  shfaqNav={shfaqNav}
+                  firestoreData={firestoreData}
+                />
               }
             />
           </Routes>

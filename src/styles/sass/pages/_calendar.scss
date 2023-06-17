@@ -62,49 +62,28 @@
           0
         );
       }
-      .calendar_component {
-        font-size: 8px;
-        background-color: var.$col-60_Neutral900;
-        .Calendar__weekDays {
-          color: var.$col-mainTxt_Ifno300;
-        }
-        .Calendar__header {
-          .Calendar__monthArrowWrapper.-right {
-            .Calendar__monthArrow {
-              background-image: url("../../assets/images/icons/rightArrowWhite.png");
-              transform: rotateZ(270deg);
-            }
-          }
-          .Calendar__monthArrowWrapper.-left {
-            .Calendar__monthArrow {
-              background-image: url("../../assets/images/icons/rightArrowWhite.png");
-              transform: rotateZ(270deg);
-            }
-          }
-          .Calendar__monthYearContainer {
-            .Calendar__monthYear.-shown {
-              .Calendar__monthText,
-              .Calendar__yearText {
-                color: white;
-              }
-            }
-          }
-        }
-        .Calendar__sectionWrapper {
-          .Calendar__section {
-            .Calendar__weekRow {
-              .Calendar__day {
-                color: var.$col-subTxt_Neutral100;
-              }
-            }
-          }
-        }
-      }
-      .selectedDayCalendar {
+
+      .rdp {
+        //datepicker
         color: white;
-      }
-      .CalendarToday {
-        color: var.$col-secSubTxt_Neutral300;
+        background-color: #0d1627;
+        font-size: var.$s_PCsm16-23;
+        padding: 1em;
+        border-radius: 0.5em;
+        box-shadow: var.$bxshadow1;
+        margin: 0;
+
+        --rdp-cell-size: clamp(2.5rem, calc(0.25rem + 3vw), 3.63rem); //40-58
+        --rdp-caption-font-size: clamp(
+          1.19rem,
+          calc(0.06rem + 1.5vw),
+          1.75rem
+        ); //19-28
+        --rdp-accent-color: #f3a052;
+        --rdp-background-color: #7a9ffb;
+        .calendar_component {
+          color: var.$col-dilBtnHov_Error600;
+        }
       }
     }
     .dateInformat {
