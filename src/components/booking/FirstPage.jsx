@@ -16,9 +16,9 @@ const FirstPage = () => {
     top: 0,
   });
   const [dataForSpecific, setDataForSpecific] = useState();
+  const [search, setSearch] = useState("");
   useEffect(() => {
     const refr = [...document.getElementById("bkfpID").childNodes];
-
     //marrim ato qe jan te pranuar per ti ndryshuar stilimet InshaaAllah
     const elems = refr.map((el, i) => {
       if (data[i] != null) {
@@ -57,7 +57,18 @@ const FirstPage = () => {
           <div className="optLeft">
             <h3>Paneli Rezervimit</h3>
             <div className="searchField">
-              <input type="text" placeholder="Kërko" />
+              <input
+                type="text"
+                placeholder="Kërko"
+                value={search}
+                onChange={(e) => {
+                  setSearch(e.target.value);
+                  setTimeout(() => {
+                    console.log("cuar");
+                    setData([...dta.firestoreData]);
+                  }, 3000);
+                }}
+              />
               <img src={SearchIcon} alt="" />
             </div>
           </div>
@@ -85,34 +96,45 @@ const FirstPage = () => {
             </div>
 
             <div className="tBody" id="bkfpID">
-              {data.map((el) => (
-                <div className="tr" key={`${el.idja}${el.mbiemri}`}>
-                  <h5 className="tdEmr">{`${el.emri} ${el.mbiemri}`}</h5>
-                  <h5>{el.telefon}</h5>
-                  <h5>{el.email}</h5>
-                  <h5>{el.ditaArdjhes}</h5>
-                  <h5>{el.ditaIkjes}</h5>
-                  <h5>{el.dhoma}</h5>
-                  <h5>{`${
-                    Number(el.persona.femij) + Number(el.persona.teRritur)
-                  }`}</h5>
-                  <h5>
-                    <img
-                      src={Veprimet}
-                      alt="icon"
-                      onClick={(e) => {
-                        setShowOptions(!showOptions);
-                        setSameID(`${el.telefon}/${el.emri}`);
-                        setPozicioniOpt({
-                          top: `${e.target.offsetTop + 4}px`,
-                        });
-                        setDataForSpecific(el);
-                        setDcsId(dta.docsId[data.indexOf(el)]);
-                      }}
-                    />
-                  </h5>
-                </div>
-              ))}
+              {data
+                .filter((il) => {
+                  //searchfunc
+                  if (search === "") {
+                    return il;
+                  } else if (
+                    il.emri.toLowerCase().includes(search.toLowerCase())
+                  ) {
+                    return il;
+                  }
+                })
+                .map((el) => (
+                  <div className="tr" key={`${el.idja}${el.mbiemri}`}>
+                    <h5 className="tdEmr">{`${el.emri} ${el.mbiemri}`}</h5>
+                    <h5>{el.telefon}</h5>
+                    <h5>{el.email}</h5>
+                    <h5>{el.ditaArdjhes}</h5>
+                    <h5>{el.ditaIkjes}</h5>
+                    <h5>{el.dhoma}</h5>
+                    <h5>{`${
+                      Number(el.persona.femij) + Number(el.persona.teRritur)
+                    }`}</h5>
+                    <h5>
+                      <img
+                        src={Veprimet}
+                        alt="icon"
+                        onClick={(e) => {
+                          setShowOptions(!showOptions);
+                          setSameID(`${el.telefon}/${el.emri}`);
+                          setPozicioniOpt({
+                            top: `${e.target.offsetTop + 4}px`,
+                          });
+                          setDataForSpecific(el);
+                          setDcsId(dta.docsId[data.indexOf(el)]);
+                        }}
+                      />
+                    </h5>
+                  </div>
+                ))}
               {showOptions ? (
                 <OnImgClick
                   pozicioniOpti={pozicioniOpti}
