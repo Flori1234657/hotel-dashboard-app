@@ -5,8 +5,53 @@ import leter from "../../assets/images/icons/teDhenatIcon/paper.png";
 import trePikat from "../../assets/images/icons/trePikatMenu.png";
 import LineChart from "../chart/LineChart";
 import RrethorChart from "../chart/RrethorChart";
+import { useContext, useState } from "react";
+import { PageContext } from "../../App";
 
 const Main = ({ shfaqNav }) => {
+  const dta = useContext(PageContext);
+  const data = new Date();
+
+  const [dhGjithsej, setDhGjithsej] = useState(
+    dta.statsData[0].NumriDhomave.dhomTeke +
+      dta.statsData[0].NumriDhomave.dhomCift +
+      dta.statsData[0].NumriDhomave.dhomFamiljare
+  );
+
+  const [rzvr, setRzvr] = useState(
+    dta.statsData[0].Rezervuar.dhomTeke +
+      dta.statsData[0].Rezervuar.dhomCift +
+      dta.statsData[0].Rezervuar.dhomFamiljare
+  );
+
+  const [dhmDizpNr, setDhmDizpNr] = useState(dhGjithsej - rzvr);
+
+  const [allRoomsCost, setAllRoomsCost] = useState(() => {
+    const dht = `${dta.statsData[0].NumriDhomave.dhomTeke * 100}`;
+    const dhc = `${dta.statsData[0].NumriDhomave.dhomCift * 120}`;
+    const dhf = `${dta.statsData[0].NumriDhomave.dhomFamiljare * 150}`;
+
+    return Number(dht) + Number(dhc) + Number(dhf);
+  });
+
+  const [ftTotal, setFtTotal] = useState("");
+
+  const [ftmSot, setFtmSot] = useState(() => {
+    let perPages = 0;
+
+    dta.firestoreData.forEach((el) => {
+      if (
+        el.ditaArdjhes ==
+          `${data.getMonth() + 1}/${data.getDate()}/${data.getFullYear()}` &&
+        el.pranuar
+      ) {
+        perPages += el.perTuPaguar.match(/\d+/g)[0];
+      }
+    });
+
+    return perPages;
+  });
+
   return (
     <main className="homeMain">
       <section className="homeMainText">
@@ -21,12 +66,17 @@ const Main = ({ shfaqNav }) => {
               <img src={leter} alt="paper icon" />
               <div className="text">
                 <h3>{shfaqNav ? "Total rez." : "Rezervime total"}</h3>
-                <h2>1,230</h2>
+                <h2>{rzvr}</h2>
               </div>
             </div>
 
             <div className="progressBar">
-              <div style={{ width: "70%", backgroundColor: "#069715" }}></div>
+              <div
+                style={{
+                  width: `${Math.floor((rzvr * 100) / dhGjithsej)}%`, //e bere *92 pasi duam fitimin max te gjith sezoni nga dhomat
+                  backgroundColor: "#069715",
+                }}
+              ></div>
             </div>
           </div>
           <div className="cardCont">
@@ -34,12 +84,17 @@ const Main = ({ shfaqNav }) => {
               <img src={krevat} alt="bed icon" />
               <div className="text">
                 <h3>{shfaqNav ? "Dhoma diz." : "Dhoma të lira"}</h3>
-                <h2>130</h2>
+                <h2>{dhmDizpNr}</h2>
               </div>
             </div>
 
             <div className="progressBar">
-              <div style={{ width: "96%", backgroundColor: "#9235e8" }}></div>
+              <div
+                style={{
+                  width: `${Math.floor((dhmDizpNr * 100) / dhGjithsej)}%`,
+                  backgroundColor: "#9235e8",
+                }}
+              ></div>
             </div>
           </div>
           <div className="cardCont">
@@ -47,25 +102,41 @@ const Main = ({ shfaqNav }) => {
               <img src={lek} alt="money icon" />
               <div className="text">
                 <h3>Fitimet Sot</h3>
-                <h2>$1,500</h2>
+                <h2>${ftmSot}</h2>
               </div>
             </div>
 
             <div className="progressBar">
-              <div style={{ width: "60%", backgroundColor: "#e88c35" }}></div>
+              <div
+                style={{
+                  width: `${Math.floor((ftmSot * 100) / allRoomsCost)}%`,
+                  backgroundColor: "#e88c35",
+                }}
+              ></div>
             </div>
           </div>
           <div className="cardCont">
             <div className="txtIcn">
               <img src={safe} alt="" />
               <div className="text">
-                <h3>Fitimi Total</h3>
-                <h2>$30,000</h2>
+                <h3>Fitimi total/sezon</h3>
+                <h2>${ftTotal ? ftTotal : "..."}</h2>
               </div>
             </div>
 
             <div className="progressBar">
-              <div style={{ width: "20%", backgroundColor: "#970606" }}></div>
+              {ftTotal ? (
+                <div
+                  style={{
+                    width: `${Math.floor(
+                      (ftTotal * 100) / (allRoomsCost * 92)
+                    )}%`,
+                    backgroundColor: "#970606",
+                  }}
+                ></div>
+              ) : (
+                ""
+              )}
             </div>
           </div>
         </section>
@@ -76,7 +147,10 @@ const Main = ({ shfaqNav }) => {
               <img src={trePikat} alt="three doots" />
             </div>
             <div className="grChartDown">
-              <LineChart />
+              <LineChart
+                statistikat={dta.statistikat}
+                setFtTotal={setFtTotal}
+              />
             </div>
           </div>
           <div className="secondChart">
@@ -85,7 +159,7 @@ const Main = ({ shfaqNav }) => {
               <img src={trePikat} alt="three doots" />
             </div>
             <div className="rrethorChart">
-              <RrethorChart />
+              <RrethorChart dhomat={dta.statsData} />
             </div>
           </div>
         </section>

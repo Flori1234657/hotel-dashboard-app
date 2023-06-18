@@ -12,10 +12,14 @@ const Home = ({ setShfaqNav, shfaqNav, preloader }) => {
 
   return (
     <div className="conRight">
-      {preloader ? <Preloader preloader={preloader} /> : ""}
-
-      <Header setShfaqNav={setShfaqNav} shfaqNav={shfaqNav} />
-      <Main shfaqNav={shfaqNav} />
+      {preloader ? (
+        <Preloader preloader={preloader} />
+      ) : (
+        <>
+          <Header setShfaqNav={setShfaqNav} shfaqNav={shfaqNav} />
+          <Main shfaqNav={shfaqNav} />
+        </>
+      )}
     </div>
   );
 };

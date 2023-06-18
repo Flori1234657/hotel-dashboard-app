@@ -95,7 +95,7 @@ const SecondRmsPage = ({ dhomatDat, menaxhimDT, setRegetData }) => {
           }}
         </Formik>
         <div className="barchart">
-          <BarChart />
+          <BarChart menaxhimDT={menaxhimDT} />
         </div>
       </div>
     </main>

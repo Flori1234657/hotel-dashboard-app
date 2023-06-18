@@ -15,6 +15,7 @@ const LogIn = ({
   setDocsId,
   getDataDhomat,
   getDataStats,
+  getStatistikat,
 }) => {
   const nav = useNavigate();
 
@@ -43,6 +44,7 @@ const LogIn = ({
       getData();
       getDataDhomat();
       getDataStats();
+      getStatistikat();
     }, 3000);
   };
   useEffect(() => {

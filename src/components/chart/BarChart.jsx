@@ -3,7 +3,7 @@ import { useState, useContext } from "react";
 import { Chart as ChartJS } from "chart.js/auto";
 import { PageContext } from "../../App";
 
-const BarChart = () => {
+const BarChart = ({ menaxhimDT }) => {
   const dta = useContext(PageContext);
   const [data, setData] = useState(dta.firestoreData);
 
@@ -12,12 +12,20 @@ const BarChart = () => {
     datasets: [
       {
         label: "Dhoma Gjithsej",
-        data: [123, 90, 130],
+        data: [
+          menaxhimDT[0].NumriDhomave.dhomTeke,
+          menaxhimDT[0].NumriDhomave.dhomCift,
+          menaxhimDT[0].NumriDhomave.dhomFamiljare,
+        ],
         backgroundColor: "rgba(255, 99, 132, 0.5)",
       },
       {
         label: "Dhoma Të Zëna",
-        data: [48, 53, 87],
+        data: [
+          menaxhimDT[0].Rezervuar.dhomTeke,
+          menaxhimDT[0].Rezervuar.dhomCift,
+          menaxhimDT[0].Rezervuar.dhomFamiljare,
+        ],
         backgroundColor: "rgba(53, 162, 235, 0.5)",
       },
     ],

@@ -30,6 +30,7 @@ function App() {
   const [firestoreDhomatDat, setFirestoreDhomatDat] = useState();
   const [statsData, setStatsData] = useState();
   const [docsId, setDocsId] = useState("");
+  const [statistikat, setStatistikat] = useState("");
 
   const [regetData, setRegetData] = useState(false);
   const [preloader, setPreloader] = useState(true);
@@ -60,12 +61,19 @@ function App() {
       setStatsData(dta);
     });
   };
-
+  const getStatistikat = async () => {
+    await getDocs(collection(db, "Statistikat")).then((dcs) => {
+      const dta = dcs.docs.map((doc) => doc.data());
+      setStatistikat(dta);
+    });
+  };
+  getDataStats();
   useEffect(() => {
     if (regetData) {
       getData();
       getDataDhomat();
       getDataStats();
+      getStatistikat();
     }
   }, [regetData]);
   return (
@@ -84,6 +92,8 @@ function App() {
           setSwitchNavForNotif,
           shfaqNav,
           setShfaqNav,
+          statistikat,
+          setStatistikat,
         }}
       >
         <BrowserRouter>
@@ -101,6 +111,7 @@ function App() {
                   regetData={regetData}
                   getDataDhomat={getDataDhomat}
                   getDataStats={getDataStats}
+                  getStatistikat={getStatistikat}
                 />
               }
             />
