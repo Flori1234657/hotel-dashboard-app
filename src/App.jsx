@@ -67,7 +67,10 @@ function App() {
       setStatistikat(dta);
     });
   };
-  getDataStats();
+
+  useEffect(() => {
+    getDataStats();
+  }, []);
   useEffect(() => {
     if (regetData) {
       getData();

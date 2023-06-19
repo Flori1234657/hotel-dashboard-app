@@ -1,9 +1,26 @@
 import { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
+import { doc, setDoc } from "firebase/firestore";
+import { db } from "../../config/firebase";
 import { Chart as ChartJS } from "chart.js/auto";
 
 const LineChart = ({ statistikat, setFtTotal }) => {
   const data = new Date();
+  // const docForDayStats = doc(db, "Menaxhim", "VbAZSnMRNOcc2trCUdIj");
+  // const addFitimToServer = async ()=>{
+  //   if (statistikat[0][`fitimetSezon${data.getFullYear()}`].qershor.length < 29) {
+  //     try {
+  //       await setDoc(docRefRezervim, updatedDate, { merge: true })
+  //     } catch (error) {
+
+  //     }
+  //   }
+  // }
+
+  useEffect(() => {
+    //Ktu InshaaAllah do shtojm fitimet pasi hapim appin
+  }, []);
+
   const [labels, setLabels] = useState(() => {
     const arr = [];
     if (
