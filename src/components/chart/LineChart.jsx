@@ -4,68 +4,70 @@ import { doc, setDoc } from "firebase/firestore";
 import { db } from "../../config/firebase";
 import { Chart as ChartJS } from "chart.js/auto";
 
-const LineChart = ({ statistikat, setFtTotal }) => {
+const LineChart = ({ statistikat, setFtTotal, ftmSot, rrimerStats }) => {
   const data = new Date();
-  // const docForDayStats = doc(db, "Menaxhim", "VbAZSnMRNOcc2trCUdIj");
-  // const addFitimToServer = async ()=>{
-  //   if (statistikat[0][`fitimetSezon${data.getFullYear()}`].qershor.length < 29) {
-  //     try {
-  //       await setDoc(docRefRezervim, updatedDate, { merge: true })
-  //     } catch (error) {
+  const docForDayStats = doc(db, "Statistikat", "Gdl50e3i9nMNtWGy47mD");
 
-  //     }
-  //   }
-  // }
+  const addFitimSotToServer = async () => {
+    let muajTxt;
+    const objNisja = statistikat[0][`fitimetSezon${data.getFullYear()}`];
+
+    if (data.getMonth() == 5) muajTxt = "qershor";
+    if (data.getMonth() == 6) muajTxt = "korrig";
+    if (data.getMonth() == 7) muajTxt = "gusht";
+
+    if (objNisja[muajTxt].length == data.getDate()) return; //base case dmth nese e kemi shtuar kte statistik
+
+    const fitimiSotForServer = {
+      [`fitimetSezon${data.getFullYear()}`]: {
+        ...objNisja,
+        [muajTxt]: [...objNisja[muajTxt], ftmSot],
+      },
+    };
+
+    try {
+      await setDoc(docForDayStats, fitimiSotForServer, { merge: true });
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   useEffect(() => {
     //Ktu InshaaAllah do shtojm fitimet pasi hapim appin
+    addFitimSotToServer();
   }, []);
 
   const [labels, setLabels] = useState(() => {
+    const fitimetSezon = statistikat[0][`fitimetSezon${data.getFullYear()}`];
     const arr = [];
-    if (
-      statistikat[0][`fitimetSezon${data.getFullYear()}`].qershor.length > 0
-    ) {
-      statistikat[0][`fitimetSezon${data.getFullYear()}`].qershor.forEach(
-        (el, i) => {
-          arr.push(`${i + 1} Qer.`);
-        }
-      );
-    }
-    if (statistikat[0][`fitimetSezon${data.getFullYear()}`].korrig.length > 0) {
-      statistikat[0][`fitimetSezon${data.getFullYear()}`].korrig.forEach(
-        (el, i) => {
-          arr.push(`${i + 1} Korr.`);
-        }
-      );
-    }
-    if (statistikat[0][`fitimetSezon${data.getFullYear()}`].gusht.length > 0) {
-      statistikat[0][`fitimetSezon${data.getFullYear()}`].gusht.forEach(
-        (el, i) => {
-          arr.push(`${i + 1} Gush.`);
-        }
-      );
-    }
+
+    const addLabels = (monthArray, labelPrefix) => {
+      if (monthArray.length > 0) {
+        const emrat = monthArray.map((_, i) => `${i + 1} ${labelPrefix}.`);
+        arr.push(...emrat);
+      }
+    };
+
+    addLabels(fitimetSezon.qershor, "Qer");
+    addLabels(fitimetSezon.korrig, "Korr");
+    addLabels(fitimetSezon.gusht, "Gush");
 
     return arr;
   });
 
-  const dtSetWithRecursion = (muaj) => {
+  const dtSetDryCode = (muaj) => {
     const arr = [];
-    for (
-      let i = 0;
-      i < statistikat[0][`fitimetSezon${data.getFullYear()}`][muaj].length;
-      i++
-    ) {
-      arr.push(statistikat[0][`fitimetSezon${data.getFullYear()}`][muaj][i]);
+    const startObj = statistikat[0][`fitimetSezon${data.getFullYear()}`][muaj];
+    for (let i = 0; i < startObj.length; i++) {
+      arr.push(startObj[i]);
     }
     return arr;
   };
 
   const [teDhenat, setTeDhenat] = useState([
-    ...dtSetWithRecursion("qershor"),
-    ...dtSetWithRecursion("korrig"),
-    ...dtSetWithRecursion("gusht"),
+    ...dtSetDryCode("qershor"),
+    ...dtSetDryCode("korrig"),
+    ...dtSetDryCode("gusht"),
   ]);
 
   useEffect(() => {

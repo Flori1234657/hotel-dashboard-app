@@ -150,6 +150,8 @@ const Main = ({ shfaqNav }) => {
               <LineChart
                 statistikat={dta.statistikat}
                 setFtTotal={setFtTotal}
+                ftmSot={ftmSot}
+                rrimerStats={dta.setRegetData}
               />
             </div>
           </div>
