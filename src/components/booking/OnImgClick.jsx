@@ -127,6 +127,7 @@ const OnImgClick = ({
           onClick={async () => {
             try {
               if (dataForSpecific.pranuar) {
+                //ktu duhet dhe qe te heq statsat--?/???????????/
                 //dmth nese e kemi pranuar si fillim ne momentinqe e heqim shtojme numrin e dhomave
                 await setDoc(docRefhiqDhomat, newDhomatData, { merge: true });
                 await setDoc(dhomaRezervuarStats, dhomatRezvData, {

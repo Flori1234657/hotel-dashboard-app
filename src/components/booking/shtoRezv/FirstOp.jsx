@@ -119,15 +119,7 @@ const FirstOp = ({
       }}
       //onSubmit={values=>}
     >
-      {({
-        values,
-        dirty,
-        isValid,
-        handleChange,
-        handleBlur,
-        handleSubmit,
-        isSubmitting,
-      }) => (
+      {({ dirty, isValid }) => (
         <Form className="formNje">
           <div className="nameSurname">
             <div className="name">

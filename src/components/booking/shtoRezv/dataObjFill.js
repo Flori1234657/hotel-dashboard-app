@@ -2,7 +2,6 @@ export const ditQendrimi = [];
 export let cmimi = 0;
 
 export const fillData = (ardh, ikj, dhoma) => {
-  console.log(ardh);
   const refArdh = Number(ardh.match(/(?<=\W)\d+/)[0]);
   const refIkja = Number(ikj.match(/(?<=\W)\d+/)[0]);
 

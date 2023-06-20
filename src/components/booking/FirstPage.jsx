@@ -23,16 +23,15 @@ const FirstPage = () => {
     const elems = refr.map((el, i) => {
       if (data[i] != null) {
         if (
-          el.childNodes[0].innerText == `${data[i].emri} ${data[i].mbiemri}`
-        ) {
-          if (data[i].pranuar === true) {
-            return el;
-          }
-        }
+          el.childNodes[0].innerText == `${data[i].emri} ${data[i].mbiemri}` &&
+          data[i].pranuar
+        )
+          return el;
         return;
       }
       return;
     });
+
     elems.forEach((el) => {
       if (el != undefined) {
         el.childNodes.forEach((il) => {
