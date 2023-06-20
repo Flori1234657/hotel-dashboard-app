@@ -97,6 +97,7 @@ function App() {
           setShfaqNav,
           statistikat,
           setStatistikat,
+          getStatistikat,
         }}
       >
         <BrowserRouter>

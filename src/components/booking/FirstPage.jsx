@@ -145,6 +145,7 @@ const FirstPage = () => {
                   setShowOptions={setShowOptions}
                   dhomatFirebase={dta.firestoreDhomatDat}
                   statsData={dta.statsData}
+                  merrStatistikat={dta.statistikat}
                 />
               ) : (
                 ""

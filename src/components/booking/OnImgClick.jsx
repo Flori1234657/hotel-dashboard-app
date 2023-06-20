@@ -16,24 +16,48 @@ const OnImgClick = ({
   setShowOptions,
   dhomatFirebase,
   statsData,
+  merrStatistikat,
 }) => {
   const docRefRezervim = doc(db, "Rezervimet", docsId);
   const docRefhiqDhomat = doc(db, "Dizpozicioni", "1AB8e4ZUcdrQxzEcL50T");
   const dhomaRezervuarStats = doc(db, "Menaxhim", "VbAZSnMRNOcc2trCUdIj");
+  const docForDayStats = doc(db, "Statistikat", "Gdl50e3i9nMNtWGy47mD");
 
+  const dtSot = new Date();
   const [email, setEmail] = useState("floriandollani15@gmail.com");
   const [updatedDate, setUpdatedDate] = useState({
     ...dataForSpecific,
     pranuar: true,
   });
+
+  const [newStatsObj, setNewStatsObj] = useState(() => {
+    if (
+      dataForSpecific.ditaArdjhes !=
+      `${dtSot.getMonth() + 1}/${dtSot.getDate()}/${dtSot.getFullYear()}`
+    )
+      return false;
+    let muaj;
+    let cmimiPerDit;
+    if (dtSot.getMonth() === 5) muaj = "qershor";
+    if (dtSot.getMonth() === 6) muaj = "korrig";
+    if (dtSot.getMonth() === 7) muaj = "gusht";
+
+    if (dataForSpecific.dhoma === "dhomTeke") cmimiPerDit = 100;
+    if (dataForSpecific.dhoma === "dhomCift") cmimiPerDit = 120;
+    if (dataForSpecific.dhoma === "dhomFamiljare") cmimiPerDit = 150;
+
+    let newStatObj = JSON.parse(JSON.stringify(merrStatistikat[0])); //kjo quhet Deep Copy
+    newStatObj[`fitimetSezon${dtSot.getFullYear()}`][muaj][
+      dtSot.getDate() - 1
+    ] += Number(cmimiPerDit);
+    return newStatObj;
+  });
+
   const [muaj, setMuaj] = useState(() => {
-    if (dataForSpecific.ditaArdjhes.match(/\d+/)[0] == 6) {
-      return "qershor";
-    } else if (dataForSpecific.ditaArdjhes.match(/\d+/)[0] == 7) {
-      return "korrig";
-    } else if (dataForSpecific.ditaArdjhes.match(/\d+/)[0] == 8) {
-      return "gusht";
-    }
+    const startObj = dataForSpecific.ditaArdjhes.match(/\d+/)[0];
+    if (startObj == 6) return "qershor";
+    if (startObj == 7) return "korrig";
+    if (startObj == 8) return "gusht";
   });
 
   const [dhomatRezvData, setDhomatRezvData] = useState(() => {
@@ -74,6 +98,8 @@ const OnImgClick = ({
       });
       await setDoc(docRefhiqDhomat, newDhomatData, { merge: true });
       await setDoc(dhomaRezervuarStats, dhomatRezvData, { merge: true });
+      if (newStatsObj)
+        await setDoc(docForDayStats, newStatsObj, { merge: true });
     } catch (error) {
       console.log(error);
       alert("pati nje problem");

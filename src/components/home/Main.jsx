@@ -45,7 +45,9 @@ const Main = ({ shfaqNav }) => {
           `${data.getMonth() + 1}/${data.getDate()}/${data.getFullYear()}` &&
         el.pranuar
       ) {
-        perPages += el.perTuPaguar.match(/\d+/g)[0];
+        if (el.dhoma === "dhomTeke") perPages += 100;
+        if (el.dhoma === "dhomCift") perPages += 120;
+        if (el.dhoma === "dhomFamiljare") perPages += 150;
       }
     });
 
