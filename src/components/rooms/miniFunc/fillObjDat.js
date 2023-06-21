@@ -17,10 +17,9 @@ export const updateData = (dt, firestoreDT, shenja, defMuaj = "qershor") => {
     return datForUpdat;
   }
 
-  if (
-    firestoreDT.muajt[defMuaj].datatDhomat[`dat${i}`] != null &&
-    shenja == "-"
-  ) {
+  const path = firestoreDT.muajt[defMuaj].datatDhomat[`dat${i}`];
+
+  if (path != null && shenja == "-") {
     datForUpdat = {
       ...datForUpdat,
       muajt: {
@@ -39,10 +38,7 @@ export const updateData = (dt, firestoreDT, shenja, defMuaj = "qershor") => {
         },
       },
     };
-  } else if (
-    firestoreDT.muajt[defMuaj].datatDhomat[`dat${i}`] != null &&
-    shenja == "+"
-  ) {
+  } else if (path != null && shenja == "+") {
     datForUpdat = {
       ...datForUpdat,
       muajt: {

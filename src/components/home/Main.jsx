@@ -11,25 +11,23 @@ import { PageContext } from "../../App";
 const Main = ({ shfaqNav }) => {
   const dta = useContext(PageContext);
   const data = new Date();
+  const path = dta.statsData[0].NumriDhomave;
+  const path2 = dta.statsData[0].Rezervuar;
 
   const [dhGjithsej, setDhGjithsej] = useState(
-    dta.statsData[0].NumriDhomave.dhomTeke +
-      dta.statsData[0].NumriDhomave.dhomCift +
-      dta.statsData[0].NumriDhomave.dhomFamiljare
+    path.dhomTeke + path.dhomCift + path.dhomFamiljare
   );
 
   const [rzvr, setRzvr] = useState(
-    dta.statsData[0].Rezervuar.dhomTeke +
-      dta.statsData[0].Rezervuar.dhomCift +
-      dta.statsData[0].Rezervuar.dhomFamiljare
+    path2.dhomTeke + path2.dhomCift + path2.dhomFamiljare
   );
 
   const [dhmDizpNr, setDhmDizpNr] = useState(dhGjithsej - rzvr);
 
   const [allRoomsCost, setAllRoomsCost] = useState(() => {
-    const dht = `${dta.statsData[0].NumriDhomave.dhomTeke * 100}`;
-    const dhc = `${dta.statsData[0].NumriDhomave.dhomCift * 120}`;
-    const dhf = `${dta.statsData[0].NumriDhomave.dhomFamiljare * 150}`;
+    const dht = `${path.dhomTeke * 100}`;
+    const dhc = `${path.dhomCift * 120}`;
+    const dhf = `${path.dhomFamiljare * 150}`;
 
     return Number(dht) + Number(dhc) + Number(dhf);
   });

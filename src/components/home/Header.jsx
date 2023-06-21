@@ -12,15 +12,9 @@ const Header = ({ setShfaqNav, shfaqNav }) => {
   const [showBox, setShowBox] = useState(false);
 
   useEffect(() => {
-    if (pages.firestoreData != null) {
-      pages.firestoreData.forEach((el) => {
-        if (el != null) {
-          if (!el.pranuar) {
-            setNotif(true);
-          }
-        }
-      });
-    }
+    const fstDat = pages.firestoreData;
+    if (fstDat != null)
+      fstDat.forEach((el) => (el != null && !el.pranuar ? setNotif(true) : ""));
   });
 
   return (
@@ -31,21 +25,15 @@ const Header = ({ setShfaqNav, shfaqNav }) => {
         alt="Hamburger Icon"
         onClick={(e) => {
           setShfaqNav(!shfaqNav);
+          const path = e.target.parentNode.nextElementSibling;
+          const path2 =
+            e.target.parentNode.parentNode.previousElementSibling.attributes[0]
+              .value;
 
-          if (
-            e.target.parentNode.nextElementSibling.classList[0] ==
-            "bookingFirstPage"
-          ) {
-            if (
-              e.target.parentNode.parentNode.previousElementSibling
-                .attributes[0].value == "display: flex;"
-            ) {
-              e.target.parentNode.nextElementSibling.childNodes[1].style.width =
-                "80%";
-            } else {
-              e.target.parentNode.nextElementSibling.childNodes[1].style.width =
-                "95%";
-            }
+          if (path.classList[0] == "bookingFirstPage") {
+            if (path2 == "display: flex;")
+              path.childNodes[1].style.width = "80%";
+            else path.childNodes[1].style.width = "95%";
           }
         }}
       />

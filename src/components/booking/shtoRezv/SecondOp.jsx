@@ -24,17 +24,7 @@ const SecondOp = ({ setOptRendr, formData, setFormData }) => {
         setOptRendr("SuccessOp");
       }}
     >
-      {({
-        values,
-        errors,
-        touched,
-        isValid,
-        dirty,
-        handleChange,
-        handleBlur,
-        handleSubmit,
-        isSubmitting,
-      }) => (
+      {({ isValid, dirty }) => (
         <Form className="formDy">
           <div className="roomType">
             <label>Dhoma</label>

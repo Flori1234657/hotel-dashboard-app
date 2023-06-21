@@ -16,7 +16,6 @@ const Kalendar = ({ setShfaqNav, shfaqNav, firestoreData }) => {
     setSelectedDate(`${dt.getMonth()}/${dt.getDate()}/${dt.getFullYear()}`);
 
     setObjekti(() => {
-      //InshaaAllah me ngeli per ta ber te njejten gje po ksaj radhe nese nje dat ka me shum se nje rezervim
       const teDhenat = firestoreData.filter((el) => {
         if (
           el.ditaArdjhes ==

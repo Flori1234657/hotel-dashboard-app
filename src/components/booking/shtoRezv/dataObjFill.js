@@ -2,68 +2,42 @@ export const ditQendrimi = [];
 export let cmimi = 0;
 
 export const fillData = (ardh, ikj, dhoma) => {
-  const refArdh = Number(ardh.match(/(?<=\W)\d+/)[0]);
+  const refArdh = Number(ardh.match(/(?<=\W)\d+/)[0]); //dita
   const refIkja = Number(ikj.match(/(?<=\W)\d+/)[0]);
+  const ardhj = ardh.match(/\d+/)[0]; //muaj
+  const ikja = ikj.match(/\d+/)[0];
+  let nisja = refArdh;
 
-  if (ardh.match(/\d+/)[0] == ikj.match(/\d+/)[0]) {
-    let nisja = refArdh;
-    for (let i = 0; i < refIkja; i++) {
-      ditQendrimi.push(nisja);
-      nisja++;
-    }
-  }
+  if (ardhj == ikja) helperFunc(refIkja);
 
-  if (ardh.match(/\d+/)[0] == 6 && ikj.match(/\d+/)[0] == 7) {
-    let nisja = refArdh;
-    for (let i = nisja; i <= 30; i++) {
-      ditQendrimi.push(nisja);
-      nisja++;
-    }
+  if (ardhj == 6 && ikja == 7) {
+    helperFunc(30);
     nisja = 1;
-    for (let i = 0; i < refIkja; i++) {
-      ditQendrimi.push(nisja);
-      nisja++;
-    }
+    helperFunc(refIkja);
   }
 
-  if (ardh.match(/\d+/)[0] == 6 && ikj.match(/\d+/)[0] == 8) {
-    let nisja = refArdh;
-    for (let i = nisja; i <= 30; i++) {
-      ditQendrimi.push(nisja);
-      nisja++;
-    }
+  if (ardhj == 6 && ikja == 8) {
+    helperFunc(30);
     nisja = 1;
-    for (let i = 0; i < 31; i++) {
-      ditQendrimi.push(nisja);
-      nisja++;
-    }
+    helperFunc(31);
     nisja = 1;
-    for (let i = 0; i < refIkja; i++) {
-      ditQendrimi.push(nisja);
-      nisja++;
-    }
+    helperFunc(refIkja);
   }
 
-  if (ardh.match(/\d+/)[0] == 7 && ikj.match(/\d+/)[0] == 8) {
-    let nisja = refArdh;
-    for (let i = nisja; i <= 31; i++) {
-      ditQendrimi.push(nisja);
-      nisja++;
-    }
+  if (ardhj == 7 && ikja == 8) {
+    helperFunc(31);
     nisja = 1;
-    for (let i = 0; i < refIkja; i++) {
-      ditQendrimi.push(nisja);
-      nisja++;
-    }
+    helperFunc(refIkja);
   }
 
-  if (dhoma === "dhomTeke") {
-    cmimi = `$${ditQendrimi.length * 100}`;
-  }
-  if (dhoma === "dhomCift") {
-    cmimi = `$${ditQendrimi.length * 120}`;
-  }
-  if (dhoma === "dhomFamiljare") {
-    cmimi = `$${ditQendrimi.length * 150}`;
-  }
+  const helperFunc = (pozicioni) => {
+    ditQendrimi.push(nisja);
+    if (nisja == pozicioni) return;
+    nisja++;
+    helperFunc(pozicioni);
+  };
+
+  if (dhoma === "dhomTeke") cmimi = `$${ditQendrimi.length * 100}`;
+  if (dhoma === "dhomCift") cmimi = `$${ditQendrimi.length * 120}`;
+  if (dhoma === "dhomFamiljare") cmimi = `$${ditQendrimi.length * 150}`;
 };
