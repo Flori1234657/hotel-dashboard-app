@@ -30,26 +30,43 @@ const OnImgClick = ({
     pranuar: true,
   });
 
+  const [muajSot, setMuajSot] = useState(() => {
+    if (dtSot.getMonth() === 5) return "qershor";
+    if (dtSot.getMonth() === 6) return "korrig";
+    if (dtSot.getMonth() === 7) return "gusht";
+  });
+
+  const [cmimiPerDit, setCmimiPerDit] = useState(() => {
+    if (dataForSpecific.dhoma === "dhomTeke") return 100;
+    if (dataForSpecific.dhoma === "dhomCift") return 120;
+    if (dataForSpecific.dhoma === "dhomFamiljare") return 150;
+  });
+
   const [newStatsObj, setNewStatsObj] = useState(() => {
     if (
       dataForSpecific.ditaArdjhes !=
       `${dtSot.getMonth() + 1}/${dtSot.getDate()}/${dtSot.getFullYear()}`
     )
       return false;
-    let muaj;
-    let cmimiPerDit;
-    if (dtSot.getMonth() === 5) muaj = "qershor";
-    if (dtSot.getMonth() === 6) muaj = "korrig";
-    if (dtSot.getMonth() === 7) muaj = "gusht";
-
-    if (dataForSpecific.dhoma === "dhomTeke") cmimiPerDit = 100;
-    if (dataForSpecific.dhoma === "dhomCift") cmimiPerDit = 120;
-    if (dataForSpecific.dhoma === "dhomFamiljare") cmimiPerDit = 150;
 
     let newStatObj = JSON.parse(JSON.stringify(merrStatistikat[0])); //kjo quhet Deep Copy
-    newStatObj[`fitimetSezon${dtSot.getFullYear()}`][muaj][
+    newStatObj[`fitimetSezon${dtSot.getFullYear()}`][muajSot][
       dtSot.getDate() - 1
     ] += Number(cmimiPerDit);
+    return newStatObj;
+  });
+
+  const [newStatsObjMinus, setNewStatsObjMinus] = useState(() => {
+    if (
+      newStatsObj[`fitimetSezon${dtSot.getFullYear()}`][muaj][
+        dtSot.getDate() - 1
+      ] == 0
+    )
+      return "";
+    let newStatObj = JSON.parse(JSON.stringify(merrStatistikat[0]));
+    newStatObj[`fitimetSezon${dtSot.getFullYear()}`][muajSot][
+      dtSot.getDate() - 1
+    ] -= Number(cmimiPerDit);
     return newStatObj;
   });
 
@@ -127,12 +144,15 @@ const OnImgClick = ({
           onClick={async () => {
             try {
               if (dataForSpecific.pranuar) {
-                //ktu duhet dhe qe te heq statsat--?/???????????/
                 //dmth nese e kemi pranuar si fillim ne momentinqe e heqim shtojme numrin e dhomave
                 await setDoc(docRefhiqDhomat, newDhomatData, { merge: true });
                 await setDoc(dhomaRezervuarStats, dhomatRezvData, {
                   merge: true,
                 });
+                if (newStatsObjMinus)
+                  await setDoc(docForDayStats, newStatsObjMinus, {
+                    merge: true,
+                  }); //ktu InshaaAllah heqim statsat e fitimeve
               }
 
               await deleteDoc(docRefRezervim).then(() => {
