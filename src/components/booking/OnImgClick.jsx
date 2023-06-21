@@ -110,6 +110,10 @@ const OnImgClick = ({
 
   const setStateTrueOnFirebase = async () => {
     try {
+      if (!newDhomatData) {
+        alert("Skemi dhoma në diz. për të gjitha datat");
+        return;
+      }
       await setDoc(docRefRezervim, updatedDate, { merge: true }).then(() => {
         alert("Rezervimi u pranua me sukses!");
       });
