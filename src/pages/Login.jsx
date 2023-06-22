@@ -4,30 +4,16 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth, provider } from "../config/firebase";
 import { signInWithPopup } from "firebase/auth";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../config/firebase";
 
 const LogIn = ({
   setRouteHyr,
   setShfaqNav,
-  setPreloader,
-  setFirestoreData,
-  setDocsId,
   getDataDhomat,
   getDataStats,
   getStatistikat,
+  getData,
 }) => {
   const nav = useNavigate();
-
-  const getData = async () => {
-    await getDocs(collection(db, "Rezervimet")).then((dcs) => {
-      const dta = dcs.docs.map((doc) => doc.data());
-      setFirestoreData(dta);
-      setPreloader(false);
-      const idit = dcs.docs.map((dcsID) => dcsID.id);
-      setDocsId(idit);
-    });
-  };
 
   const sgninWthGoogl = async (e) => {
     e.preventDefault();

@@ -8,23 +8,6 @@ export const objektiINumritTeDhomave = (dataForSpecific, muaj, dhFirebase) => {
   obj = JSON.parse(JSON.stringify(dhFirebase));
   let i = 0;
 
-  if (dataIkjes == dataArdhjes) {
-    helpFunc(true, muaj, ditQendrimiArray.length);
-  } else if (dataArdhjes == 6 && dataIkjes == 7) {
-    //qershor korrig
-    helpFunc(false, "qershor", 31);
-    helpFunc(true, "korrig", ditQendrimiArray.length);
-  } else if (dataArdhjes == 6 && dataIkjes == 8) {
-    //qershor gusht
-    helpFunc(false, "qershor", 31);
-    helpFunc(false, "korrig", 32);
-    helpFunc(true, "gusht", ditQendrimiArray.length);
-  } else if (dataArdhjes == 7 && dataIkjes == 8) {
-    //korrig gusht
-    helpFunc(false, "qershor", 31);
-    helpFunc(true, "korrig", ditQendrimiArray.length);
-  }
-
   const helpFunc = (equal, mj, fundi) => {
     if (!obj) return; //objekti do na behet false InshaaAllah ne momentin qe dhoma e caktuar esht 0
     const path =
@@ -60,6 +43,23 @@ export const objektiINumritTeDhomave = (dataForSpecific, muaj, dhFirebase) => {
       }
     }
   };
+
+  if (dataIkjes == dataArdhjes) {
+    helpFunc(true, muaj, ditQendrimiArray.length);
+  } else if (dataArdhjes == 6 && dataIkjes == 7) {
+    //qershor korrig
+    helpFunc(false, "qershor", 31);
+    helpFunc(true, "korrig", ditQendrimiArray.length);
+  } else if (dataArdhjes == 6 && dataIkjes == 8) {
+    //qershor gusht
+    helpFunc(false, "qershor", 31);
+    helpFunc(false, "korrig", 32);
+    helpFunc(true, "gusht", ditQendrimiArray.length);
+  } else if (dataArdhjes == 7 && dataIkjes == 8) {
+    //korrig gusht
+    helpFunc(false, "qershor", 31);
+    helpFunc(true, "korrig", ditQendrimiArray.length);
+  }
 };
 
 export const objektiINumritTeDhomaveShto = (

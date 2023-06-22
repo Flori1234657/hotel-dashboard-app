@@ -5,13 +5,24 @@ import AllBooking from "./pages/AllBooking";
 import Rooms from "./pages/Rooms";
 import Kalendar from "./pages/Kalendar";
 import SideNav from "./components/SideNav";
+import {
+  objektiINumritTeDhomaveShto,
+  obj,
+} from "./components/booking/miniUtils/onImgClickObject";
 import { useState, createContext, useEffect } from "react";
-import { getDocs, collection } from "firebase/firestore";
+import {
+  getDocs,
+  collection,
+  deleteDoc,
+  setDoc,
+  doc,
+} from "firebase/firestore";
 import { db } from "./config/firebase";
 
 export const PageContext = createContext();
 
 function App() {
+  const dtSot = new Date();
   const [routeHyr, setRouteHyr] = useState("");
   const [shfaqNav, setShfaqNav] = useState(false);
   const [switchPageObj, setSwitchPagejObj] = useState({
@@ -34,6 +45,7 @@ function App() {
 
   const [regetData, setRegetData] = useState(false);
   const [preloader, setPreloader] = useState(true);
+  const [checkIfFirestoreRecived, setCheckIfFirestoreRecived] = useState(false);
 
   const [switchNavForNotif, setSwitchNavForNotif] = useState({
     initialState: false,
@@ -41,31 +53,111 @@ function App() {
   });
 
   const getData = async () => {
-    await getDocs(collection(db, "Rezervimet")).then((dcs) => {
-      const dta = dcs.docs.map((doc) => doc.data());
-      setFirestoreData(dta);
-      const idit = dcs.docs.map((dcsID) => dcsID.id);
-      setDocsId(idit);
-    });
+    try {
+      await getDocs(collection(db, "Rezervimet")).then((dcs) => {
+        const dta = dcs.docs.map((doc) => doc.data());
+        setFirestoreData(dta);
+        const idit = dcs.docs.map((dcsID) => dcsID.id);
+        setDocsId(idit);
+      });
+    } catch (error) {
+      alert("Programi pati nje problem ju lutem kontaktoni programuesin");
+      console.log(error);
+    }
   };
 
   const getDataDhomat = async () => {
-    await getDocs(collection(db, "Dizpozicioni")).then((dcs) => {
-      const dta = dcs.docs.map((doc) => doc.data());
-      setFirestoreDhomatDat(dta);
-    });
+    try {
+      await getDocs(collection(db, "Dizpozicioni")).then((dcs) => {
+        const dta = dcs.docs.map((doc) => doc.data());
+        setFirestoreDhomatDat(dta);
+      });
+    } catch (error) {
+      alert("Programi pati nje problem ju lutem kontaktoni programuesin");
+      console.log(error);
+    }
   };
   const getDataStats = async () => {
-    await getDocs(collection(db, "Menaxhim")).then((dcs) => {
-      const dta = dcs.docs.map((doc) => doc.data());
-      setStatsData(dta);
-    });
+    try {
+      await getDocs(collection(db, "Menaxhim")).then((dcs) => {
+        const dta = dcs.docs.map((doc) => doc.data());
+        setStatsData(dta);
+      });
+    } catch (error) {
+      alert("Programi pati nje problem ju lutem kontaktoni programuesin");
+      console.log(error);
+    }
   };
   const getStatistikat = async () => {
-    await getDocs(collection(db, "Statistikat")).then((dcs) => {
-      const dta = dcs.docs.map((doc) => doc.data());
-      setStatistikat(dta);
+    try {
+      await getDocs(collection(db, "Statistikat")).then((dcs) => {
+        const dta = dcs.docs.map((doc) => doc.data());
+        setStatistikat(dta);
+        setCheckIfFirestoreRecived(true);
+      });
+    } catch (error) {
+      alert("Kemi problem me statistikat ju lutem kontaktoni programuesin");
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    if (checkIfFirestoreRecived) {
+      deleteFinished();
+      setPreloader(false);
+    }
+  }, [checkIfFirestoreRecived]);
+
+  //InshaaAllah fshim datat qe kan mbaruar
+  const deleteFinished = async () => {
+    const forMatch = `${dtSot.getMonth()}/${dtSot.getDate()}/${dtSot.getFullYear()}`;
+    const dtForCpsfArr = [];
+    console.log(firestoreData); //undefined
+    const dcsId = firestoreData.map((el) => {
+      if (el.pranuar && el.ditaIkjes >= forMatch) {
+        dtForCpsfArr.push(el);
+        return docsId[firestoreData.indexOf(el)];
+      }
+      if (!el.pranuar && el.ditaArdjhes >= forMatch)
+        return docsId[firestoreData.indexOf(el)];
     });
+
+    //CRUD for this func.
+    if (dcsId < 1) return; //ndalimi nese datat jan ne rregull
+    try {
+      await dcsId.forEach(async (el) => {
+        //Delete finished
+        await deleteDoc(doc(db, "Rezervimet", el));
+      });
+      if (dtForCpsfArr.length < 1) return;
+      await dtForCpsfArr.forEach(async (el) => {
+        let muaj;
+
+        const startObj = el.ditaArdjhes.match(/\d+/)[0];
+        if (startObj == 6) muaj = "qershor";
+        if (startObj == 7) muaj = "korrig";
+        if (startObj == 8) muaj = "gusht";
+
+        objektiINumritTeDhomaveShto(el, muaj, firestoreDhomatDat[0]); //Upadate rooms number
+        await setDoc(doc(db, "Dizpozicioni", "1AB8e4ZUcdrQxzEcL50T"), obj, {
+          merge: true,
+        });
+
+        await setDoc(
+          doc(db, "Menaxhim", "VbAZSnMRNOcc2trCUdIj"),
+          {
+            ...statsData[0],
+            Rezervuar: {
+              ...statsData[0].Rezervuar,
+              [`${el.dhoma}`]: statsData[0].Rezervuar[`${el.dhoma}`] - 1,
+            },
+          },
+          { merge: true }
+        ); //Upadate menaxhimi stats
+      });
+    } catch (error) {
+      alert("Kemi rezervime ne pritje te cilave data i ka kaluar");
+      console.log(error);
+    }
   };
 
   useEffect(() => {
@@ -109,13 +201,14 @@ function App() {
                 <LogIn
                   setRouteHyr={setRouteHyr}
                   setShfaqNav={setShfaqNav}
-                  setPreloader={setPreloader}
                   setFirestoreData={setFirestoreData}
                   setDocsId={setDocsId}
                   regetData={regetData}
                   getDataDhomat={getDataDhomat}
                   getDataStats={getDataStats}
                   getStatistikat={getStatistikat}
+                  getData={getData}
+                  checkIfFirestoreRecived={checkIfFirestoreRecived}
                 />
               }
             />
