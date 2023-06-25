@@ -171,6 +171,8 @@ const OnImgClick = ({
                 await setDoc(docRefhiqDhomat, newDhomatData, { merge: true });
                 await setDoc(dhomaRezervuarStats, dhomatRezvData, {
                   merge: true,
+                }).then(() => {
+                  rrimerrTeDhenat(`Refuzo ${dataForSpecific.idja} pranuar`);
                 });
                 if (newStatsObjMinus)
                   await setDoc(docForDayStats, newStatsObjMinus, {
@@ -179,7 +181,7 @@ const OnImgClick = ({
               }
 
               await deleteDoc(docRefRezervim).then(() => {
-                rrimerrTeDhenat(true);
+                rrimerrTeDhenat(`Refuzo ${dataForSpecific.idja} jo pranuar`);
                 setShowOptions(false);
               });
             } catch (error) {

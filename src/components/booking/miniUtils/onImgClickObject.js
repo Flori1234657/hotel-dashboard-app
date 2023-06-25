@@ -80,7 +80,21 @@ export const objektiINumritTeDhomaveShto = (
   const helpFunc = (equal, mj, fundi) => {
     if (!obj) return; //objekti do na behet false InshaaAllah ne momentin qe dhoma e caktuar esht 0
     if (i == fundi) return;
-    if (obj.muajt[mj].datatDhomat[`dat${ditQendrimiArray[i]}`] == null) return;
+    if (obj.muajt[mj].datatDhomat[`dat${ditQendrimiArray[i]}`] == null) {
+      //ketu InshaaAllah do na kthej prap mbrapsht daten e hequr
+      obj.muajt[mj].datatDhomat = {
+        ...obj.muajt[mj].datatDhomat,
+        [`dat${ditQendrimiArray[i]}`]: {
+          dhomTeke: 0,
+          dhomCift: 0,
+          dhomFamiljare: 0,
+          [dataForSpecific.dhoma]: 1,
+        },
+      };
+      i++;
+      helpFunc(equal, mj, fundi);
+      return;
+    }
 
     const path =
       obj.muajt[mj].datatDhomat[`dat${ditQendrimiArray[i]}`][

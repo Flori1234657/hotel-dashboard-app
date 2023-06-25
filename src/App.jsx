@@ -118,11 +118,11 @@ function App() {
       const refDtIkja = el.ditaIkjes.match(/\d+/g).join("");
       const refDtArdhja = el.ditaArdjhes.match(/\d+/g).join("");
 
-      if (el.pranuar && Number(refDtIkja) >= Number(forMatch)) {
+      if (el.pranuar && Number(refDtIkja) <= Number(forMatch)) {
         dtForCpsfArr.push(el);
         return docsId[firestoreData.indexOf(el)];
       }
-      if (!el.pranuar && Number(refDtArdhja) >= Number(forMatch))
+      if (!el.pranuar && Number(refDtArdhja) <= Number(forMatch))
         return docsId[firestoreData.indexOf(el)];
     });
 
