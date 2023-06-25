@@ -109,15 +109,20 @@ function App() {
 
   //InshaaAllah fshim datat qe kan mbaruar
   const deleteFinished = async () => {
-    const forMatch = `${dtSot.getMonth()}${dtSot.getDate()}${dtSot.getFullYear()}`;
+    const forMatch = `${
+      dtSot.getMonth() + 1
+    }${dtSot.getDate()}${dtSot.getFullYear()}`;
     const dtForCpsfArr = [];
-    console.log(firestoreData); //undefined
+
     const dcsId = firestoreData.map((el) => {
-      if (el.pranuar && el.ditaIkjes.match(/\d+/g)[0] >= Number(forMatch)) {
+      const refDtIkja = el.ditaIkjes.match(/\d+/g).join("");
+      const refDtArdhja = el.ditaArdjhes.match(/\d+/g).join("");
+
+      if (el.pranuar && Number(refDtIkja) >= Number(forMatch)) {
         dtForCpsfArr.push(el);
         return docsId[firestoreData.indexOf(el)];
       }
-      if (!el.pranuar && el.ditaArdjhes.match(/\d+/g)[0] >= Number(forMatch))
+      if (!el.pranuar && Number(refDtArdhja) >= Number(forMatch))
         return docsId[firestoreData.indexOf(el)];
     });
 
@@ -126,7 +131,9 @@ function App() {
     try {
       await dcsId.forEach(async (el) => {
         //Delete finished
-        await deleteDoc(doc(db, "Rezervimet", el));
+        await deleteDoc(doc(db, "Rezervimet", el)).then(() => {
+          setRegetData("Delete finished");
+        });
       });
       if (dtForCpsfArr.length < 1) return;
       await dtForCpsfArr.forEach(async (el) => {

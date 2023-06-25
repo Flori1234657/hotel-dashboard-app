@@ -16,7 +16,7 @@ export const kontrrolloNeseKemiDataBosh = (Dizpozicioni, dtQndr, muaj) => {
       path[`dat${dtQndr[i]}`].dhomTeke == 0 &&
       path[`dat${dtQndr[i]}`].dhomFamiljare == 0
     )
-      datatQeJaneZero.push(`muajt.${mj}.${datatDhomat}.dat${dtQndr[i]}`); //path i fieldit qe do fshihet InshaaAllah
+      datatQeJaneZero.push(`muajt.${mj}.datatDhomat.dat${dtQndr[i]}`); //path i fieldit qe do fshihet InshaaAllah
 
     if (muaj === "qershor" && i == 29) mj = "korrig";
     if (muaj === "korrig" && i == 30) mj = "gusht";

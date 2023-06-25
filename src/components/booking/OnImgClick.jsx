@@ -1,5 +1,11 @@
 import { useEffect, useState } from "react";
-import { doc, setDoc, deleteDoc } from "firebase/firestore";
+import {
+  doc,
+  setDoc,
+  deleteDoc,
+  getDocs,
+  collection,
+} from "firebase/firestore";
 import { db } from "../../config/firebase";
 import {
   objektiINumritTeDhomave,
