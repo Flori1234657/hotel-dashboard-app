@@ -6,6 +6,7 @@ import {
   obj,
   objektiINumritTeDhomaveShto,
 } from "./miniUtils/onImgClickObject";
+import { kontrrolloNeseKemiDataBosh } from "./miniUtils/ifRoomsEnd";
 
 const OnImgClick = ({
   pozicioniOpti,
@@ -56,7 +57,16 @@ const OnImgClick = ({
     return newStatObj;
   });
 
+  const [muaj, setMuaj] = useState(() => {
+    const startObj = dataForSpecific.ditaArdjhes.match(/\d+/)[0];
+    if (startObj == 6) return "qershor";
+    if (startObj == 7) return "korrig";
+    if (startObj == 8) return "gusht";
+  });
+
   const [newStatsObjMinus, setNewStatsObjMinus] = useState(() => {
+    if (!newStatsObj) return false;
+
     if (
       newStatsObj[`fitimetSezon${dtSot.getFullYear()}`][muaj][
         dtSot.getDate() - 1
@@ -68,13 +78,6 @@ const OnImgClick = ({
       dtSot.getDate() - 1
     ] -= Number(cmimiPerDit);
     return newStatObj;
-  });
-
-  const [muaj, setMuaj] = useState(() => {
-    const startObj = dataForSpecific.ditaArdjhes.match(/\d+/)[0];
-    if (startObj == 6) return "qershor";
-    if (startObj == 7) return "korrig";
-    if (startObj == 8) return "gusht";
   });
 
   const [dhomatRezvData, setDhomatRezvData] = useState(() => {
@@ -121,6 +124,16 @@ const OnImgClick = ({
       await setDoc(dhomaRezervuarStats, dhomatRezvData, { merge: true });
       if (newStatsObj)
         await setDoc(docForDayStats, newStatsObj, { merge: true });
+
+      //ktu posht InshaaAllah heqim datat nëse nuk kemi më dhoma në dizp
+      await getDocs(collection(db, "Dizpozicioni")).then((dcs) => {
+        const dta = dcs.docs.map((doc) => doc.data());
+        kontrrolloNeseKemiDataBosh(
+          dta[0],
+          dataForSpecific.ditetEQendrimitL,
+          muaj
+        );
+      });
     } catch (error) {
       console.log(error);
       alert("pati nje problem");

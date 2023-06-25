@@ -109,15 +109,15 @@ function App() {
 
   //InshaaAllah fshim datat qe kan mbaruar
   const deleteFinished = async () => {
-    const forMatch = `${dtSot.getMonth()}/${dtSot.getDate()}/${dtSot.getFullYear()}`;
+    const forMatch = `${dtSot.getMonth()}${dtSot.getDate()}${dtSot.getFullYear()}`;
     const dtForCpsfArr = [];
     console.log(firestoreData); //undefined
     const dcsId = firestoreData.map((el) => {
-      if (el.pranuar && el.ditaIkjes >= forMatch) {
+      if (el.pranuar && el.ditaIkjes.match(/\d+/g)[0] >= Number(forMatch)) {
         dtForCpsfArr.push(el);
         return docsId[firestoreData.indexOf(el)];
       }
-      if (!el.pranuar && el.ditaArdjhes >= forMatch)
+      if (!el.pranuar && el.ditaArdjhes.match(/\d+/g)[0] >= Number(forMatch))
         return docsId[firestoreData.indexOf(el)];
     });
 

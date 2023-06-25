@@ -10,6 +10,9 @@ export const objektiINumritTeDhomave = (dataForSpecific, muaj, dhFirebase) => {
 
   const helpFunc = (equal, mj, fundi) => {
     if (!obj) return; //objekti do na behet false InshaaAllah ne momentin qe dhoma e caktuar esht 0
+    if (i == fundi) return;
+    if (obj.muajt[mj].datatDhomat[`dat${ditQendrimiArray[i]}`] == null) return;
+
     const path =
       obj.muajt[mj].datatDhomat[`dat${ditQendrimiArray[i]}`][
         `${dataForSpecific.dhoma}`
@@ -17,7 +20,6 @@ export const objektiINumritTeDhomave = (dataForSpecific, muaj, dhFirebase) => {
 
     if (equal) {
       //dmth nese kemi vetem nje muaj
-      if (i == fundi) return;
 
       if (path != 0) {
         obj.muajt[mj].datatDhomat[`dat${ditQendrimiArray[i]}`][
@@ -31,11 +33,12 @@ export const objektiINumritTeDhomave = (dataForSpecific, muaj, dhFirebase) => {
     }
 
     if (!equal) {
-      if (ditQendrimiArray[i] == fundi) return; //fundi duhet te jet gjithnje 1+
       if (path != 0) {
         obj.muajt[mj].datatDhomat[`dat${ditQendrimiArray[i]}`][
           `${dataForSpecific.dhoma}`
         ] -= 1;
+
+        if (ditQendrimiArray[i] == fundi) return;
         i++;
         helpFunc(equal, mj, fundi);
       } else {
@@ -48,17 +51,17 @@ export const objektiINumritTeDhomave = (dataForSpecific, muaj, dhFirebase) => {
     helpFunc(true, muaj, ditQendrimiArray.length);
   } else if (dataArdhjes == 6 && dataIkjes == 7) {
     //qershor korrig
-    helpFunc(false, "qershor", 31);
+    helpFunc(false, "qershor", 30);
     helpFunc(true, "korrig", ditQendrimiArray.length);
   } else if (dataArdhjes == 6 && dataIkjes == 8) {
     //qershor gusht
-    helpFunc(false, "qershor", 31);
-    helpFunc(false, "korrig", 32);
+    helpFunc(false, "qershor", 30);
+    helpFunc(false, "korrig", 31);
     helpFunc(true, "gusht", ditQendrimiArray.length);
   } else if (dataArdhjes == 7 && dataIkjes == 8) {
     //korrig gusht
-    helpFunc(false, "qershor", 31);
-    helpFunc(true, "korrig", ditQendrimiArray.length);
+    helpFunc(false, "korrig", 31);
+    helpFunc(true, "gusht", ditQendrimiArray.length);
   }
 };
 
@@ -74,25 +77,11 @@ export const objektiINumritTeDhomaveShto = (
   obj = JSON.parse(JSON.stringify(dhFirebase));
   let i = 0;
 
-  if (dataIkjes == dataArdhjes) {
-    helpFunc(true, muaj, ditQendrimiArray.length);
-  } else if (dataArdhjes == 6 && dataIkjes == 7) {
-    //qershor korrig
-    helpFunc(false, "qershor", 31);
-    helpFunc(true, "korrig", ditQendrimiArray.length);
-  } else if (dataArdhjes == 6 && dataIkjes == 8) {
-    //qershor gusht
-    helpFunc(false, "qershor", 31);
-    helpFunc(false, "korrig", 32);
-    helpFunc(true, "gusht", ditQendrimiArray.length);
-  } else if (dataArdhjes == 7 && dataIkjes == 8) {
-    //korrig gusht
-    helpFunc(false, "qershor", 31);
-    helpFunc(true, "korrig", ditQendrimiArray.length);
-  }
-
   const helpFunc = (equal, mj, fundi) => {
     if (!obj) return; //objekti do na behet false InshaaAllah ne momentin qe dhoma e caktuar esht 0
+    if (i == fundi) return;
+    if (obj.muajt[mj].datatDhomat[`dat${ditQendrimiArray[i]}`] == null) return;
+
     const path =
       obj.muajt[mj].datatDhomat[`dat${ditQendrimiArray[i]}`][
         `${dataForSpecific.dhoma}`
@@ -100,7 +89,6 @@ export const objektiINumritTeDhomaveShto = (
 
     if (equal) {
       //dmth nese kemi vetem nje muaj
-      if (i == fundi) return;
 
       if (path != 0) {
         obj.muajt[mj].datatDhomat[`dat${ditQendrimiArray[i]}`][
@@ -114,11 +102,12 @@ export const objektiINumritTeDhomaveShto = (
     }
 
     if (!equal) {
-      if (ditQendrimiArray[i] == fundi) return; //fundi duhet te jet gjithnje 1+
       if (path != 0) {
         obj.muajt[mj].datatDhomat[`dat${ditQendrimiArray[i]}`][
           `${dataForSpecific.dhoma}`
         ] += 1;
+
+        if (ditQendrimiArray[i] == fundi) return;
         i++;
         helpFunc(equal, mj, fundi);
       } else {
@@ -126,4 +115,21 @@ export const objektiINumritTeDhomaveShto = (
       }
     }
   };
+
+  if (dataIkjes == dataArdhjes) {
+    helpFunc(true, muaj, ditQendrimiArray.length);
+  } else if (dataArdhjes == 6 && dataIkjes == 7) {
+    //qershor korrig
+    helpFunc(false, "qershor", 30);
+    helpFunc(true, "korrig", ditQendrimiArray.length);
+  } else if (dataArdhjes == 6 && dataIkjes == 8) {
+    //qershor gusht
+    helpFunc(false, "qershor", 30);
+    helpFunc(false, "korrig", 31);
+    helpFunc(true, "gusht", ditQendrimiArray.length);
+  } else if (dataArdhjes == 7 && dataIkjes == 8) {
+    //korrig gusht
+    helpFunc(false, "korrig", 31);
+    helpFunc(true, "gusht", ditQendrimiArray.length);
+  }
 };
