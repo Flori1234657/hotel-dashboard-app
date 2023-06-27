@@ -101,7 +101,15 @@ const Variant2 = ({ objProp, setVariant }) => {
           <h4>+</h4>
         </div>
       </nav>
-      <button style={{ marginTop: "7.3em" }}>DIL</button>
+      <button
+        style={{ marginTop: "7.3em" }}
+        onClick={() => {
+          nav("/");
+          location.reload();
+        }}
+      >
+        DIL
+      </button>
     </>
   );
 };

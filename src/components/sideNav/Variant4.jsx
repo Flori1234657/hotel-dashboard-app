@@ -70,7 +70,14 @@ const Variant4 = ({ objProp, setVariant }) => {
           <h4>-</h4>
         </div>
       </nav>
-      <button>DIL</button>
+      <button
+        onClick={() => {
+          nav("/");
+          location.reload();
+        }}
+      >
+        DIL
+      </button>
     </>
   );
 };

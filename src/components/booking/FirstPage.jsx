@@ -6,7 +6,7 @@ import { PageContext } from "../../App";
 import { useContext, useEffect, useState } from "react";
 import OnImgClick from "./OnImgClick";
 
-const FirstPage = () => {
+const FirstPage = ({ switchpg, swiPgObj }) => {
   const dta = useContext(PageContext);
   const [data, setData] = useState(dta.firestoreData);
   const [dcsId, setDcsId] = useState("");
@@ -73,7 +73,29 @@ const FirstPage = () => {
           </div>
           <div className="optRight">
             <div>
-              <img src={Add} alt="" />
+              <img
+                src={Add}
+                alt=""
+                onClick={(e) => {
+                  e.stopPropagation();
+                  switchpg({
+                    ...swiPgObj,
+                    bkPg: {
+                      ...swiPgObj.bkPg,
+                      fp: "pasive",
+                      sp: "active",
+                    },
+                  });
+                  //Ktu posht InshaaAllah ndryshojme ngjurat e faqes te momentit
+                  const path =
+                    e.target.parentNode.parentNode.parentNode.parentNode
+                      .parentNode.parentNode.previousElementSibling
+                      .childNodes[2].childNodes[2];
+
+                  path.childNodes[1].style.color = "#f5f5fb";
+                  path.childNodes[0].style.color = "#8f98a9";
+                }}
+              />
             </div>
             <div>
               <img src={GoBckArr} alt="" />

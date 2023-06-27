@@ -9,7 +9,12 @@ const AllBooking = ({ setShfaqNav, shfaqNav }) => {
 
   const [pageForRender, setPageForRender] = useState(() => {
     if (pages.switchPageObj.bkPg.fp == "active") {
-      return <FirstPage />;
+      return (
+        <FirstPage
+          switchpg={pages.setSwitchPagejObj}
+          swiPgObj={pages.switchPageObj}
+        />
+      );
     } else {
       return <SecondPage />;
     }
@@ -21,7 +26,12 @@ const AllBooking = ({ setShfaqNav, shfaqNav }) => {
   useEffect(() => {
     setPageForRender(() => {
       if (pages.switchPageObj.bkPg.fp == "active") {
-        return <FirstPage />;
+        return (
+          <FirstPage
+            switchpg={pages.setSwitchPagejObj}
+            swiPgObj={pages.switchPageObj}
+          />
+        );
       } else {
         return <SecondPage />;
       }
