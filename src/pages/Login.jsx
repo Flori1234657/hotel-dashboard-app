@@ -51,7 +51,7 @@ const LogIn = ({
         </div>
         <p>
           Nëse nuk keni akses tek llogaria e google ju lutem kontaktoni me
-          <a href="#"> programuesin</a>.
+          <a href="tel:+355688393968"> programuesin</a>.
         </p>
       </form>
     </div>

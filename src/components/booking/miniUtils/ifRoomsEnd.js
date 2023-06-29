@@ -4,7 +4,7 @@ import { doc, updateDoc, deleteField } from "firebase/firestore";
 const datatQeJaneZero = [];
 const refList = doc(db, "Dizpozicioni", "1AB8e4ZUcdrQxzEcL50T");
 
-//Ktu InshaaAllah do datat nese kemi zero dhoma ne nje dat te cakutar
+//Ktu InshaaAllah do heqim datat nese kemi zero dhoma ne nje dat te cakutar
 export const kontrrolloNeseKemiDataBosh = (Dizpozicioni, dtQndr, muaj) => {
   //ditetEQendrimitL
   let mj = muaj;

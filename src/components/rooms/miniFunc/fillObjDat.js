@@ -2,7 +2,7 @@ export let datForUpdat;
 let i = 1;
 export const updateData = (dt, firestoreDT, shenja, defMuaj = "qershor") => {
   //dt esht per dat. qe marrim nga inputet
-  datForUpdat = firestoreDT;
+  datForUpdat = JSON.parse(JSON.stringify(firestoreDT));
 
   if (i == 31 && defMuaj == "qershor") {
     i = 1;
@@ -18,46 +18,26 @@ export const updateData = (dt, firestoreDT, shenja, defMuaj = "qershor") => {
   }
 
   const path = firestoreDT.muajt[defMuaj].datatDhomat[`dat${i}`];
+  const path2 = datForUpdat.muajt[defMuaj].datatDhomat[`dat${i}`];
 
-  if (path != null && shenja == "-") {
-    datForUpdat = {
-      ...datForUpdat,
-      muajt: {
-        ...datForUpdat.muajt,
-        [defMuaj]: {
-          datatDhomat: {
-            ...datForUpdat.muajt[defMuaj].datatDhomat,
-            [`dat${i}`]: {
-              ...datForUpdat.muajt[defMuaj].datatDhomat[`dat${i}`],
-              [`${dt.llojiDhomes}`]:
-                datForUpdat.muajt[defMuaj].datatDhomat[`dat${i}`][
-                  `${dt.llojiDhomes}`
-                ] - dt.numri,
-            },
+  datForUpdat = {
+    ...datForUpdat,
+    muajt: {
+      ...datForUpdat.muajt,
+      [defMuaj]: {
+        datatDhomat: {
+          ...datForUpdat.muajt[defMuaj].datatDhomat,
+          [`dat${i}`]: {
+            ...path2,
+            [`${dt.llojiDhomes}`]:
+              path != null && shenja == "-"
+                ? path2[`${dt.llojiDhomes}`] - dt.numri
+                : path2[`${dt.llojiDhomes}`] + dt.numri,
           },
         },
       },
-    };
-  } else if (path != null && shenja == "+") {
-    datForUpdat = {
-      ...datForUpdat,
-      muajt: {
-        ...datForUpdat.muajt,
-        [defMuaj]: {
-          datatDhomat: {
-            ...datForUpdat.muajt[defMuaj].datatDhomat,
-            [`dat${i}`]: {
-              ...datForUpdat.muajt[defMuaj].datatDhomat[`dat${i}`],
-              [`${dt.llojiDhomes}`]:
-                datForUpdat.muajt[defMuaj].datatDhomat[`dat${i}`][
-                  `${dt.llojiDhomes}`
-                ] + dt.numri,
-            },
-          },
-        },
-      },
-    };
-  }
+    },
+  };
   i++;
   updateData(dt, datForUpdat, shenja, defMuaj);
 };

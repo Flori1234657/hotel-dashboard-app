@@ -64,10 +64,10 @@ const LineChart = ({ statistikat, setFtTotal, ftmSot, rrimerStats }) => {
     return arr;
   };
 
+  //InshaaAllah kjo flatMap ben run kte func per te gjitha el te arrayt
+  //pastaj na kthen nje array tek e cila aplikojm ...spread operator
   const [teDhenat, setTeDhenat] = useState([
-    ...dtSetDryCode("qershor"),
-    ...dtSetDryCode("korrig"),
-    ...dtSetDryCode("gusht"),
+    ...["qershor", "korrig", "gusht"].flatMap(dtSetDryCode),
   ]);
 
   useEffect(() => {

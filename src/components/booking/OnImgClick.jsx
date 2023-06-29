@@ -30,6 +30,18 @@ const OnImgClick = ({
   const dhomaRezervuarStats = doc(db, "Menaxhim", "VbAZSnMRNOcc2trCUdIj");
   const docForDayStats = doc(db, "Statistikat", "Gdl50e3i9nMNtWGy47mD");
 
+  const [muajMapping, setMuajMapping] = useState({
+    6: "qershor",
+    7: "korrig",
+    8: "gusht",
+  });
+
+  //Pasi objektet ruhen me referenc InshaaAllah per siguri i bejm nje
+  //deep copy qe mos te ndryshohet objekti orgjinal
+  const [statsDtDeepCopy, setStatsDtDeepCopy] = useState(
+    JSON.parse(JSON.stringify(statsData[0]))
+  );
+
   const dtSot = new Date();
   const [email, setEmail] = useState("floriandollani15@gmail.com");
   const [updatedDate, setUpdatedDate] = useState({
@@ -37,11 +49,9 @@ const OnImgClick = ({
     pranuar: true,
   });
 
-  const [muajSot, setMuajSot] = useState(() => {
-    if (dtSot.getMonth() === 5) return "qershor";
-    if (dtSot.getMonth() === 6) return "korrig";
-    if (dtSot.getMonth() === 7) return "gusht";
-  });
+  const [muajSot, setMuajSot] = useState(
+    muajMapping[`${Number(dtSot.getMonth()) + Number(1)}`]
+  );
 
   const [cmimiPerDit, setCmimiPerDit] = useState(() => {
     if (dataForSpecific.dhoma === "dhomTeke") return 100;
@@ -63,12 +73,9 @@ const OnImgClick = ({
     return newStatObj;
   });
 
-  const [muaj, setMuaj] = useState(() => {
-    const startObj = dataForSpecific.ditaArdjhes.match(/\d+/)[0];
-    if (startObj == 6) return "qershor";
-    if (startObj == 7) return "korrig";
-    if (startObj == 8) return "gusht";
-  });
+  const [muaj, setMuaj] = useState(
+    muajMapping[dataForSpecific.ditaArdjhes.match(/\d+/)[0]]
+  );
 
   const [newStatsObjMinus, setNewStatsObjMinus] = useState(() => {
     if (!newStatsObj) return false;
@@ -86,26 +93,14 @@ const OnImgClick = ({
     return newStatObj;
   });
 
-  const [dhomatRezvData, setDhomatRezvData] = useState(() => {
-    if (dataForSpecific.pranuar) {
-      return {
-        ...statsData[0],
-        Rezervuar: {
-          ...statsData[0].Rezervuar,
-          [`${dataForSpecific.dhoma}`]:
-            statsData[0].Rezervuar[`${dataForSpecific.dhoma}`] - 1,
-        },
-      };
-    } else {
-      return {
-        ...statsData[0],
-        Rezervuar: {
-          ...statsData[0].Rezervuar,
-          [`${dataForSpecific.dhoma}`]:
-            statsData[0].Rezervuar[`${dataForSpecific.dhoma}`] + 1,
-        },
-      };
-    }
+  const [dhomatRezvData, setDhomatRezvData] = useState({
+    ...statsDtDeepCopy,
+    Rezervuar: {
+      ...statsDtDeepCopy.Rezervuar,
+      [`${dataForSpecific.dhoma}`]: dataForSpecific.pranuar
+        ? statsDtDeepCopy.Rezervuar[`${dataForSpecific.dhoma}`] - 1
+        : statsDtDeepCopy.Rezervuar[`${dataForSpecific.dhoma}`] + 1,
+    },
   });
 
   const [newDhomatData, setNewDhomatData] = useState(() => {
