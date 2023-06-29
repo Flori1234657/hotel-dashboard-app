@@ -52,6 +52,8 @@ function App() {
     switchUpdateForUseEffect: false,
   });
 
+  const [variant, setVariant] = useState("v1"); //Variantet e navit InshaaAllah
+
   const getData = async () => {
     try {
       await getDocs(collection(db, "Rezervimet")).then((dcs) => {
@@ -197,6 +199,8 @@ function App() {
           statistikat,
           setStatistikat,
           getStatistikat,
+          variant,
+          setVariant,
         }}
       >
         <BrowserRouter>

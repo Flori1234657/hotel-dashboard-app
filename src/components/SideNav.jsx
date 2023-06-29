@@ -12,7 +12,6 @@ import { PageContext } from "../App";
 
 const SideNav = ({ shfaqNav }) => {
   const context = useContext(PageContext);
-  const [variant, setVariant] = useState("v1");
   const props = {
     cl: calendar,
     rm: rooms,
@@ -21,34 +20,34 @@ const SideNav = ({ shfaqNav }) => {
     log: Logo,
   };
   const [sdNv, setSdNv] = useState(
-    <Variant1 objProp={props} setVariant={setVariant} />
+    <Variant1 objProp={props} setVariant={context.setVariant} />
   );
 
   useEffect(() => {
     if (context.switchNavForNotif.initialState !== false) {
-      setVariant(context.switchNavForNotif.initialState);
+      context.setVariant(context.switchNavForNotif.initialState);
     }
   }, [context.switchNavForNotif]);
 
   useEffect(() => {
     setSdNv(() => {
-      switch (variant) {
+      switch (context.variant) {
         case "v1":
-          return <Variant1 objProp={props} setVariant={setVariant} />;
+          return <Variant1 objProp={props} setVariant={context.setVariant} />;
         case "v2":
-          return <Variant2 objProp={props} setVariant={setVariant} />;
+          return <Variant2 objProp={props} setVariant={context.setVariant} />;
 
         case "v3":
-          return <Variant3 objProp={props} setVariant={setVariant} />;
+          return <Variant3 objProp={props} setVariant={context.setVariant} />;
 
         case "v4":
-          return <Variant4 objProp={props} setVariant={setVariant} />;
+          return <Variant4 objProp={props} setVariant={context.setVariant} />;
 
         default:
-          return <Variant1 objProp={props} setVariant={setVariant} />;
+          return <Variant1 objProp={props} setVariant={context.setVariant} />;
       }
     });
-  }, [variant]);
+  }, [context.variant]);
 
   return (
     <aside style={shfaqNav ? { display: "flex" } : { display: "none" }}>

@@ -144,7 +144,7 @@ const Main = ({ shfaqNav }) => {
           <div className="graphChart">
             <div className="grChartUp">
               <h3>Grafiku i Fitimeve</h3>
-              <img src={trePikat} alt="three doots" />
+              {/* <img src={trePikat} alt="three doots" /> */}
             </div>
             <div className="grChartDown">
               <LineChart
@@ -158,7 +158,7 @@ const Main = ({ shfaqNav }) => {
           <div className="secondChart">
             <div>
               <h3>Grafiku i rezervimeve</h3>
-              <img src={trePikat} alt="three doots" />
+              {/* <img src={trePikat} alt="three doots" /> */}
             </div>
             <div className="rrethorChart">
               <RrethorChart dhomat={dta.statsData} />

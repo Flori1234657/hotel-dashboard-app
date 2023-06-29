@@ -5,8 +5,10 @@ import Veprimet from "../../assets/images/icons/materialiconsround_24px.png";
 import { PageContext } from "../../App";
 import { useContext, useEffect, useState } from "react";
 import OnImgClick from "./OnImgClick";
+import { useNavigate } from "react-router-dom";
 
 const FirstPage = ({ switchpg, swiPgObj }) => {
+  const nav = useNavigate();
   const dta = useContext(PageContext);
   const [data, setData] = useState(dta.firestoreData);
   const [dcsId, setDcsId] = useState("");
@@ -98,7 +100,14 @@ const FirstPage = ({ switchpg, swiPgObj }) => {
               />
             </div>
             <div>
-              <img src={GoBckArr} alt="" />
+              <img
+                src={GoBckArr}
+                alt=""
+                onClick={() => {
+                  nav(`/home.user${dta.routeHyr}`);
+                  dta.setVariant("v1");
+                }}
+              />
             </div>
           </div>
         </section>
