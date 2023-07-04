@@ -5,11 +5,14 @@ import provProfil from "../../assets/images/perProv.jpg";
 import { useContext, useEffect, useState } from "react";
 import { PageContext } from "../../App";
 import NotifDialog from "./components/NotifDialog";
+import { motion, useAnimation } from "framer-motion";
 
 const Header = ({ setShfaqNav, shfaqNav }) => {
   const pages = useContext(PageContext);
   const [notif, setNotif] = useState(false);
   const [showBox, setShowBox] = useState(false);
+
+  const animate = useAnimation();
 
   useEffect(() => {
     const fstDat = pages.firestoreData;
@@ -19,11 +22,15 @@ const Header = ({ setShfaqNav, shfaqNav }) => {
 
   return (
     <header>
-      <img
+      <motion.img
         style={!shfaqNav ? { width: `3.42%` } : { width: `4%` }}
         src={hmIcon}
         alt="Hamburger Icon"
         onClick={(e) => {
+          animate.start({
+            scale: ["50%", "100%"],
+          });
+
           setShfaqNav(!shfaqNav);
           const path = e.target.parentNode.nextElementSibling;
           const path2 =
@@ -36,6 +43,7 @@ const Header = ({ setShfaqNav, shfaqNav }) => {
             else path.childNodes[1].style.width = "95%";
           }
         }}
+        animate={animate}
       />
 
       <div

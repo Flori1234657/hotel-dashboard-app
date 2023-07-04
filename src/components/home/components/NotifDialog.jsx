@@ -16,7 +16,7 @@ const NotifDialog = () => {
   });
 
   return (
-    <section className="notificationBox">
+    <section className="notificationBox" style={{ zIndex: 1 }}>
       <h1>Rezervimet e reja</h1>
       {rezervFiltr.length >= 1 ? (
         <ul>

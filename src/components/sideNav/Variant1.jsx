@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { PageContext } from "../../App";
 import { useContext } from "react";
+import { motion } from "framer-motion";
 
 const Variant1 = ({ objProp, setVariant }) => {
   const nav = useNavigate();
@@ -27,16 +28,21 @@ const Variant1 = ({ objProp, setVariant }) => {
       <img src={objProp.log} alt="Logo" />
       <h2>MAIN</h2>
       <nav>
-        <div
+        <motion.div
           onClick={() => {
             setVariant("v1");
             nav("/home.userAlbanian%20HD");
           }}
-          style={{ backgroundColor: "#7a9ffb" }}
+          animate={{
+            backgroundColor: ["#0d1627", "#7a9ffb"],
+          }}
+          transition={{
+            duration: 1,
+          }}
         >
           <img src={objProp.hm} alt="" />
           <h3>Kreu</h3>
-        </div>
+        </motion.div>
         <div
           onClick={() => {
             setVariant("v2");

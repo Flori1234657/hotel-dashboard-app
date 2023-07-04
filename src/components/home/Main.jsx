@@ -7,6 +7,7 @@ import LineChart from "../chart/LineChart";
 import RrethorChart from "../chart/RrethorChart";
 import { useContext, useState } from "react";
 import { PageContext } from "../../App";
+import { motion } from "framer-motion";
 
 const Main = ({ shfaqNav }) => {
   const dta = useContext(PageContext);
@@ -55,12 +56,49 @@ const Main = ({ shfaqNav }) => {
   return (
     <main className="homeMain">
       <section className="homeMainText">
-        <h1>Përshëndetje mirëseerdhe!</h1>
-        <h2>Paneli i Hotelit</h2>
+        <motion.h1
+          initial={{
+            x: "-8%",
+          }}
+          animate={{
+            x: "0%",
+          }}
+          transition={{
+            duration: 0.5,
+          }}
+        >
+          Përshëndetje mirëseerdhe!
+        </motion.h1>
+        <motion.h2
+          initial={{
+            x: "20%",
+          }}
+          animate={{
+            x: "0%",
+          }}
+          transition={{
+            duration: 0.5,
+          }}
+        >
+          Paneli i Hotelit
+        </motion.h2>
       </section>
       <section className="teDhenatCont">
         <section className="firstInfoCont">
-          <div className="cardCont">
+          <motion.div
+            className="cardCont"
+            initial={{
+              y: "30%",
+              zIndex: -2,
+            }}
+            animate={{
+              y: "0%",
+              zIndex: 0,
+            }}
+            transition={{
+              delay: 0.5,
+            }}
+          >
             <div className="txtIcn">
               {" "}
               <img src={leter} alt="paper icon" />
@@ -78,8 +116,21 @@ const Main = ({ shfaqNav }) => {
                 }}
               ></div>
             </div>
-          </div>
-          <div className="cardCont">
+          </motion.div>
+          <motion.div
+            className="cardCont"
+            initial={{
+              y: "30%",
+              zIndex: -2,
+            }}
+            animate={{
+              y: "0%",
+              zIndex: 0,
+            }}
+            transition={{
+              delay: 0.7,
+            }}
+          >
             <div className="txtIcn">
               <img src={krevat} alt="bed icon" />
               <div className="text">
@@ -96,8 +147,21 @@ const Main = ({ shfaqNav }) => {
                 }}
               ></div>
             </div>
-          </div>
-          <div className="cardCont">
+          </motion.div>
+          <motion.div
+            className="cardCont"
+            initial={{
+              y: "30%",
+              zIndex: -2,
+            }}
+            animate={{
+              y: "0%",
+              zIndex: 0,
+            }}
+            transition={{
+              delay: 0.6,
+            }}
+          >
             <div className="txtIcn">
               <img src={lek} alt="money icon" />
               <div className="text">
@@ -114,8 +178,21 @@ const Main = ({ shfaqNav }) => {
                 }}
               ></div>
             </div>
-          </div>
-          <div className="cardCont">
+          </motion.div>
+          <motion.div
+            className="cardCont"
+            initial={{
+              y: "30%",
+              zIndex: -2,
+            }}
+            animate={{
+              y: "0%",
+              zIndex: 0,
+            }}
+            transition={{
+              delay: 0.8,
+            }}
+          >
             <div className="txtIcn">
               <img src={safe} alt="" />
               <div className="text">
@@ -138,7 +215,7 @@ const Main = ({ shfaqNav }) => {
                 ""
               )}
             </div>
-          </div>
+          </motion.div>
         </section>
         <section className="graphCont">
           <div className="graphChart">

@@ -6,6 +6,7 @@ import { PageContext } from "../../App";
 import { useContext, useEffect, useState } from "react";
 import OnImgClick from "./OnImgClick";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const FirstPage = ({ switchpg, swiPgObj }) => {
   const nav = useNavigate();
@@ -50,8 +51,31 @@ const FirstPage = ({ switchpg, swiPgObj }) => {
   return (
     <main className="bookingFirstPage">
       <section className="bookingFirstPage_txt">
-        <h1>Faqja e rezervimeve</h1>
-        <h2>Të gjitha rezervimet</h2>
+        <motion.h1
+          initial={{
+            y: "50%",
+          }}
+          animate={{
+            y: "0%",
+          }}
+        >
+          Faqja e rezervimeve
+        </motion.h1>
+        <motion.h2
+          initial={{
+            y: "110%",
+            zIndex: -1,
+          }}
+          animate={{
+            y: "0%",
+            zIndex: 0,
+          }}
+          transition={{
+            delay: 0.5,
+          }}
+        >
+          Të gjitha rezervimet
+        </motion.h2>
       </section>
       <section className="bookingPanel">
         <section className="panelUp">

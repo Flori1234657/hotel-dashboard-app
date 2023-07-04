@@ -3,6 +3,7 @@ import Header from "../components/home/Header";
 import "react-modern-calendar-datepicker/lib/DatePicker.css";
 import { DayPicker } from "react-day-picker";
 import { sq } from "date-fns/locale";
+import { motion } from "framer-motion";
 
 const Kalendar = ({ setShfaqNav, shfaqNav, firestoreData }) => {
   const [selectedDate, setSelectedDate] = useState(null);
@@ -77,12 +78,56 @@ const Kalendar = ({ setShfaqNav, shfaqNav, firestoreData }) => {
       <Header setShfaqNav={setShfaqNav} shfaqNav={shfaqNav} />
       <main className="calendar">
         <section className="calendar_txt">
-          <h1>Kalendari</h1>
-          <h2>Shiko Rezervimet</h2>
+          <motion.h1
+            initial={{
+              y: "100%",
+              zIndex: -1,
+              rotate: -60,
+              transformOrigin: "bottom left",
+            }}
+            animate={{
+              y: "0%",
+              zIndex: 0,
+              rotate: 0,
+            }}
+          >
+            Kalendari
+          </motion.h1>
+          <motion.h2
+            initial={{
+              y: "-20%",
+              zIndex: -1,
+              rotate: -60,
+              transformOrigin: "top right",
+            }}
+            animate={{
+              y: "0%",
+              zIndex: 0,
+              rotate: 0,
+            }}
+            transition={{
+              delay: 0.5,
+            }}
+          >
+            Shiko Rezerimet
+          </motion.h2>
         </section>
 
         <div className="shikoRezerv_cont">
-          <div className="calendar-cont">
+          <motion.div
+            className="calendar-cont"
+            initial={{
+              x: "60%",
+              scale: "5%",
+            }}
+            animate={{
+              x: "0%",
+              scale: "100%",
+            }}
+            transition={{
+              duration: 0.5,
+            }}
+          >
             <h3>Zgjidh një datë</h3>
             <h5>Data</h5>
             <DayPicker
@@ -109,8 +154,23 @@ const Kalendar = ({ setShfaqNav, shfaqNav, firestoreData }) => {
                 ),
               }}
             />
-          </div>
-          <div className="dateInformat">
+          </motion.div>
+          <motion.div
+            className="dateInformat"
+            initial={{
+              x: "-30%",
+              opacity: 0,
+              zIndex: -1,
+            }}
+            animate={{
+              x: "0%",
+              opacity: 1,
+              zIndex: 0,
+            }}
+            transition={{
+              delay: 0.5,
+            }}
+          >
             <h3>Rezervimet</h3>
             <h5 style={objekti ? { color: "#19cb2a" } : { color: "#cb1919" }}>
               {objekti
@@ -160,7 +220,7 @@ const Kalendar = ({ setShfaqNav, shfaqNav, firestoreData }) => {
                 ""
               )}
             </div>
-          </div>
+          </motion.div>
         </div>
       </main>
     </div>

@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import { doc, setDoc } from "firebase/firestore";
 import { db } from "../../config/firebase";
 import { datForUpdat, updateData } from "./miniFunc/fillObjDat";
+import { motion } from "framer-motion";
 
 const FirstRmsPage = ({ dhomatDat, menaxhimDT, setRegetData }) => {
   const validationSchema = Yup.object().shape({
@@ -47,8 +48,33 @@ const FirstRmsPage = ({ dhomatDat, menaxhimDT, setRegetData }) => {
   return (
     <main className="rmvRoom">
       <section className="rmvRm_fp_txt">
-        <h1>Faqja e dhomave</h1>
-        <h2>Hiq një dhomë</h2>
+        <motion.h1
+          initial={{
+            y: "-100%",
+            zIndex: -1,
+          }}
+          animate={{
+            y: "0%",
+            zIndex: 0,
+          }}
+        >
+          Faqja e dhomave
+        </motion.h1>
+        <motion.h2
+          initial={{
+            y: "-20%",
+            zIndex: -1,
+          }}
+          animate={{
+            y: "0%",
+            zIndex: 0,
+          }}
+          transition={{
+            delay: 0.5,
+          }}
+        >
+          Hiq një dhomë
+        </motion.h2>
       </section>
       <div className="funcContainer">
         <Formik

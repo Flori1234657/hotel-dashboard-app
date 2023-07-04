@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { PageContext } from "../../App";
+import { motion } from "framer-motion";
 
 const Variant2 = ({ objProp, setVariant }) => {
   const nav = useNavigate();
@@ -63,22 +64,38 @@ const Variant2 = ({ objProp, setVariant }) => {
           <img src={objProp.hm} alt="" />
           <h3>Kreu</h3>
         </div>
-        <div
+        <motion.div
           onClick={() => {
             setVariant("v2");
             returnActiveFirstPage();
             nav("/booking.userAlbanian%20HD");
           }}
-          style={{ backgroundColor: "#7a9ffb" }}
+          animate={{
+            backgroundColor: ["#0d1627", "#7a9ffb"],
+          }}
+          transition={{
+            duration: 1,
+          }}
         >
           <img src={objProp.bkg} alt="" />
           <h3>Rezervimet</h3>
           <h4>-</h4>
-        </div>
-        <ul>
+        </motion.div>
+        <motion.ul
+          initial={{
+            y: "-40%",
+            display: "none",
+            zIndex: -1,
+          }}
+          animate={{
+            y: "0%",
+            display: "flex",
+            zIndex: 1,
+          }}
+        >
           <li onClick={(e) => onOptClick(e, "par")}>Rezervimet</li>
           <li onClick={(e) => onOptClick(e, "dyt")}>Shto Rezervim</li>
-        </ul>
+        </motion.ul>
         <div
           onClick={() => {
             setVariant("v3");

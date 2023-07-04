@@ -5,6 +5,7 @@ import SubSuccess from "./shtoRezv/SubSuccess";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../config/firebase";
 import { ditQendrimi, fillData, cmimi } from "./shtoRezv/dataObjFill";
+import { motion } from "framer-motion";
 
 const SecondPage = () => {
   const [optRendr, setOptRendr] = useState("FirstOp");
@@ -82,8 +83,33 @@ const SecondPage = () => {
   return (
     <main className="booking_secondPage">
       <section className="homeMainText">
-        <h1>Faqja e rezervimeve</h1>
-        <h2>Shto revervim</h2>
+        <motion.h1
+          initial={{
+            y: "-100%",
+            zIndex: -1,
+          }}
+          animate={{
+            y: "0%",
+            zIndex: 0,
+          }}
+        >
+          Faqja e rezervimeve
+        </motion.h1>
+        <motion.h2
+          initial={{
+            x: "-20%",
+            zIndex: -1,
+          }}
+          animate={{
+            x: "0%",
+            zIndex: 0,
+          }}
+          transition={{
+            delay: 0.5,
+          }}
+        >
+          Shto revervim
+        </motion.h2>
       </section>
       {returnPage}
     </main>
