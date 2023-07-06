@@ -162,7 +162,11 @@ const FirstPage = ({ switchpg, swiPgObj }) => {
                   }
                 })
                 .map((el) => (
-                  <div className="tr" key={`${el.idja}${el.mbiemri}`}>
+                  <div
+                    className="tr"
+                    key={`${el.idja}${el.mbiemri}`}
+                    data-testid="rezervimetElement"
+                  >
                     <h5 className="tdEmr">{`${el.emri} ${el.mbiemri}`}</h5>
                     <h5>{el.telefon}</h5>
                     <h5>{el.email}</h5>
